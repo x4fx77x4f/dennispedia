@@ -1,0 +1,7 @@
+:root {
+	color-scheme: light dark;
+}
+table, thead, tbody, tfoot, th, td {
+	border: 1px solid currentcolor;
+	border-collapse: collapse;
+}
