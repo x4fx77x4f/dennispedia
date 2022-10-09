@@ -4,4 +4,8 @@
 table, thead, tbody, tfoot, th, td {
 	border: 1px solid currentcolor;
 	border-collapse: collapse;
+	padding: 2px 4px;
+}
+tt, code, kbd, samp {
+	font-family: monospace, monospace;
 }
