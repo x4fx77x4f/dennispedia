@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
 	color-scheme: light dark;
 }
@@ -8,4 +9,14 @@ table, thead, tbody, tfoot, th, td {
 }
 tt, code, kbd, samp {
 	font-family: monospace, monospace;
+}
+.breadcrumbs {
+	list-style: none;
+	padding: 0;
+}
+.breadcrumbs > li {
+	display: inline;
+}
+.breadcrumbs > li:not(:last-child)::after {
+	content: " → ";
 }
