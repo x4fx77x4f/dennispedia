@@ -1,6 +1,22 @@
 @charset "UTF-8";
 :root {
+	font-family: sans-serif;
 	color-scheme: light dark;
+}
+@media screen and (prefers-color-scheme: dark) {
+	:root {
+		background: black;
+		color: #d7d7d7;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		color: #f0f0f0;
+	}
+	:link {
+		color: #7ab6ff;
+	}
+	:visited {
+		color: #cd99ff;
+	}
 }
 table, thead, tbody, tfoot, th, td {
 	border: 1px solid currentcolor;
