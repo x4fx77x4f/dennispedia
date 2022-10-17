@@ -11,6 +11,7 @@
 </nav>
 <title>Teardown — Dennispedia</title>
 <h1>Teardown</h1>
+<p>Teardown is a voxel-based heist and sandbox game with raytraced graphics and destruction physics.</p>
 <h2 id="external-links">External links</h2>
 <ul>
 	<li><a href="https://store.steampowered.com/app/1167630/Teardown/">Steam store page</a></li>
@@ -24,6 +25,9 @@
 </ul>
 <h2 id="level-format">Level format</h2>
 <p>Modded levels are in XML format. The root element of a level is a <code>&lt;scene&gt;</code> element. This is also the original format of the base game levels, but the source files of the base game levels are not included in the release builds' files. They are baked into a proprietary binary format referred to by the community as "TDBIN". Binary levels are stored in <code>data/bin/</code>, have <code>.bin</code> extensions, and are compressed with DEFLATE and can be decompressed/recompressed with <code>zlib-flate</code>—except for quicksaves, which are uncompressed and located at <code>%LOCALAPPDATA%/Teardown/quicksave.bin</code>.</p>
+<h2 id="scripting">Scripting</h2>
+<p>Teardown embeds <a href="https://www.lua.org/">Lua 5.1.4</a>. It does not "open" the package, I/O, OS, or debug libraries, which means no <code>require</code>, <code>io.open</code>, <code>os.execute</code>, or <code>debug.getinfo</code>. You still have <code>dofile</code> and <code>loadfile</code> though (although you're not supposed to and they don't respect <code>MOD/</code> or <code>LEVEL/</code> notation). Loading of bytecode has been disabled.</p>
+<p>I intend to document mod support thoroughly, but for now, most of the information you could want to know is on the game's website.</p>
 <h2 id="versions">Versions</h2>
 <p>
 	<strong>Please ensure you are familiar with <a href="https://steamdb.info/faq/#branches">Steam's technical vocabulary</a>.</strong>
