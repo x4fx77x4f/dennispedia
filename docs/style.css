@@ -1,0 +1,31 @@
+@charset "UTF-8";
+@media (min-width: 60em) {
+	#docs-nav {
+	}
+	html, body {
+		height: 100%;
+	}
+	body {
+		display: flex;
+		margin: 0;
+	}
+	#docs-main, #docs-nav {
+		display: inline-block;
+		padding: 8px;
+	}
+	#docs-nav {
+		width: 20em;
+		background: #ccc;
+	}
+	#docs-nav + hr {
+		display: none;
+	}
+	#docs-main {
+		width: calc(100% - 20em);
+	}
+	@media screen and (prefers-color-scheme: dark) {
+		#docs-nav {
+			background: #222;
+		}
+	}
+}
