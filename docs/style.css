@@ -1,7 +1,8 @@
 @charset "UTF-8";
+main {
+	display: none;
+}
 @media (min-width: 60em) {
-	#docs-nav {
-	}
 	html, body {
 		height: 100%;
 	}
@@ -9,22 +10,22 @@
 		display: flex;
 		margin: 0;
 	}
-	#docs-main, #docs-nav {
+	main:target, nav {
 		display: inline-block;
 		padding: 8px;
 	}
-	#docs-nav {
+	nav {
 		width: 20em;
 		background: #ccc;
 	}
-	#docs-nav + hr {
+	nav + hr {
 		display: none;
 	}
-	#docs-main {
+	main {
 		width: calc(100% - 20em);
 	}
 	@media screen and (prefers-color-scheme: dark) {
-		#docs-nav {
+		nav {
 			background: #222;
 		}
 	}
@@ -33,7 +34,7 @@
 	border: 1px solid currentcolor;
 	padding: 8px;
 }
-.alert-bug {
+.alert-warning {
 	background: #fed;
 	color: #730;
 }
@@ -49,7 +50,7 @@
 	color: #030;
 }
 @media screen and (prefers-color-scheme: dark) {
-	.alert-bug {
+	.alert-warning {
 		background: #730;
 		color: #edc;
 	}
