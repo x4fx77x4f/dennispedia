@@ -3,15 +3,18 @@
 	display: none;
 }
 @media (min-width: 60em) {
-	html, body {
+	html {
 		height: 100%;
+	}
+	body {
+		min-height: 100%;
 	}
 	body {
 		display: flex;
 		margin: 0;
 	}
 	main, nav {
-		display: inline-block;
+		display: block;
 		padding: 8px;
 	}
 	nav {
