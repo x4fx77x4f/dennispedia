@@ -1,4 +1,7 @@
 @charset "UTF-8";
+.docs-hidden {
+	display: none;
+}
 @media (min-width: 60em) {
 	html, body {
 		height: 100%;
