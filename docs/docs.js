@@ -24,30 +24,36 @@ const die = (href, message) => {
 	return p;
 }
 const as = document.getElementById('docs-nav').getElementsByTagName('a');
+const a_click = (event, a) => {
+	location.hash = a.getAttribute('href');
+	die(null, "Loading...");
+	fetch(a.href)
+		.then(response => {
+			if (!response.ok) {
+				throw `Bad response code ${response.status}.`;
+			}
+			return response.text();
+		})
+		.then(text => {
+			const parser = new DOMParser();
+			const subdoc = parser.parseFromString(text, 'text/html');
+			const submain = subdoc.getElementById('docs-main');
+			main.replaceWith(submain);
+			main.remove();
+			main = submain;
+		})
+		.catch(error => {
+			die(a.href, error);
+		})
+	;
+	if (event) event.preventDefault();
+};
+const hash = location.hash.slice(1);
 Array.prototype.forEach.call(as, a => {
-	a.addEventListener('click', event => {
-		die(null, "Loading...");
-		fetch(a.href)
-			.then(response => {
-				if (!response.ok) {
-					throw `Bad response code ${response.status}.`;
-				}
-				return response.text();
-			})
-			.then(text => {
-				const parser = new DOMParser();
-				const subdoc = parser.parseFromString(text, 'text/html');
-				const submain = subdoc.getElementById('docs-main');
-				main.replaceWith(submain);
-				main.remove();
-				main = submain;
-			})
-			.catch(error => {
-				die(a.href, error);
-			})
-		;
-		event.preventDefault();
-	});
+	a.addEventListener('click', event => a_click(event, a));
+	if (a.getAttribute('href') === hash) {
+		a_click(null, a);
+	}
 });
 
 const search = document.getElementById('docs-search');
