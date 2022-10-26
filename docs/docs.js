@@ -23,7 +23,6 @@ const die = (href, message) => {
 	}
 	return p;
 }
-const as = document.getElementById('docs-nav').getElementsByTagName('a');
 const a_click = (event, a) => {
 	location.hash = a.getAttribute('href');
 	die(null, "Loading...");
@@ -41,6 +40,9 @@ const a_click = (event, a) => {
 			main.replaceWith(submain);
 			main.remove();
 			main = submain;
+			Array.prototype.forEach.call(main.getElementsByTagName('a'), a => {
+				a.addEventListener('click', event => a_click(event, a));
+			});
 		})
 		.catch(error => {
 			die(a.href, error);
@@ -49,6 +51,7 @@ const a_click = (event, a) => {
 	if (event) event.preventDefault();
 };
 const hash = location.hash.slice(1);
+const as = document.getElementById('docs-nav').getElementsByTagName('a');
 Array.prototype.forEach.call(as, a => {
 	a.addEventListener('click', event => a_click(event, a));
 	if (a.getAttribute('href') === hash) {
