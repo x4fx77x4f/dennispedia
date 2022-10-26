@@ -9,7 +9,6 @@
 	<h1><code>Command</code></h1>
 	<p>Runs an engine command. There's no equivalent to a developer console as far as I can tell, so I have no idea why this was done this way instead of defining a function for each one of these commands.</p>
 	<p class="alert alert-undocumented">This function is not officially documented.</p>
-	<p class="alert alert-added">This function exists in all known builds.</p>
 	<h2>Arguments</h2>
 	<ol>
 		<li>string: Command to execute</li>
@@ -24,7 +23,7 @@
 		<dd>
 			Enter about state, which runs <code>data/ui/about.lua</code>. Only used in perftest.
 			<br/>
-			<span class="alert-removed">Added in 0.3.0 (perftest), removed in 0.5.0 (5943727).</span>
+			<span class="alert-removed">Removed in 0.5.0 (5943727).</span>
 		</dd>
 		<dt><code>game.applydisplay</code></dt>
 		<dd>Reads updated graphics settings from registry and applies them.</dd>
@@ -32,7 +31,7 @@
 		<dd>
 			Presumably bakes an XML level into a binary level (i.e. a TDBIN file). I have been unable to get this to do anything but crash the game.
 			<br/>
-			<span class="alert-removed">Added in 0.3.0 (perftest), removed in 0.4.5 (5748542).</span>
+			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 			<ol start="2">
 				<li>string: Mission ID</li>
 				<li>string: Path to level XML</li>
@@ -43,19 +42,19 @@
 		<dd>
 			Delete all binary levels, i.e. all files in <code>data/bin/</code>.
 			<br/>
-			<span class="alert-removed">Added in 0.3.0 (perftest), removed in 0.4.5 (5748542).</span>
+			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
 		<dt><code>game.exitlevel</code></dt>
 		<dd>
 			Enter main menu. Obsoleted by <code>Menu</code> function.
 			<br/>
-			<span class="alert-removed">Added in 0.3.0 (perftest), removed in 0.4.5 (5748542).</span>
+			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
 		<dt><code>game.menu</code></dt>
 		<dd>
 			Enter main menu. Obsoleted by <code>Menu</code> function.
 			<br/>
-			<span class="alert-removed">Added in 0.3.0 (perftest), removed in 0.4.5 (5748542).</span>
+			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
 		<dt><code>game.openurl</code></dt>
 		<dd>
@@ -82,7 +81,7 @@
 		<dd>
 			Open pause menu. Obsoleted by <code>SetPaused</code> function.
 			<br/>
-			<span class="alert-removed">Added in 0.3.0 (perftest), <em>probably</em> removed in 0.4.5 (5748542).</span>
+			<span class="alert-removed"><em>Probably</em> removed in 0.4.5 (5748542).</span>
 		</dd>
 		<dt><code>game.quickload</code></dt>
 		<dd>Load quicksave.</dd>
@@ -94,13 +93,13 @@
 		<dd>
 			Respawn player. Obsoleted by <code>RespawnPlayer</code> function.
 			<br/>
-			<span class="alert-removed">Added in 0.3.0 (perftest), removed in 0.4.5 (5748542).</span>
+			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
 		<dt><code>game.restart</code></dt>
 		<dd>
 			Reload level. Obsoleted by <code>Restart</code> function.
 			<br/>
-			<span class="alert-removed">Added in 0.3.0 (perftest), removed in 0.4.5 (5748542).</span>
+			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
 		<dt><code>game.screenrecord</code></dt>
 		<dd>
@@ -126,7 +125,7 @@
 		<dd>
 			Enters level. Obsoleted by <code>StartLevel</code> function.
 			<br/>
-			<span class="alert-removed">Added in 0.3.0 (perftest), removed in 0.5.0 (5943727).</span>
+			<span class="alert-removed">Removed in 0.5.0 (5943727).</span>
 			<ol start="2">
 				<li>string: Path to level XML</li>
 			</ol>
@@ -135,7 +134,7 @@
 		<dd>
 			Enters level. Obsoleted by <code>StartLevel</code> function.
 			<br/>
-			<span class="alert-removed">Added in 0.3.0 (perftest), removed in 0.5.0 (5943727).</span>
+			<span class="alert-removed">Removed in 0.5.0 (5943727).</span>
 			<ol start="2">
 				<li>string: Mission ID</li>
 				<li>string: Path to level XML</li>
@@ -152,7 +151,7 @@
 		<dd>
 			Close pause menu. Obsoleted by <code>SetPaused</code> function.
 			<br/>
-			<span class="alert-removed">Added in 0.3.0 (perftest), <em>probably</em> removed in 0.4.5 (5748542).</span>
+			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
 		<dt><code>mods.activate</code></dt>
 		<dt><code>mods.browsesubscribed</code></dt>
