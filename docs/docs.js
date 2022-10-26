@@ -50,11 +50,6 @@ Array.prototype.forEach.call(as, a => {
 	});
 });
 
-const unhide = collection => {
-	Array.prototype.forEach.call(collection, el => {
-		el.classList.remove('docs-hidden');
-	});
-};
 const search = document.getElementById('docs-search');
 search.addEventListener('input', event => {
 	const value = search.value.normalize().toLowerCase();
