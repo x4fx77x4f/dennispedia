@@ -20,6 +20,11 @@
 	nav {
 		width: 20em;
 		background: #ccc;
+		height: 100vh;
+		overflow-y: scroll;
+		position: sticky;
+		top: 0;
+		box-sizing: border-box;
 	}
 	nav ul {
 		padding-left: 1em;
