@@ -39,6 +39,7 @@
 .alert {
 	border: 1px solid currentcolor;
 	padding: 8px;
+	display: table;
 }
 .alert-warning {
 	background: #fed;
