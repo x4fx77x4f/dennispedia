@@ -8,8 +8,6 @@
 	}
 	body {
 		min-height: 100%;
-	}
-	body {
 		display: flex;
 		margin: 0;
 	}
