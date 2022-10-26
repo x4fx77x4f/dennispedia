@@ -1,7 +1,4 @@
 @charset "UTF-8";
-main {
-	display: none;
-}
 @media (min-width: 60em) {
 	html, body {
 		height: 100%;
@@ -10,13 +7,16 @@ main {
 		display: flex;
 		margin: 0;
 	}
-	main:target, nav {
+	main, nav {
 		display: inline-block;
 		padding: 8px;
 	}
 	nav {
 		width: 20em;
 		background: #ccc;
+	}
+	nav ul {
+		padding-left: 1em;
 	}
 	nav + hr {
 		display: none;

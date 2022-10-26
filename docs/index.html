@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8"/>
-<link rel="stylesheet" href="../style.css"/>
+<base href="../"/>
 <link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="docs/style.css"/>
 <title>Documentation — Dennispedia</title>
 <nav>
 	<a href="#docs-main">Skip to content</a>
 	<ol class="breadcrumbs">
-		<li><a href="../">Dennispedia</a></li>
-		<li><a href="." aria-current="page">Documentation</a></li>
+		<li><a href=".">Dennispedia</a></li>
+		<li><a href="docs/" aria-current="page">Documentation</a></li>
 	</ol>
 	<hr/>
 	<ul>
-		<li><details>
+		<li><details open="">
 			<summary>Smash Hit</summary>
 			<ul>
 				<li>Modding</li>
 			</ul>
 		</details></li>
-		<li><details>
+		<li><details open="">
 			<summary>Teardown</summary>
 			<ul>
-				<li><a href="#softmodding">Making mods</a></li>
-				<li><a href="#g_GetIntParam"><code>GetIntParam</code></a></li>
-				<li><a href="#g_GetFloatParam"><code>GetFloatParam</code></a></li>
-				<li><a href="#g_GetBoolParam"><code>GetBoolParam</code></a></li>
-				<li><a href="#g_GetStringParam"><code>GetStringParam</code></a></li>
+				<li><a href="teardown/softmodding.html">Making mods</a></li>
+				<li><details>
+					<summary>Variables</summary>
+					<ul>
+						<li><a href="teardown/g/GetIntParam.html"><code>GetIntParam</code></a></li>
+						<li><a href="teardown/g/GetFloatParam.html"><code>GetFloatParam</code></a></li>
+						<li><a href="teardown/g/GetBoolParam.html"><code>GetBoolParam</code></a></li>
+						<li><a href="teardown/g/GetStringParam.html"><code>GetStringParam</code></a></li>
+					</ul>
+				</details></li>
 			</ul>
 		</details></li>
 	</ul>
 </nav>
 <hr/>
-<main id="g_GetIntParam">
-	<h2><code>GetIntParam</code></h2>
-	<p>Lorem ipsum</p>
-	<p class="alert alert-warning">If you call this function with a malformed parameter, it crashes the game.</p>
-	<p class="alert alert-undocumented">This function is undocumented.</p>
-	<p class="alert alert-removed">This function was removed in 1.1.0 (8942147).</p>
-	<p class="alert alert-added">This function was added in 1.0.0 (8558212).</p>
+<main id="docs-main">
+	<h1>Documentation</h1>
+	<p>On the left in a sidebar (desktop) or above (mobile) is a list of links to articles.</p>
 </main>
 </html>
