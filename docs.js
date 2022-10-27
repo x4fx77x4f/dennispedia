@@ -31,10 +31,21 @@ const die = (href, message) => {
 	}
 	return p;
 }
+const src_host = location.host;
+const src_pathname = location.pathname;
 const a_click = (event, a) => {
-	location.hash = a.getAttribute('href');
+	if (a.host !== src_host) {
+		return;
+	}
+	const dst_pathname = a.dataset.pathname;
+	const dst_href = a.href;
+	console.log(`Loading article '${dst_href}'`);
+	history.pushState({
+		src_pathname: src_pathname,
+		dst_pathname: a.dataset.pathname,
+	}, '', dst_href);
 	die(null, "Loading...");
-	fetch(a.href)
+	fetch(dst_href)
 		.then(response => {
 			if (!response.ok) {
 				throw `Bad response code ${response.status}.`;
@@ -63,20 +74,39 @@ const a_click = (event, a) => {
 			Array.prototype.forEach.call(main.getElementsByTagName('a'), a => {
 				a.addEventListener('click', event => a_click(event, a));
 			});
+			let title = subdoc.title;
+			if (!title) {
+				console.warn("No article title. Falling back to first h1.");
+				const h1 = document.getElementsByTagName('h1')[0];
+				if (h1) {
+					title = h1.innerText;
+				} else {
+					console.warn("No fallback title either?");
+				}
+			}
+			history.replaceState({
+				src_pathname: src_pathname,
+				dst_pathname: dst_pathname,
+				dst_text: text,
+			}, title, dst_href);
 		})
 		.catch(error => {
 			die(a.href, error);
 		})
 	;
-	if (event) event.preventDefault();
+	if (event) {
+		event.preventDefault();
+	}
 };
-const hash = location.hash.slice(1);
 const as = nav.getElementsByTagName('a');
 Array.prototype.forEach.call(as, a => {
-	a.addEventListener('click', event => a_click(event, a));
-	if (a.getAttribute('href') === hash) {
-		a_click(null, a);
+	if (a.host !== src_host) {
+		return;
 	}
+	a.dataset.pathname = a.pathname;
+	const dst_pathname = `/${src_pathname}/${a.getAttribute('href')}`.replace(/\/+/, '/');
+	a.href = `${location.protocol}//${src_host}${dst_pathname}`;
+	a.addEventListener('click', event => a_click(event, a));
 });
 
 const search = document.getElementById('docs-search');
