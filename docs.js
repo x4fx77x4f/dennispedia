@@ -33,6 +33,72 @@ const die = (href, message) => {
 }
 const src_host = location.host;
 const src_pathname = location.pathname;
+const load_text = text => {
+	const parser = new DOMParser();
+	const subdoc = parser.parseFromString(text, 'text/html');
+	let submain = subdoc.getElementById('docs-main');
+	if (submain) {
+		main.replaceWith(submain);
+		main.remove();
+		main = submain;
+	} else {
+		console.warn("No #docs-main! Falling back to moving children of body.");
+		submain = subdoc.body;
+		while (main.firstChild) {
+			main.lastChild.remove();
+		}
+		const children = submain.childNodes;
+		for (let i=children.length-1; i >= 0; --i) {
+			const child = children[i];
+			if (child.tagName && child.tagName.toUpperCase() === 'NAV') continue;
+			main.prepend(child);
+		}
+		submain.remove();
+	}
+	Array.prototype.forEach.call(main.getElementsByTagName('a'), a => {
+		a.addEventListener('click', event => a_click(event, a));
+	});
+	let title = subdoc.title;
+	if (!title) {
+		console.warn("No article title. Falling back to first h1.");
+		const h1 = document.getElementsByTagName('h1')[0];
+		if (h1) {
+			title = h1.innerText;
+		} else {
+			console.warn("No fallback title either?");
+		}
+	}
+	if (title) {
+		const name = "Dennispedia";
+		document.title = title === name ? name : `${title} — ${name}`;
+	}
+	return title;
+}
+const load = (dst_href, dst_pathname, dst_text) => {
+	if (dst_text) {
+		return load_text(dst_text);
+	}
+	die(null, "Loading...");
+	fetch(dst_href)
+		.then(response => {
+			if (!response.ok) {
+				throw `Bad response code ${response.status}.`;
+			}
+			return response.text();
+		})
+		.then(text => {
+			const title = load_text(text);
+			history.replaceState({
+				src_pathname: src_pathname,
+				dst_pathname: dst_pathname,
+				dst_text: text,
+			}, title, dst_href);
+		})
+		.catch(error => {
+			die(dst_href, error);
+		})
+	;
+};
 const a_click = (event, a) => {
 	if (a.host !== src_host) {
 		return;
@@ -44,70 +110,36 @@ const a_click = (event, a) => {
 		src_pathname: src_pathname,
 		dst_pathname: a.dataset.pathname,
 	}, '', dst_href);
-	die(null, "Loading...");
-	fetch(dst_href)
-		.then(response => {
-			if (!response.ok) {
-				throw `Bad response code ${response.status}.`;
-			}
-			return response.text();
-		})
-		.then(text => {
-			const parser = new DOMParser();
-			const subdoc = parser.parseFromString(text, 'text/html');
-			let submain = subdoc.getElementById('docs-main');
-			if (submain) {
-				main.replaceWith(submain);
-				main.remove();
-				main = submain;
-			} else {
-				console.warn("No #docs-main! Falling back to moving children of body.");
-				submain = subdoc.body;
-				while (main.firstChild) {
-					main.lastChild.remove();
-				}
-				for (let i=submain.childNodes.length-1; i > 0; --i) {
-					main.prepend(submain.childNodes[i]);
-				}
-				submain.remove();
-			}
-			Array.prototype.forEach.call(main.getElementsByTagName('a'), a => {
-				a.addEventListener('click', event => a_click(event, a));
-			});
-			let title = subdoc.title;
-			if (!title) {
-				console.warn("No article title. Falling back to first h1.");
-				const h1 = document.getElementsByTagName('h1')[0];
-				if (h1) {
-					title = h1.innerText;
-				} else {
-					console.warn("No fallback title either?");
-				}
-			}
-			history.replaceState({
-				src_pathname: src_pathname,
-				dst_pathname: dst_pathname,
-				dst_text: text,
-			}, title, dst_href);
-		})
-		.catch(error => {
-			die(a.href, error);
-		})
-	;
+	load(dst_href, dst_pathname);
 	if (event) {
 		event.preventDefault();
 	}
 };
 const as = nav.getElementsByTagName('a');
+const get_href = dst_pathname => `${location.protocol}//${src_host}${dst_pathname}`;
 Array.prototype.forEach.call(as, a => {
 	if (a.host !== src_host) {
 		return;
 	}
 	a.dataset.pathname = a.pathname;
 	const dst_pathname = `/${src_pathname}/${a.getAttribute('href')}`.replace(/\/+/, '/');
-	a.href = `${location.protocol}//${src_host}${dst_pathname}`;
+	a.href = get_href(dst_pathname);
 	a.addEventListener('click', event => a_click(event, a));
 });
+const popstate = state => {
+	state = state ?? history.state;
+	load(get_href(state.dst_pathname), state.dst_pathname, state.dst_text);
+};
+window.addEventListener('popstate', () => popstate());
+if (history.state) {
+	popstate();
+} else {
+	history.replaceState({
+		src_pathname: src_pathname,
+		dst_pathname: location.pathname,
+		dst_text: main.innerHTML,
+	}, document.title, location.href);
+}
 
 const search = document.getElementById('docs-search');
 search.addEventListener('input', event => {
