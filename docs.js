@@ -1,6 +1,14 @@
 'use strict';
 
+const style = document.createElement('link');
+style.rel = 'stylesheet';
+style.href = 'docs.css';
+document.head.append(style);
+
 let main = document.getElementById('docs-main');
+const nav = document.getElementById('docs-nav');
+main.parentNode.insertBefore(nav, main);
+
 const die = (href, message) => {
 	console.log(message);
 	while (main.firstChild) {
@@ -36,10 +44,22 @@ const a_click = (event, a) => {
 		.then(text => {
 			const parser = new DOMParser();
 			const subdoc = parser.parseFromString(text, 'text/html');
-			const submain = subdoc.getElementById('docs-main');
-			main.replaceWith(submain);
-			main.remove();
-			main = submain;
+			let submain = subdoc.getElementById('docs-main');
+			if (submain) {
+				main.replaceWith(submain);
+				main.remove();
+				main = submain;
+			} else {
+				console.warn("No #docs-main! Falling back to moving children of body.");
+				submain = subdoc.body;
+				while (main.firstChild) {
+					main.lastChild.remove();
+				}
+				for (let i=submain.childNodes.length-1; i > 0; --i) {
+					main.prepend(submain.childNodes[i]);
+				}
+				submain.remove();
+			}
 			Array.prototype.forEach.call(main.getElementsByTagName('a'), a => {
 				a.addEventListener('click', event => a_click(event, a));
 			});
@@ -51,7 +71,7 @@ const a_click = (event, a) => {
 	if (event) event.preventDefault();
 };
 const hash = location.hash.slice(1);
-const as = document.getElementById('docs-nav').getElementsByTagName('a');
+const as = nav.getElementsByTagName('a');
 Array.prototype.forEach.call(as, a => {
 	a.addEventListener('click', event => a_click(event, a));
 	if (a.getAttribute('href') === hash) {
