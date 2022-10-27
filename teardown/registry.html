@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"/>
+<base href="../"/>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="docs/alert.css"/>
+<nav>
+	<ol class="breadcrumbs">
+		<li><a href=".">Dennispedia</a></li>
+		<li><a href="teardown/">Teardown</a></li>
+		<li><a href="teardown/registry.html" aria-current="page">Registry</a></li>
+	</ol>
+	<hr/>
+</nav>
+<title>Registry — Dennispedia</title>
+<main id="docs-main">
+	<h1>Registry</h1>
+	<p>The registry (not to be confused with the Windows registry) consists of what the official modding documentation refers to as "nodes", which are key and value pairs where both are strings.</p>
+	<p>Registry nodes are not to be confused with <a href="teardown/g/Command.html">commands</a>, which follow the same naming conventions but are handled entirely separately.</p>
+	<dl>
+		<dt><code>game.brokenvoxels</code></dt>
+		<dt><code>game.canquickload</code></dt>
+		<dt><code>game.deploy</code></dt>
+		<dt><code>game.fire.maxcount</code></dt>
+		<dt><code>game.fire.spread</code></dt>
+		<dt><code>game.input.crouch</code></dt>
+		<dt><code>game.input.curdevice</code></dt>
+		<dt><code>game.input.down</code></dt>
+		<dt><code>game.input.flashlight</code></dt>
+		<dt><code>game.input.grab</code></dt>
+		<dt><code>game.input.handbrake</code></dt>
+		<dt><code>game.input.interact</code></dt>
+		<dt><code>game.input.jump</code></dt>
+		<dt><code>game.input.left</code></dt>
+		<dt><code>game.input.lmb</code></dt>
+		<dt><code>game.input.map</code></dt>
+		<dt><code>game.input.mmb</code></dt>
+		<dt><code>game.input.pause</code></dt>
+		<dt><code>game.input.right</code></dt>
+		<dt><code>game.input.scroll_down</code></dt>
+		<dt><code>game.input.scroll_up</code></dt>
+		<dt><code>game.input.up</code></dt>
+		<dt><code>game.input.usetool</code></dt>
+		<dt><code>game.input.vehicle_action</code></dt>
+		<dt><code>game.input.vehicle_lower</code></dt>
+		<dt><code>game.input.vehicle_raise</code></dt>
+		<dt><code>game.largeui</code></dt>
+		<dt><code>game.levelpath</code></dt>
+		<dt><code>game.loading.alpha</code></dt>
+		<dt><code>game.loading.text</code></dt>
+		<dt><code>game.map.enabled</code></dt>
+		<dt><code>game.map.fade</code></dt>
+		<dt><code>game.mod</code></dt>
+		<dt><code>game.mod.description</code></dt>
+		<dt><code>game.mod.title</code></dt>
+		<dt><code>game.path</code></dt>
+		<dt><code>game.path.length</code></dt>
+		<dt><code>game.path.loaded</code></dt>
+		<dt><code>game.path.pos</code></dt>
+		<dt><code>game.path.recording</code></dt>
+		<dt><code>game.paused</code></dt>
+		<dt><code>game.player.cangrab</code></dt>
+		<dt><code>game.player.caninteract</code></dt>
+		<dt><code>game.player.canusetool</code></dt>
+		<dt><code>game.player.grabbing</code></dt>
+		<dt><code>game.player.health</code></dt>
+		<dt><code>game.player.hit</code></dt>
+		<dt><code>game.player.idling</code></dt>
+		<dt><code>game.player.interactive</code></dt>
+		<dt><code>game.player.picking</code></dt>
+		<dt><code>game.player.steroid</code></dt>
+		<dt><code>game.player.throwing</code></dt>
+		<dt><code>game.player.tool</code></dt>
+		<dt><code>game.player.tool.scope</code></dt>
+		<dt><code>game.player.toolselect</code></dt>
+		<dt><code>game.player.usescreen</code></dt>
+		<dt><code>game.player.usevehicle</code></dt>
+		<dt><code>game.savegamepath</code></dt>
+		<dt><code>game.screenshot</code></dt>
+		<dt><code>game.steam.active</code></dt>
+		<dt><code>game.steam.hascontroller</code></dt>
+		<dt><code>game.tool</code></dt>
+		<dt><code>game.vehicle.health</code></dt>
+		<dt><code>game.vehicle.interactive</code></dt>
+		<dt><code>game.version</code></dt>
+		<dt><code>game.version.patch</code></dt>
+		<dt><code>game.workshop</code></dt>
+		<dt><code>game.workshop.publish</code></dt>
+		<dt><code>level.campaign</code></dt>
+		<dt><code>level.sandbox</code></dt>
+		<dt><code>level.spawn</code></dt>
+		<dt><code>level.unlimitedammo</code></dt>
+		<dt><code>options.audio.ambiencevolume</code></dt>
+		<dt><code>options.audio.menumusic</code></dt>
+		<dt><code>options.audio.musicvolume</code></dt>
+		<dt><code>options.audio.soundvolume</code></dt>
+		<dt><code>options.display.mode</code></dt>
+		<dt><code>options.display.resolution</code></dt>
+		<dt><code>options.game.campaign.ammo</code></dt>
+		<dt><code>options.game.campaign.health</code></dt>
+		<dt><code>options.game.campaign.time</code></dt>
+		<dt><code>options.game.missionskipping</code></dt>
+		<dt><code>options.game.sandbox.unlocklevels</code></dt>
+		<dt><code>options.game.sandbox.unlocktools</code></dt>
+		<dt><code>options.gfx.barrel</code></dt>
+		<dt><code>options.gfx.dof</code></dt>
+		<dt><code>options.gfx.fov</code></dt>
+		<dt><code>options.gfx.gamma</code></dt>
+		<dt><code>options.gfx.motionblur</code></dt>
+		<dt><code>options.gfx.quality</code></dt>
+		<dt><code>options.gfx.renderscale</code></dt>
+		<dt><code>options.gfx.vsync</code></dt>
+		<dt><code>options.input.headbob</code></dt>
+		<dt><code>options.input.invert</code></dt>
+		<dt><code>options.input.keymap.backward</code></dt>
+		<dt><code>options.input.keymap.crouch</code></dt>
+		<dt><code>options.input.keymap.flashlight</code></dt>
+		<dt><code>options.input.keymap.forward</code></dt>
+		<dt><code>options.input.keymap.interact</code></dt>
+		<dt><code>options.input.keymap.jump</code></dt>
+		<dt><code>options.input.keymap.left</code></dt>
+		<dt><code>options.input.keymap.right</code></dt>
+		<dt><code>options.input.sensitivity</code></dt>
+		<dt><code>options.input.smoothing</code></dt>
+		<dt><code>options.input.toolsway</code></dt>
+		<dt><code>savegame.cash</code></dt>
+		<dt><code>savegame.challenge</code></dt>
+		<dt><code>savegame.hint.targetlocation</code></dt>
+		<dt><code>savegame.hub</code></dt>
+		<dt><code>savegame.lastcompleted</code></dt>
+		<dt><code>savegame.legalnoticeshown</code></dt>
+		<dt><code>savegame.message</code></dt>
+		<dt><code>savegame.mission</code></dt>
+		<dt><code>savegame.promoupdated</code></dt>
+		<dt><code>savegame.reward</code></dt>
+		<dt><code>savegame.spawn.shortcut</code></dt>
+		<dt><code>savegame.startcount</code></dt>
+		<dt><code>savegame.stats.brokentreadmills</code></dt>
+		<dt><code>savegame.stats.brokenvoxels</code></dt>
+		<dt><code>savegame.stats.skeetfullscore</code></dt>
+		<dt><code>savegame.tool</code></dt>
+		<dt><code>savegame.valuable</code></dt>
+		<dt><code>mods.available</code></dt>
+		<dt><code>mods.publish</code></dt>
+	</dl>
+</main>
+</html>
