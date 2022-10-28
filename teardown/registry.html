@@ -17,11 +17,34 @@
 	<p>The registry (not to be confused with the Windows registry) consists of what the official modding documentation refers to as "nodes", which are key and value pairs where both are strings.</p>
 	<p>Registry nodes are not to be confused with <a href="teardown/g/Command.html">commands</a>, which follow the same naming conventions but are handled entirely separately.</p>
 	<dl>
+		<dt><code>game.break</code></dt>
+		<dt><code>game.break.size</code></dt>
+		<dt><code>game.break.x</code></dt>
+		<dt><code>game.break.y</code></dt>
+		<dt><code>game.break.z</code></dt>
 		<dt><code>game.brokenvoxels</code></dt>
 		<dt><code>game.canquickload</code></dt>
+		<dt><code>game.cctv.hits</code></dt>
+		<dt><code>game.cpu.threads</code></dt>
 		<dt><code>game.deploy</code></dt>
+		<dt><code>game.destroyed</code></dt>
+		<dt><code>game.disableinput</code></dt>
+		<dt><code>game.disableinteract</code></dt>
+		<dt><code>game.disablemap</code></dt>
+		<dt><code>game.disablepause</code></dt>
+		<dt><code>game.explosion.strength</code></dt>
+		<dt><code>game.explosion.x</code></dt>
+		<dt><code>game.explosion.y</code></dt>
+		<dt><code>game.explosion.z</code></dt>
 		<dt><code>game.fire.maxcount</code></dt>
 		<dt><code>game.fire.spread</code></dt>
+		<dt><code>game.graphics.bindless</code></dt>
+		<dt><code>game.graphics.card</code></dt>
+		<dt><code>game.graphics.fps</code></dt>
+		<dt><code>game.graphics.fpsavg</code></dt>
+		<dt><code>game.graphics.height</code></dt>
+		<dt><code>game.graphics.vendor</code></dt>
+		<dt><code>game.graphics.width</code></dt>
 		<dt><code>game.input.crouch</code></dt>
 		<dt><code>game.input.curdevice</code></dt>
 		<dt><code>game.input.down</code></dt>
@@ -32,10 +55,14 @@
 		<dt><code>game.input.jump</code></dt>
 		<dt><code>game.input.left</code></dt>
 		<dt><code>game.input.lmb</code></dt>
+		<dt><code>game.input.locktool</code></dt>
 		<dt><code>game.input.map</code></dt>
 		<dt><code>game.input.mmb</code></dt>
+		<dt><code>game.input.mousex</code></dt>
+		<dt><code>game.input.mousey</code></dt>
 		<dt><code>game.input.pause</code></dt>
 		<dt><code>game.input.right</code></dt>
+		<dt><code>game.input.rmb</code></dt>
 		<dt><code>game.input.scroll_down</code></dt>
 		<dt><code>game.input.scroll_up</code></dt>
 		<dt><code>game.input.up</code></dt>
@@ -44,15 +71,22 @@
 		<dt><code>game.input.vehicle_lower</code></dt>
 		<dt><code>game.input.vehicle_raise</code></dt>
 		<dt><code>game.largeui</code></dt>
+		<dt><code>game.levelid</code></dt>
 		<dt><code>game.levelpath</code></dt>
 		<dt><code>game.loading.alpha</code></dt>
 		<dt><code>game.loading.text</code></dt>
 		<dt><code>game.map.enabled</code></dt>
 		<dt><code>game.map.fade</code></dt>
+		<dt><code>game.map.focus</code></dt>
 		<dt><code>game.mod</code></dt>
 		<dt><code>game.mod.description</code></dt>
 		<dt><code>game.mod.title</code></dt>
+		<dt><code>game.music.volume</code></dt>
 		<dt><code>game.path</code></dt>
+		<dt><code>game.path.alpha</code></dt>
+		<dt><code>game.path.current.x</code></dt>
+		<dt><code>game.path.current.y</code></dt>
+		<dt><code>game.path.current.z</code></dt>
 		<dt><code>game.path.length</code></dt>
 		<dt><code>game.path.loaded</code></dt>
 		<dt><code>game.path.pos</code></dt>
@@ -60,13 +94,21 @@
 		<dt><code>game.paused</code></dt>
 		<dt><code>game.player.cangrab</code></dt>
 		<dt><code>game.player.caninteract</code></dt>
+		<dt><code>game.player.caninteract.x</code></dt>
+		<dt><code>game.player.caninteract.y</code></dt>
+		<dt><code>game.player.caninteract.z</code></dt>
+		<dt><code>game.player.caninteractvehicle</code></dt>
 		<dt><code>game.player.canusetool</code></dt>
+		<dt><code>game.player.disableinput</code></dt>
 		<dt><code>game.player.grabbing</code></dt>
 		<dt><code>game.player.health</code></dt>
 		<dt><code>game.player.hit</code></dt>
 		<dt><code>game.player.idling</code></dt>
 		<dt><code>game.player.interactive</code></dt>
+		<dt><code>game.player.pickdesc</code></dt>
 		<dt><code>game.player.picking</code></dt>
+		<dt><code>game.player.picktarget</code></dt>
+		<dt><code>game.player.pickvehicle</code></dt>
 		<dt><code>game.player.steroid</code></dt>
 		<dt><code>game.player.throwing</code></dt>
 		<dt><code>game.player.tool</code></dt>
@@ -74,11 +116,22 @@
 		<dt><code>game.player.toolselect</code></dt>
 		<dt><code>game.player.usescreen</code></dt>
 		<dt><code>game.player.usevehicle</code></dt>
+		<dt><code>game.restarted</code></dt>
+		<dt><code>game.saveerror</code></dt>
 		<dt><code>game.savegamepath</code></dt>
 		<dt><code>game.screenshot</code></dt>
+		<dt><code>game.screenshot.bloom</code></dt>
+		<dt><code>game.screenshot.dof.max</code></dt>
+		<dt><code>game.screenshot.dof.min</code></dt>
+		<dt><code>game.screenshot.dof.scale</code></dt>
+		<dt><code>game.screenshot.exposure</code></dt>
+		<dt><code>game.screenshot.tool</code></dt>
+		<dt><code>game.simtime</code></dt>
 		<dt><code>game.steam.active</code></dt>
 		<dt><code>game.steam.hascontroller</code></dt>
+		<dt><code>game.steamdeck</code></dt>
 		<dt><code>game.tool</code></dt>
+		<dt><code>game.tool.count</code></dt>
 		<dt><code>game.vehicle.health</code></dt>
 		<dt><code>game.vehicle.interactive</code></dt>
 		<dt><code>game.version</code></dt>
@@ -122,6 +175,8 @@
 		<dt><code>options.input.sensitivity</code></dt>
 		<dt><code>options.input.smoothing</code></dt>
 		<dt><code>options.input.toolsway</code></dt>
+		<dt><code>promo.available</code></dt>
+		<dt><code>promo.groups</code></dt>
 		<dt><code>savegame.cash</code></dt>
 		<dt><code>savegame.challenge</code></dt>
 		<dt><code>savegame.hint.targetlocation</code></dt>
@@ -130,6 +185,7 @@
 		<dt><code>savegame.legalnoticeshown</code></dt>
 		<dt><code>savegame.message</code></dt>
 		<dt><code>savegame.mission</code></dt>
+		<dt><code>savegame.promoclosed</code></dt>
 		<dt><code>savegame.promoupdated</code></dt>
 		<dt><code>savegame.reward</code></dt>
 		<dt><code>savegame.spawn.shortcut</code></dt>
