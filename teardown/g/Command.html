@@ -67,8 +67,18 @@
 		</dd>
 		<dt><code>game.path.has</code></dt>
 		<dt><code>game.path.load</code></dt>
+		<dd>
+			<ol start="2">
+				<li>string: Path ID. Will be loaded from <code>%LOCALAPPDATA%/Teardown/path-${path_id}.pth</code> where <code>${path_id}</code> is this parameter</code></li>
+			</ol>
+		</dd>
 		<dt><code>game.path.record</code></dt>
 		<dt><code>game.path.save</code></dt>
+		<dd>
+			<ol start="2">
+				<li>string: Path ID. Will be saved to <code>%LOCALAPPDATA%/Teardown/path-${path_id}.pth</code> where <code>${path_id}</code> is this parameter. May not contain slashes, backslashes, or colons</code></li>
+			</ol>
+		</dd>
 		<dt><code>game.path.stop</code></dt>
 		<dt><code>game.pausemenu</code></dt>
 		<dd>
@@ -145,11 +155,7 @@
 		</dd>
 		<dt><code>game.startui</code></dt>
 		<dt><code>game.steam.showbindingpanel</code></dt>
-		<dd>
-			Saves a screenshot.
-			<br/>
-			<span class="alert-added">Added in 0.7.1 (6627985).</span>
-		</dd>
+		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
 		<dt><code>game.unpause</code></dt>
 		<dd>
 			Close pause menu. Obsoleted by <code>SetPaused</code> function.

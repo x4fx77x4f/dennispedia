@@ -80,7 +80,7 @@
 		</dd>
 		<dt><code>game.graphics.card</code></dt>
 		<dd>
-			Name of OpenGL renderer, i.e. <code>*glGetString(GL_RENDERER)</code>. String.
+			Name of OpenGL renderer, i.e. <code>glGetString(GL_RENDERER)</code>. String.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
@@ -104,7 +104,7 @@
 		</dd>
 		<dt><code>game.graphics.vendor</code></dt>
 		<dd>
-			Name of OpenGL implementation vendor, i.e. <code>*glGetString(GL_VENDOR)</code>. String.
+			Name of OpenGL implementation vendor, i.e. <code>glGetString(GL_VENDOR)</code>. String.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
@@ -117,7 +117,11 @@
 		<dt><code>game.input.crouch</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
 		<dt><code>game.input.curdevice</code></dt>
-		<dd><span class="alert-added">Added in 0.9.4 (8273165).</span></dd>
+		<dd>
+			String. Can be either <code>mouse</code> or <code>gamepad</code>.
+			<br/>
+			<span class="alert-added">Added in 0.9.4 (8273165).</span>
+		</dd>
 		<dt><code>game.input.down</code></dt>
 		<dd><span class="alert-added">Added in 0.4.6 (5777578).</span></dd>
 		<dt><code>game.input.flashlight</code></dt>
@@ -280,34 +284,83 @@
 		<dt><code>level.unlimitedammo</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985). Non-engine.</span></dd>
 		<dt><code>options.audio.ambiencevolume</code></dt>
+		<dd>Integer. Defaults to 100. Intended range is 0 to 100. Only appears in options menu if <code>game.deploy</code> is falsy. (since 0.4.5 (5748542)).</dd>
 		<dt><code>options.audio.menumusic</code></dt>
-		<dd><span class="alert-added">Added in 0.7.0 (7801522).</span></dd>
+		<dd>
+			Whether to play music on the main menu. Integer. 1 is enabled, 0 is disabled.
+			<br/>
+			<span class="alert-added">Added in 0.9.0 (7801522).</span>
+		</dd>
 		<dt><code>options.audio.musicvolume</code></dt>
+		<dd>Volume of music as percentage. Integer. Defaults to 100. Intended range is 0 to 100.</dd>
 		<dt><code>options.audio.soundvolume</code></dt>
+		<dd>Volume of audio (excluding music) as percentage. Integer. Defaults to 100. Intended range is 0 to 100.</dd>
 		<dt><code>options.display.mode</code></dt>
+		<dd>Whether to be in windowed mode or fullscreen. Integer. 0 is exclusive fullscreen, 1 is windowed, 2 is borderless windowed.</dd>
 		<dt><code>options.display.resolution</code></dt>
+		<dd>Which resolution preset to use. Integer. Varies depending on screen resolution and display mode. Must be 0 in borderless windowed. Will never be negative. Use <code>GetDisplayResolution</code> to get resolution for given display mode and preset index. Use <code>GetDisplayResolutionCount</code> to get number of presets for given display mode (including 0).</dd>
 		<dt><code>options.game.campaign.ammo</code></dt>
-		<dd><span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span></dd>
+		<dd>
+			Amount of ammo to add to all tools as a percentage multiplier. Integer. Non-engine. Intended values are 50, 100, -1 (special value that means tool will have no ammo at all), or 0.
+			<br/>
+			<span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span>
+		</dd>
 		<dt><code>options.game.campaign.health</code></dt>
-		<dd><span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span></dd>
+		<dd>
+			Amount of health to add to max health as a percentage. Integer. Non-engine. Intended values are 50, 100, -50, or 0.
+			<br/>
+			<span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span>
+		</dd>
 		<dt><code>options.game.campaign.time</code></dt>
-		<dd><span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span></dd>
+		<dd>
+			Amount of time in seconds to add to timer after alarm goes off in missions. Integer. Non-engine. Intended values are 15, 30, 60, -10, -20, or 0.
+			<br/>
+			<span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span>
+		</dd>
 		<dt><code>options.game.missionskipping</code></dt>
-		<dd><span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span></dd>
+		<dd>
+			Whether the option to skip missions on the terminal and mission fail screens should appear. Integer. 1 is enabled, 0 is disabled.
+			<br/>
+			<span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span>
+		</dd>
 		<dt><code>options.game.sandbox.unlocklevels</code></dt>
-		<dd><span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span></dd>
+		<dd>
+			Whether all sandbox levels should be available, or only unlocked sandbox levels should be available. Integer. 1 is enabled, 0 is disabled.
+			<br/>
+			<span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span>
+		</dd>
 		<dt><code>options.game.sandbox.unlocktools</code></dt>
-		<dd><span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span></dd>
+		<dd>
+			Whether all tools should always be available in sandbox, or whether only unlocked tools should be available. Integer. 1 is enabled, 0 is disabled.
+			<br/>
+			<span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span>
+		</dd>
+		<dt><code>options.game.spawn</code></dt>
+		<dd>
+			Whether the spawn menu should always be accessible, or only be accessible in sandbox mode. Integer. 1 is enabled, 0 is disabled.
+			<br/>
+			<span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span>
+		</dd>
 		<dt><code>options.gfx.barrel</code></dt>
+		<dd>Whether barrel distortion should be used. Integer. 1 is enabled, 0 is disabled.</dd>
 		<dt><code>options.gfx.dof</code></dt>
+		<dd>Whether depth of field should be used. Integer. 1 is enabled, 0 is disabled.</dd>
 		<dt><code>options.gfx.fov</code></dt>
+		<dd>Field of view in degrees. Integer. Defaults to 90. Intended range is 60 to 120.</dd>
 		<dt><code>options.gfx.gamma</code></dt>
+		<dd>Gamma correction. Integer. Lower makes the scene darker, higher makes the scene brighter. Defaults to 100. Intended range is 50 to 150.</dd>
 		<dt><code>options.gfx.motionblur</code></dt>
+		<dd>Whether motion blur should be used. Integer. 1 is enabled, 0 is disabled.</dd>
 		<dt><code>options.gfx.quality</code></dt>
+		<dd>Render quality. Integer. High is 1, low is 2, medium is 3.</dd>
 		<dt><code>options.gfx.renderscale</code></dt>
+		<dd>Render scale as a percentage. Integer. Intended values are 100, 75, or 50, but higher values work. Lower values not tested.</dd>
 		<dt><code>options.gfx.vsync</code></dt>
+		<dd>Whether vertical synchronization should be used. Integer. 0 is disabled, 1 is "every frame", 2 is "every other frame". -1 is adaptive <span class="alert-added">(since 0.7.1 (6627985))</span>.</dd>
 		<dt><code>options.input.headbob</code></dt>
+		<dd>Percentage for how much the camera should tilt in response to player movement, and screen shaking on swing/gunshot. Does not affect shake on explosion. Integer. Defaults to 0. Intended range is 0 to 100.</dd>
 		<dt><code>options.input.invert</code></dt>
+		<dd>Whether to invert vertical look movement. Integer. 1 is enabled, 0 is disabled.</dd>
 		<dt><code>options.input.keymap.backward</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
 		<dt><code>options.input.keymap.crouch</code></dt>
@@ -325,9 +378,15 @@
 		<dt><code>options.input.keymap.right</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
 		<dt><code>options.input.sensitivity</code></dt>
+		<dd>Mouse sensitivity percentage multiplier. Integer. Defaults to 100. Intended range is 25 (50 before 0.5.4 (6109598)) to 200.</dd>
 		<dt><code>options.input.smoothing</code></dt>
+		<dd>Mouse smoothing percentage. Integer. Defaults to 0. Intended range is 0 to 100.</dd>
 		<dt><code>options.input.toolsway</code></dt>
-		<dd><span class="alert-added">Added in 0.9.3 (8199301).</span></dd>
+		<dd>
+			Whether tool models should sway and move in response to player movement. Integer. 1 is enabled, 0 is disabled.
+			<br/>
+			<span class="alert-added">Added in 0.9.3 (8199301).</span>
+		</dd>
 		<dt><code>promo.available</code></dt>
 		<dd><span class="alert-added">Added in 1.1.0 (8942147).</span></dd>
 		<dt><code>promo.groups</code></dt>
