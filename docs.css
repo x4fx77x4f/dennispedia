@@ -2,7 +2,7 @@
 .docs-hidden {
 	display: none;
 }
-@media (min-width: 60em) {
+@media screen and (min-width: 60em) {
 	html {
 		height: 100%;
 	}
@@ -31,9 +31,14 @@
 	main {
 		width: calc(100% - 20em);
 	}
-	@media screen and (prefers-color-scheme: dark) {
+	@media (prefers-color-scheme: dark) {
 		nav {
 			background: #222;
 		}
+	}
+}
+@media print {
+	nav {
+		display: none;
 	}
 }
