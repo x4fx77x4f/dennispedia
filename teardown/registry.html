@@ -429,8 +429,36 @@
 		<dd><span class="alert-added">Added in 0.4.5 (5748542). Non-engine.</span></dd>
 		<dt><code>mods.available</code></dt>
 		<dd><span class="alert-added">Added in 0.5.0 (5943727).</span></dd>
-		<dt><code>mods.publish</code></dt>
+		<dt><code>mods.pending</code></dt>
+		<dd><span class="alert-added">Added in 1.2.0 (9734688).</span></dd>
+		<dt><code>mods.publish.id</code></dt>
 		<dd><span class="alert-added">Added in 0.6.1 (6279809).</span></dd>
+		<dt><code>mods.publish.message</code></dt>
+		<dd>
+			Error message if publishing failed. String.
+			<br/>
+			<span class="alert-added">Added in 0.6.1 (6279809).</span>
+		</dd>
+		<dt><code>mods.publish.progress</code></dt>
+		<dd>
+			Number.
+			<br/>
+			<span class="alert-added">Added in 0.6.1 (6279809).</span>
+		</dd>
+		<dt><code>mods.publish.state</code></dt>
+		<dd>
+			String. Valid values are <code>uploading</code>, <code>ready</code>, <code>failed</code>, and <code>done</code>.
+			<br/>
+			<span class="alert-added">Added in 0.6.1 (6279809).</span>
+		</dd>
+		<dt><code>mods.publish.visibility</code></dt>
+		<dd>
+			Integer. 0 is public, 1 is friends only, 2 is private, and 3 is unlisted. A -1 value is referenced in the code but its purpose is unclear.
+			<br/>
+			<span class="alert-added">Added in 0.6.1 (6279809).</span>
+		</dd>
+		<dt><code>mods.subscribestate</code></dt>
+		<dd>Has never existed. Obsoleted by <code>mods.pending</code>.</dd>
 	</dl>
 </main>
 </html>
