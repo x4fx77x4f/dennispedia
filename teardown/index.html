@@ -38,7 +38,7 @@
 <h2 id="versions">Versions</h2>
 <p>
 	<strong>Please ensure you are familiar with <a href="https://steamdb.info/faq/#branches">Steam's technical vocabulary</a>.</strong>
-	<br/>The "Version" column refers to the value of the <code>game.version</code> registry node (game registry, not Windows registry!).
+	<br/>The "Ver." column refers to the value of the <code>game.version</code> registry node (game registry, not Windows registry!).
 	<br/>The "Patch" column refers to the value of the <code>game.version.patch</code> registry node. 0.5.5 (6205729) was the earliest build to have support for this, and 0.6.2 (patch 1) (6324468) was the first build to make use of it.
 	<br/>Rows without a "<code>buildid</code>" value are non-Steam builds.
 	<br/>Rows without a "<code>manifests</code>" value are builds I don't have access to because they were never on a public branch.
@@ -46,12 +46,11 @@
 	<br/>Branches are separated by commas and go in order of first branch the build appeared on to last.
 	<br/>The "CRC-32" column is the <a href="https://en.wikipedia.org/wiki/Cyclic_redundancy_check#CRC-32_algorithm">CRC-32</a> checksum of the game's executable, i.e. <code>teardown.exe</code> (except for perftests which are <code>teardown-perftest.exe</code>), in hexadecimal (hence the <code>0x</code> at the beginning).
 	<br/>Rows without a "CRC-32" value are builds I have not checked, either because I don't have that build, or because I just haven't gotten around to downloading it yet.
-	<br/>The YouTuber builds are not in this list because I don't have them, I don't know their version numbers, and I don't know how many revisions there were of them.
 </p>
 <table>
 	<thead>
 		<tr>
-			<th>Version</th>
+			<th>Ver.</th>
 			<th>Patch</th>
 			<th><code aria-label="time updated">timeupdated</code></th>
 			<th><code aria-label="build ID">buildid</code></th>
