@@ -1,7 +1,11 @@
 @charset "UTF-8";
+
 :root {
 	font-family: sans-serif;
 	color-scheme: light dark;
+}
+tt, code, kbd, samp {
+	font-family: monospace, monospace;
 }
 @media screen and (prefers-color-scheme: dark) {
 	:root {
@@ -18,14 +22,13 @@
 		color: #cd99ff;
 	}
 }
+
 table, thead, tbody, tfoot, th, td {
 	border: 1px solid currentcolor;
 	border-collapse: collapse;
 	padding: 2px 4px;
 }
-tt, code, kbd, samp {
-	font-family: monospace, monospace;
-}
+
 .breadcrumbs {
 	list-style: none;
 	padding: 0;
@@ -36,6 +39,7 @@ tt, code, kbd, samp {
 .breadcrumbs > li:not(:last-child)::after {
 	content: " → ";
 }
+
 .alert {
 	border: 1px solid currentcolor;
 	padding: 8px;
@@ -71,5 +75,20 @@ tt, code, kbd, samp {
 	.alert-added {
 		background: #030;
 		color: #ded;
+	}
+}
+
+.bad {
+	color: #a00;
+}
+.good {
+	color: #060;
+}
+@media screen and (prefers-color-scheme: dark) {
+	.bad {
+		color: #f77;
+	}
+	.good {
+		color: #7f7;
 	}
 }
