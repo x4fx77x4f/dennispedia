@@ -165,8 +165,6 @@ search.addEventListener('input', event => {
 	});
 });
 
-Array.prototype.forEach.call(document.getElementsByClassName('docs-hidden'), el => {
-	el.classList.remove('docs-hidden');
-});
+Array.prototype.forEach.call(document.getElementsByClassName('docs-remove'), el => el.remove());
 
 console.log("Hello, world!");
