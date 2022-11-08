@@ -1,9 +1,11 @@
 'use strict';
 
-const style = document.createElement('link');
-style.rel = 'stylesheet';
-style.href = 'docs.css';
-document.head.append(style);
+if (!document.currentScript.dataset.noStyle) {
+	const style = document.createElement('link');
+	style.rel = 'stylesheet';
+	style.href = 'docs.css';
+	document.head.append(style);
+}
 
 let main = document.getElementById('docs-main');
 const nav = document.getElementById('docs-nav');
@@ -32,11 +34,12 @@ const die = (href, message) => {
 	}
 	return p;
 }
-const src_host = location.host;
-const src_pathname = location.pathname;
+const src_host = document.currentScript.dataset.srcHost ?? location.host;
+const src_pathname = document.currentScript.dataset.srcPathname ?? location.pathname;
 const load_text = text => {
 	const parser = new DOMParser();
 	const subdoc = parser.parseFromString(text, 'text/html');
+	const base = subdoc.baseURI.replace(/[^\/]+$/, '');
 	let submain = subdoc.getElementById('docs-main');
 	if (submain) {
 		main.replaceWith(submain);
@@ -57,6 +60,9 @@ const load_text = text => {
 		submain.remove();
 	}
 	Array.prototype.forEach.call(main.getElementsByTagName('a'), a => {
+		const url = new URL(a.getAttribute('href'), base);
+		if (url.host !== location.host) return;
+		a.href = url.href;
 		a.addEventListener('click', event => a_click(event, a));
 	});
 	let title = subdoc.title;
@@ -132,7 +138,7 @@ const popstate = state => {
 	load(get_href(state.dst_pathname), state.dst_pathname, state.dst_text);
 };
 window.addEventListener('popstate', () => popstate());
-if (history.state) {
+if (history.state && !document.currentScript.dataset.noPopstate) {
 	popstate();
 } else {
 	history.replaceState({
