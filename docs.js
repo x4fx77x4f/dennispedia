@@ -8,6 +8,7 @@ document.head.append(style);
 let main = document.getElementById('docs-main');
 const nav = document.getElementById('docs-nav');
 main.parentNode.insertBefore(nav, main);
+main.parentNode.insertBefore(document.createElement('hr'), main);
 
 const die = (href, message) => {
 	console.log(message);
@@ -70,7 +71,7 @@ const load_text = text => {
 	}
 	if (title) {
 		const name = "Dennispedia";
-		document.title = title === name ? name : `${title} — ${name}`;
+		document.title = title.endsWith(name) ? title : `${title} — ${name}`;
 	}
 	return title;
 }
@@ -122,7 +123,7 @@ Array.prototype.forEach.call(as, a => {
 		return;
 	}
 	a.dataset.pathname = a.pathname;
-	const dst_pathname = `/${src_pathname}/${a.getAttribute('href')}`.replace(/\/+/, '/');
+	const dst_pathname = `/${src_pathname}/${a.getAttribute('href')}`.replace(/\/+/g, '/');
 	a.href = get_href(dst_pathname);
 	a.addEventListener('click', event => a_click(event, a));
 });
@@ -141,7 +142,12 @@ if (history.state) {
 	}, document.title, location.href);
 }
 
-const search = document.getElementById('docs-search');
+const search = document.createElement('input');
+search.type = 'search';
+const label = document.createElement('label');
+label.append(document.createTextNode("Search: "));
+label.append(search);
+nav.insertBefore(label, nav.firstChild);
 search.addEventListener('input', event => {
 	const value = search.value.normalize().toLowerCase();
 	if (!value) {

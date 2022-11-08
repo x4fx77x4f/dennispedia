@@ -6,6 +6,7 @@
 }
 tt, code, kbd, samp {
 	font-family: monospace, monospace;
+	font-stretch: condensed;
 }
 dd ol, dd dl, dd ul, dd menu {
 	margin: 0;

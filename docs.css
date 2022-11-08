@@ -25,6 +25,9 @@
 	nav ul {
 		padding-left: 1em;
 	}
+	nav code {
+		font-size: 90%;
+	}
 	nav + hr {
 		display: none;
 	}
