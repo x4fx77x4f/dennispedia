@@ -7,6 +7,9 @@
 tt, code, kbd, samp {
 	font-family: monospace, monospace;
 }
+dd ol, dd dl, dd ul, dd menu {
+	margin: 0;
+}
 @media screen and (prefers-color-scheme: dark) {
 	:root {
 		background: black;
