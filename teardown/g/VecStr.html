@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"/>
+<base href="../../../"/>
+<script src="docs-article.js"></script>
+<link rel="stylesheet" href="style.css"/>
+<nav>
+	<ol class="breadcrumbs">
+		<li><a href=".">Dennispedia</a></li>
+		<li><a href="teardown/">Teardown</a></li>
+		<li><a href="teardown/g/VecStr.html" aria-current="page"><code>VecStr</code></a></li>
+	</ol>
+	<hr/>
+</nav>
+<title>VecStr — Dennispedia</title>
+<main id="docs-main">
+	<h1><code>VecStr</code></h1>
+	<p>Returns a human readable string with the values of a vector. <em>Approximately</em> equivalent to <code>string.format("(%s, %s, %s)", vec[1], vec[2], vec[3])</code>.</p>
+	<p>Numbers will have at least 1 digit after the decimal point (e.g. 1 becomes <code>1.0</code>) but no more than 5 (e.g. pi becomes <code>3.14159</code>). Positive infinity is represented as <code>inf</code>, negative infinity as <code>-inf</code>, and NaN as <code>-nan(ind)</code>.</p>
+	<p>Like most functions that take vectors, quaternions, or transforms as inputs, this function does not do input validation. Non-number fields will be treated as zero. A non-table value will be treated as a vector with all zeros.</p>
+	<p class="alert alert-undocumented">This function is not officially documented.</p>
+	<h2>Arguments</h2>
+	<ol>
+		<li>Vec (table): Vector to turn into a string</li>
+	</ol>
+	<h2>Return values</h2>
+	<ol>
+		<li>string: Approximate string representation</li>
+	</ol>
+</main>
+</html>

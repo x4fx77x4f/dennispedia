@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"/>
+<base href="../../../"/>
+<script src="docs-article.js"></script>
+<link rel="stylesheet" href="style.css"/>
+<nav>
+	<ol class="breadcrumbs">
+		<li><a href=".">Dennispedia</a></li>
+		<li><a href="teardown/">Teardown</a></li>
+		<li><a href="teardown/g/GetDisplayResolutionCount.html" aria-current="page"><code>GetDisplayResolutionCount</code></a></li>
+	</ol>
+	<hr/>
+</nav>
+<title>GetDisplayResolutionCount — Dennispedia</title>
+<main id="docs-main">
+	<h1><code>GetDisplayResolutionCount</code></h1>
+	<p>Get number of resolutions available for given display mode. See <a href="teardown/g/GetDisplayResolution.html">the <code>GetDisplayResolution</code> article</a> for details.</p>
+	<p class="alert alert-warning">Like all UI functions, this function will only exist if <code>draw</code> is defined before <code>init</code> is called.</p>
+	<p class="alert alert-undocumented">This function is not officially documented.</p>
+	<h2>Arguments</h2>
+	<ol>
+		<li>integer (number): Display mode. 0 is exclusive fullscreen, 1 is windowed, 2 is borderless windowed. Truncated if has fractional component.</li>
+	</ol>
+	<h2>Return values</h2>
+	<ol>
+		<li>integer (number): Number of resolutions available.</li>
+	</ol>
+</main>
+</html>

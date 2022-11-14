@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"/>
+<base href="../../../"/>
+<script src="docs-article.js"></script>
+<link rel="stylesheet" href="style.css"/>
+<nav>
+	<ol class="breadcrumbs">
+		<li><a href=".">Dennispedia</a></li>
+		<li><a href="teardown/">Teardown</a></li>
+		<li><a href="teardown/g/TransformStr.html" aria-current="page"><code>TransformStr</code></a></li>
+	</ol>
+	<hr/>
+</nav>
+<title>TransformStr — Dennispedia</title>
+<main id="docs-main">
+	<h1><code>TransformStr</code></h1>
+	<p>Returns a human readable string with the values of a transform. Equivalent to <code>string.format("%s/%s", VecStr(transform.pos), QuatStr(transform.rot))</code>. Like <a href="teardown/g/VecStr.html"><code>VecStr</code></a>, but for transforms. See that article for details.</p>
+	<p class="alert alert-undocumented">This function is not officially documented.</p>
+	<h2>Arguments</h2>
+	<ol>
+		<li>Transform (table): Transform to turn into a string</li>
+	</ol>
+	<h2>Return values</h2>
+	<ol>
+		<li>string: Approximate string representation</li>
+	</ol>
+</main>
+</html>

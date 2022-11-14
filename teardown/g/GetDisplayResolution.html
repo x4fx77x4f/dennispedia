@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"/>
+<base href="../../../"/>
+<script src="docs-article.js"></script>
+<link rel="stylesheet" href="style.css"/>
+<nav>
+	<ol class="breadcrumbs">
+		<li><a href=".">Dennispedia</a></li>
+		<li><a href="teardown/">Teardown</a></li>
+		<li><a href="teardown/g/GetDisplayResolution.html" aria-current="page"><code>GetDisplayResolution</code></a></li>
+	</ol>
+	<hr/>
+</nav>
+<title>GetDisplayResolution — Dennispedia</title>
+<main id="docs-main">
+	<h1><code>GetDisplayResolution</code></h1>
+	<p>Get width and height of specified resolution index for display mode. See <a href="teardown/registry.html#options.display.resolution">the <code>options.display.resolution</code> registry node docs</a> for details.</p>
+	<p class="alert alert-warning">Like all UI functions, this function will only exist if <code>draw</code> is defined before <code>init</code> is called.</p>
+	<p class="alert alert-undocumented">This function is not officially documented.</p>
+	<h2>Arguments</h2>
+	<ol>
+		<li>integer (number): Display mode. 0 is exclusive fullscreen, 1 is windowed, 2 is borderless windowed. Truncated if has fractional component.</li>
+		<li>integer (number): Which resolution to use. Zero indexed. Use <a href="teardown/g/GetdisplayResolutionCount.html"><code>GetDisplayResolutionCount</code></a> to know how many options there are. Truncated if has fractional component. Clamped if out of bounds.</li>
+	</ol>
+	<h2>Return values</h2>
+	<ol>
+		<li>integer (number): Width in pixels.</li>
+		<li>integer (number): Height in pixels.</li>
+	</ol>
+	<h2>Example usage</h2>
+<pre>
+function init()
+	mode = 0
+	resolution = 0
+end
+local function button(label)
+	UiPush()
+		UiColor(0.75, 0.875, 1)
+		local pressed = UiTextButton(label)
+	UiPop()
+	UiTranslate(0, UiFontHeight())
+	return pressed
+end
+function draw()
+	UiFont("regular.ttf", 32)
+	UiTranslate(0, UiFontHeight())
+	if button("0 (Exclusive fullscreen)") then
+		mode = 0
+	end
+	if button("1 (Windowed)") then
+		mode = 1
+	end
+	if button("2 (Borderless windowed)") then
+		mode = 2
+	end
+	UiText(string.format("Mode: %d", mode), true)
+	for i=0, GetDisplayResolutionCount(mode)-1 do
+		local w, h = GetDisplayResolution(mode, i)
+		if button(string.format("%d (%dx%d)", i, w, h)) then
+			resolution = i
+		end
+	end
+	UiText(string.format("Resolution: %d (%dx%d)", resolution, GetDisplayResolution(mode, resolution)), true)
+end
+</pre>
+</main>
+</html>

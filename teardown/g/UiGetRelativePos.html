@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"/>
+<base href="../../../"/>
+<script src="docs-article.js"></script>
+<link rel="stylesheet" href="style.css"/>
+<nav>
+	<ol class="breadcrumbs">
+		<li><a href=".">Dennispedia</a></li>
+		<li><a href="teardown/">Teardown</a></li>
+		<li><a href="teardown/g/UiGetRelativePos.html" aria-current="page"><code>UiGetRelativePos</code></a></li>
+	</ol>
+	<hr/>
+</nav>
+<title>UiGetRelativePos — Dennispedia</title>
+<main id="docs-main">
+	<h1><code>UiGetRelativePos</code></h1>
+	<p>Get the position of the "cursor" (the origin of UI elements moved by <code>UiTranslate</code>, not the mouse cursor), taking scale into account.</p>
+	<p>For some reason, this function returns no values if the UI stack is empty.</p>
+	<p class="alert alert-warning">Like all UI functions, this function will only exist if <code>draw</code> is defined before <code>init</code> is called.</p>
+	<p class="alert alert-undocumented">This function is not officially documented.</p>
+	<h2>Arguments</h2>
+	<p>None.</p>
+	<h2>Return values</h2>
+	<ol>
+		<li>number or no value: X coordinate, or no value if UI stack is empty</li>
+		<li>number or no value: Y coordinate, or no value if UI stack is empty</li>
+	</ol>
+	<h2>Example usage</h2>
+<pre>
+function draw()
+	UiPush()
+		UiTranslate(100, 200)
+		UiScale(0.5, 0.25)
+		UiTranslate(20, 40)
+		local x, y = UiGetRelativePos()
+		DebugWatch("x", x) -- 110
+		DebugWatch("y", y) -- 210
+	UiPop()
+end
+</pre>
+</main>
+</html>
