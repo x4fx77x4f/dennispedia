@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"/>
+<base href="../../../"/>
+<script src="docs-article.js"></script>
+<link rel="stylesheet" href="style.css"/>
+<nav>
+	<ol class="breadcrumbs">
+		<li><a href=".">Dennispedia</a></li>
+		<li><a href="teardown/">Teardown</a></li>
+		<li><a href="teardown/g/ParticleOrientation.html" aria-current="page"><code>ParticleOrientation</code></a></li>
+	</ol>
+	<hr/>
+</nav>
+<title>ParticleOrientation — Dennispedia</title>
+<main id="docs-main">
+	<h1><code>ParticleOrientation</code></h1>
+	<p>Set orientation of particles to be spawned. Sole argument can contain <code>normalup</code>, <code>up</code>, or <code>fixed</code> (mutually exclusive, prioritized in that order) and optionally <code>flat</code>.</p>
+	<dl>
+		<dt><code>normalup</code></dt>
+		<dd>Face the camera, with a random roll each frame.</dd>
+		<dt><code>up</code></dt>
+		<dd>Face up.</dd>
+		<dt><code>fixed</code></dt>
+		<dd>Face the camera, but with a constant roll.</dd>
+		<dt><code>flat</code></dt>
+		<dd>The particle will be flat instead of a pyramid shape.</dd>
+	</dl>
+	<p class="alert alert-added">This function was added in 0.9.6 (8498817).</p>
+	<p class="alert alert-undocumented">This function is not officially documented.</p>
+	<h2>Arguments</h2>
+	<ol>
+		<li>string: Flags</li>
+	</ol>
+	<h2>Return values</h2>
+	<p>None.</p>
+</main>
+</html>
