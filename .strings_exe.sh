@@ -12,9 +12,9 @@ check() {
 	printf "\t\e[2m%s\e[0m\n" "$1"
 	if [ -z "$2" ]
 	then
-		strings "$1"
+		strings -- "$1"
 	else
-		strings "$1" | grep -F "$2"
+		strings -- "$1" | grep -F -- "$2"
 	fi
 }
 check "$collection/teardown-perftest/teardown-perftest.exe" $@

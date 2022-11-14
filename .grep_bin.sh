@@ -6,7 +6,7 @@ then
 	echo "Runs \`grep -F PATTERN\` on each Teardown binary level after decompression."
 	echo "This script is very slow and very CPU intensive, so you may want to define the fast environment variable so that only one level from each version will be checked, and/or define the verbose environment variable so that you can see the progress."
 	echo "If collection environment variable is undefined, .collection directory in script's parent directory will be used instead (i.e. '$collection')."
-	echo "Files that will be checked will be all files in \"\$collection/depots/1167634/*/teardown.exe\", as well as \"\$collection/teardown-perftest/teardown-perftest.exe\"."
+	echo "Files that will be checked will be all files in \"\$collection/depots/1167634/*/data/bin/*.bin\", as well as \"\$collection/teardown-perftest/data/bin/*.bin\", or only test.bin (if it exists) or lee_sandbox.bin if in fast mode."
 	exit
 fi
 check() {
@@ -14,7 +14,7 @@ check() {
 	then
 		printf "\t\e[2m%s\e[0m\n" "$1"
 	fi
-	zlib-flate -uncompress < "$1" | grep -F "$2"
+	zlib-flate -uncompress < "$1" | grep -F -- "$2"
 }
 check_dir() {
 	dir="$1"

@@ -9,7 +9,7 @@ then
 	exit
 fi
 check() {
-	grep -F "$2" "$1"
+	grep -F -- "$2" "$1"
 }
 check "$collection/teardown-perftest/teardown-perftest.exe" $@
 for file in "$collection/depots/1167634/"*"/teardown.exe"
