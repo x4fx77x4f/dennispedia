@@ -39,17 +39,25 @@
 <p>Teardown embeds <a href="https://www.lua.org/">Lua 5.1.4</a>. It does not "open" the package, I/O, OS, or debug libraries, which means no <code>require</code>, <code>io.open</code>, <code>os.execute</code>, or <code>debug.getinfo</code>. You still have <code>dofile</code> and <code>loadfile</code> though (although you're not supposed to and they don't respect <code>MOD/</code> or <code>LEVEL/</code> notation). Loading of bytecode has been disabled.</p>
 <p>I intend to document mod support thoroughly, but for now, most of the information you could want to know is on the game's website.</p>
 <h2 id="versions">Versions</h2>
-<p>
-	<strong>Please ensure you are familiar with <a href="https://steamdb.info/faq/#branches">Steam's technical vocabulary</a>.</strong>
-	<br/>The "Ver." column refers to the value of the <code>game.version</code> registry node (game registry, not Windows registry!).
-	<br/>The "Patch" column refers to the value of the <code>game.version.patch</code> registry node. 0.5.5 (6205729) was the earliest build to have support for this, and 0.6.2 (patch 1) (6324468) was the first build to make use of it.
-	<br/>Rows without a "<code>buildid</code>" value are non-Steam builds.
-	<br/>Rows without a "<code>manifests</code>" value are builds I don't have access to because they were never on a public branch.
-	<br/>Manifest IDs are always for <a href="https://steamdb.info/depot/1167634/">depot ID 1167634</a>. <a href="https://steamdb.info/depot/1167631/">Another Teardown depot is known to exist (1167631)</a>, but it has no known builds.
-	<br/>Branches are separated by commas and go in order of first branch the build appeared on to last.
-	<br/>The "CRC-32" column is the <a href="https://en.wikipedia.org/wiki/Cyclic_redundancy_check#CRC-32_algorithm">CRC-32</a> checksum of the game's executable, i.e. <code>teardown.exe</code> (except for perftests which are <code>teardown-perftest.exe</code>), in hexadecimal (hence the <code>0x</code> at the beginning).
-	<br/>Rows without a "CRC-32" value are builds I have not checked, either because I don't have that build, or because I just haven't gotten around to downloading it yet.
-</p>
+<p><strong>Please ensure you are familiar with <a href="https://steamdb.info/faq/#branches">Steam's technical vocabulary</a>.</strong></p>
+<dl>
+	<dt>Ver.</dt>
+	<dd>The value of the <code>game.version</code> registry node (game registry, not Windows registry).</dd>
+	<dt>Patch</dt>
+	<dd>The value of the <code>game.version.patch</code> registry node. 0.5.5 (6205729) was the earliest build to have support for this, and 0.6.2 (patch 1) (6324468) was the first build to make use of it.</dd>
+	<dt><code aria-label="time updated">timeupdated</code></dt>
+	<dd>Timestamp in UTC of earliest changelist referencing the build.</dd>
+	<dt><code aria-label="build ID">buildid</code></dt>
+	<dd>Rows without this value are non-Steam builds.</dd>
+	<dt><code>manifests</code></dt>
+	<dd>Manifest ID for <a href="https://steamdb.info/depot/1167634/">the sole public Teardown depot (1167634)</a>. <a href="https://steamdb.info/depot/1167631/">Another depot (1167631)</a> is known to exist, but it has no known builds.</dd>
+	<dt>Branches</dt>
+	<dd>The branches the build was pushed to, separated by commas, in order of first to last.</dd>
+	<dt>CRC-32</dt>
+	<dd><a href="https://en.wikipedia.org/wiki/Cyclic_redundancy_check#CRC-32_algorithm">CRC-32 checksum</a> of game executable (<code>teardown.exe</code> or <code>teardown-perftest.exe</code>) in hexadecimal. Rows without this value are builds I don't have access to.</dd>
+	<dt>Announcement</dt>
+	<dd><a href="https://steamcommunity.com/games/1167630/announcements">Announcement</a> corresponding to that build, if there was any.</dd>
+</dl>
 <table>
 	<thead>
 		<tr>
@@ -60,7 +68,7 @@
 			<th><code>manifests</code></th>
 			<th>Branches</th>
 			<th>CRC-32</th>
-			<th style="width: 15em;"><a href="https://steamcommunity.com/games/1167630/announcements">Announcement</a></th>
+			<th style="width: 15em;">Announcement</th>
 			<th style="width: 20em;">Remark</th>
 		</tr>
 	</thead>
