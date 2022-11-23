@@ -59,7 +59,9 @@ const load_text = text => {
 		}
 		submain.remove();
 	}
-	location.hash = location.hash;
+	if (location.hash) {
+		location.hash = location.hash;
+	}
 	Array.prototype.forEach.call(main.getElementsByTagName('a'), a => {
 		const url = new URL(a.getAttribute('href'), base);
 		if (url.host !== location.host) return;
@@ -136,6 +138,7 @@ Array.prototype.forEach.call(as, a => {
 });
 const popstate = state => {
 	state = state ?? history.state;
+	if (!state) return;
 	load(get_href(state.dst_pathname), state.dst_pathname, state.dst_text);
 };
 window.addEventListener('popstate', () => popstate());
