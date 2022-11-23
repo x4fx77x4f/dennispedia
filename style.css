@@ -14,6 +14,9 @@ dd ol, dd dl, dd ul, dd menu {
 dt {
 	margin-top: 8px;
 }
+:target:not([id^="docs-"]) {
+	background: #ff07;
+}
 @media screen and (prefers-color-scheme: dark) {
 	:root {
 		background: black;
@@ -27,6 +30,9 @@ dt {
 	}
 	:visited {
 		color: #cd99ff;
+	}
+	:target:not([id^="docs-"]) {
+		background: #ff03;
 	}
 }
 
