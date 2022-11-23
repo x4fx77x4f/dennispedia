@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"/>
+<base href="../"/>
+<script src="docs-article.js"></script>
+<link rel="stylesheet" href="style.css"/>
+<nav>
+	<ol class="breadcrumbs">
+		<li><a href=".">Dennispedia</a></li>
+		<li><a href="teardown/">Teardown</a></li>
+		<li><a href="teardown/scripting.html" aria-current="page">Scripting</a></li>
+	</ol>
+	<hr/>
+</nav>
+<title>Teardown scripting — Dennispedia</title>
+<main id="docs-main">
+<h1>Scripting</h1>
+<p>Teardown embeds <a href="https://www.lua.org/">Lua 5.1.4</a>. It does not "open" the package, I/O, OS, or debug libraries, which means no <code>require</code>, <code>io.open</code>, <code>os.execute</code>, or <code>debug.getinfo</code>. You still have <code>dofile</code> and <code>loadfile</code> though (although you're not supposed to and they don't respect <code>MOD/</code> or <code>LEVEL/</code> notation). Loading of bytecode has been disabled.</p>
+<p>See <a href=".">the main page</a> or the sidebar/navbar (if JavaScript is enabled) for documentation of individual functions. For now, only functions that are not officially documented have articles. For other functions, see <a href="https://teardowngame.com/modding/api.html">the official scripting API documentation</a>.</p>
+</main>
+</html>
