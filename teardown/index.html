@@ -40,6 +40,18 @@
 <ul>
 	<li id="scripting"><a href="teardown/scripting.html">Scripting</a></li>
 </ul>
+<h2 id="paths">Paths</h2>
+<p>Nearly all functions that take paths or XML attributes that are paths allow the use of certain case-sensitive prefixes that change which directory the path is relative to.</p>
+<dl>
+	<dt><code>LEVEL/</code></dt>
+	<dd>Relative to the directory with the same name as the current level XML in its parent directory. Kind of hard to explain. For example, if the current level is <code>data/level/lee.xml</code>, paths starting with <code>LEVEL/</code> will be relative to <code>data/level/lee/</code>.</dd>
+	<dt><code>MOD/</code></dt>
+	<dd>Relative to the current mod directory.</dd>
+	<dt><code>RAW:</code></dt>
+	<dd>Absolute path.</dd>
+	<dt><code>LIBRARY/</code></dt>
+	<dd>Relative to <code>data/library/</code> in game directory.</dd>
+</dl>
 <h2 id="level-format">Level format</h2>
 <p>Modded levels are in XML format. The root element of a level is a <code>&lt;scene&gt;</code> element. This is also the original format of the base game levels, but the source files of the base game levels are not included in the release builds' files. They are baked into a proprietary binary format referred to by the community as "TDBIN". Binary levels are stored in <code>data/bin/</code>, have <code>.bin</code> extensions, and are compressed with DEFLATE and can be decompressed/recompressed with <code>zlib-flate</code>—except for quicksaves, which are uncompressed and located at <code>%LOCALAPPDATA%/Teardown/quicksave.bin</code>.</p>
 <h2 id="versions">Versions</h2>
