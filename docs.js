@@ -59,6 +59,7 @@ const load_text = text => {
 		}
 		submain.remove();
 	}
+	location.hash = location.hash;
 	Array.prototype.forEach.call(main.getElementsByTagName('a'), a => {
 		const url = new URL(a.getAttribute('href'), base);
 		if (url.host !== location.host) return;

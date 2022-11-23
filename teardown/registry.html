@@ -20,456 +20,456 @@
 	<h2>Nodes</h2>
 	<p>"Non-engine" means it is only ever get or set by Lua scripts, and never by the engine.</p>
 	<dl>
-		<dt><code>game.break</code></dt>
+		<dt id="nodes-game.break"><code>game.break</code></dt>
 		<dd><span class="alert-added">Added in 0.9.6 (8498817).</span></dd>
-		<dt><code>game.break.size</code></dt>
+		<dt id="nodes-game.break.size"><code>game.break.size</code></dt>
 		<dd><span class="alert-added">Added in 0.9.6 (8498817).</span></dd>
-		<dt><code>game.break.x</code></dt>
+		<dt id="nodes-game.break.x"><code>game.break.x</code></dt>
 		<dd><span class="alert-added">Added in 0.9.6 (8498817).</span></dd>
-		<dt><code>game.break.y</code></dt>
+		<dt id="nodes-game.break.y"><code>game.break.y</code></dt>
 		<dd><span class="alert-added">Added in 0.9.6 (8498817).</span></dd>
-		<dt><code>game.break.z</code></dt>
+		<dt id="nodes-game.break.z"><code>game.break.z</code></dt>
 		<dd><span class="alert-added">Added in 0.9.6 (8498817).</span></dd>
-		<dt><code>game.brokenvoxels</code></dt>
+		<dt id="nodes-game.brokenvoxels"><code>game.brokenvoxels</code></dt>
 		<dd>
 			Number of destroyed voxels. Integer. Small bodies despawning do not count toward this. Breaking off a chunk of something will not consider that chunk destroyed; only actually removing the voxels well cause them to be count.
 			<br/>
 			<span class="alert-added">Added in 0.5.0 (5943727).</span>
 		</dd>
-		<dt><code>game.canquickload</code></dt>
-		<dt><code>game.cctv.hits</code></dt>
+		<dt id="nodes-game.canquickload"><code>game.canquickload</code></dt>
+		<dt id="nodes-game.cctv.hits"><code>game.cctv.hits</code></dt>
 		<dd><span class="alert-removed">Removed in 0.5.0 (5943727).</span></dd>
-		<dt><code>game.cpu.threads</code></dt>
+		<dt id="nodes-game.cpu.threads"><code>game.cpu.threads</code></dt>
 		<dd>
 			Number of CPU threads.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
-		<dt><code>game.deploy</code></dt>
+		<dt id="nodes-game.deploy"><code>game.deploy</code></dt>
 		<dd>Always set to <code>1</code>. Boolean. If falsy, the main menu and hub computer scripts will try to display additional developer only controls, but the script that contains them (<code>data/ui/debug.lua</code>) has its contents stripped in all known builds—except 0.3.0 (perftest), which doesn't use a separate file.</dd>
-		<dt><code>game.destroyed</code></dt>
+		<dt id="nodes-game.destroyed"><code>game.destroyed</code></dt>
 		<dd>
 			Number of destroyed voxels. Integer. Obsoleted by <code>game.brokenvoxels</code>.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
-		<dt><code>game.disableinput</code></dt>
+		<dt id="nodes-game.disableinput"><code>game.disableinput</code></dt>
 		<dd><span class="alert-added">Added in 0.4.5 (5748542).</span></dd>
-		<dt><code>game.disableinteract</code></dt>
+		<dt id="nodes-game.disableinteract"><code>game.disableinteract</code></dt>
 		<dd><span class="alert-added">Added in 0.9.3 (8199301).</span></dd>
-		<dt><code>game.disablemap</code></dt>
+		<dt id="nodes-game.disablemap"><code>game.disablemap</code></dt>
 		<dd><span class="alert-added">Added in 0.6.1 (6279809).</span></dd>
-		<dt><code>game.disablepause</code></dt>
+		<dt id="nodes-game.disablepause"><code>game.disablepause</code></dt>
 		<dd><span class="alert-added">Added in 0.6.1 (6279809).</span></dd>
-		<dt><code>game.explosion.strength</code></dt>
+		<dt id="nodes-game.explosion.strength"><code>game.explosion.strength</code></dt>
 		<dd><span class="alert-added">Added in 0.7.0 (6551167).</span></dd>
-		<dt><code>game.explosion.x</code></dt>
+		<dt id="nodes-game.explosion.x"><code>game.explosion.x</code></dt>
 		<dd><span class="alert-added">Added in 0.7.0 (6551167).</span></dd>
-		<dt><code>game.explosion.y</code></dt>
+		<dt id="nodes-game.explosion.y"><code>game.explosion.y</code></dt>
 		<dd><span class="alert-added">Added in 0.7.0 (6551167).</span></dd>
-		<dt><code>game.explosion.z</code></dt>
+		<dt id="nodes-game.explosion.z"><code>game.explosion.z</code></dt>
 		<dd><span class="alert-added">Added in 0.7.0 (6551167).</span></dd>
-		<dt><code>game.fire.maxcount</code></dt>
+		<dt id="nodes-game.fire.maxcount"><code>game.fire.maxcount</code></dt>
 		<dd><span class="alert-added">Added in 0.8.0 (7458793).</span></dd>
-		<dt><code>game.fire.spread</code></dt>
+		<dt id="nodes-game.fire.spread"><code>game.fire.spread</code></dt>
 		<dd><span class="alert-added">Added in 0.8.0 (7458793).</span></dd>
-		<dt><code>game.graphics.bindless</code></dt>
+		<dt id="nodes-game.graphics.bindless"><code>game.graphics.bindless</code></dt>
 		<dd>
 			Whether or not the GPU supports bindless textures. String. Can be either <code>Enabled</code> or <code>Disabled</code>.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
-		<dt><code>game.graphics.card</code></dt>
+		<dt id="nodes-game.graphics.card"><code>game.graphics.card</code></dt>
 		<dd>
 			Name of OpenGL renderer, i.e. <code>glGetString(GL_RENDERER)</code>. String.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
-		<dt><code>game.graphics.fps</code></dt>
+		<dt id="nodes-game.graphics.fps"><code>game.graphics.fps</code></dt>
 		<dd>
 			Current frames per second. Integer. Only exists if in level.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
-		<dt><code>game.graphics.fpsavg</code></dt>
+		<dt id="nodes-game.graphics.fpsavg"><code>game.graphics.fpsavg</code></dt>
 		<dd>
 			Average frames per second since level was entered. Integer.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
-		<dt><code>game.graphics.height</code></dt>
+		<dt id="nodes-game.graphics.height"><code>game.graphics.height</code></dt>
 		<dd>
 			Height of viewport in pixels. Integer.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
-		<dt><code>game.graphics.vendor</code></dt>
+		<dt id="nodes-game.graphics.vendor"><code>game.graphics.vendor</code></dt>
 		<dd>
 			Name of OpenGL implementation vendor, i.e. <code>glGetString(GL_VENDOR)</code>. String.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
-		<dt><code>game.graphics.width</code></dt>
+		<dt id="nodes-game.graphics.width"><code>game.graphics.width</code></dt>
 		<dd>
 			Width of viewport in pixels. Integer.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
-		<dt><code>game.input.crouch</code></dt>
+		<dt id="nodes-game.input.crouch"><code>game.input.crouch</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>game.input.curdevice</code></dt>
+		<dt id="nodes-game.input.curdevice"><code>game.input.curdevice</code></dt>
 		<dd>
 			String. Can be either <code>mouse</code> or <code>gamepad</code>.
 			<br/>
 			<span class="alert-added">Added in 0.9.4 (8273165).</span>
 		</dd>
-		<dt><code>game.input.down</code></dt>
+		<dt id="nodes-game.input.down"><code>game.input.down</code></dt>
 		<dd><span class="alert-added">Added in 0.4.6 (5777578).</span></dd>
-		<dt><code>game.input.flashlight</code></dt>
+		<dt id="nodes-game.input.flashlight"><code>game.input.flashlight</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>game.input.grab</code></dt>
+		<dt id="nodes-game.input.grab"><code>game.input.grab</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>game.input.handbrake</code></dt>
+		<dt id="nodes-game.input.handbrake"><code>game.input.handbrake</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>game.input.interact</code></dt>
+		<dt id="nodes-game.input.interact"><code>game.input.interact</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>game.input.jump</code></dt>
+		<dt id="nodes-game.input.jump"><code>game.input.jump</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>game.input.left</code></dt>
+		<dt id="nodes-game.input.left"><code>game.input.left</code></dt>
 		<dd><span class="alert-added">Added in 0.4.6 (5777578).</span></dd>
-		<dt><code>game.input.lmb</code></dt>
+		<dt id="nodes-game.input.lmb"><code>game.input.lmb</code></dt>
 		<dd><span class="alert-added">Added in 0.9.4 (8273165).</span></dd>
-		<dt><code>game.input.locktool</code></dt>
+		<dt id="nodes-game.input.locktool"><code>game.input.locktool</code></dt>
 		<dd><span class="alert-added">Added in 0.7.0 (6551167).</span></dd>
-		<dt><code>game.input.map</code></dt>
+		<dt id="nodes-game.input.map"><code>game.input.map</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>game.input.mmb</code></dt>
+		<dt id="nodes-game.input.mmb"><code>game.input.mmb</code></dt>
 		<dd><span class="alert-added">Added in 0.9.4 (8273165).</span></dd>
-		<dt><code>game.input.mousex</code></dt>
+		<dt id="nodes-game.input.mousex"><code>game.input.mousex</code></dt>
 		<dd><span class="alert-added">Added in 0.9.4 (8273165).</span></dd>
-		<dt><code>game.input.mousey</code></dt>
+		<dt id="nodes-game.input.mousey"><code>game.input.mousey</code></dt>
 		<dd><span class="alert-added">Added in 0.9.4 (8273165).</span></dd>
-		<dt><code>game.input.pause</code></dt>
+		<dt id="nodes-game.input.pause"><code>game.input.pause</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>game.input.right</code></dt>
+		<dt id="nodes-game.input.right"><code>game.input.right</code></dt>
 		<dd><span class="alert-added">Added in 0.4.6 (5777578).</span></dd>
-		<dt><code>game.input.rmb</code></dt>
+		<dt id="nodes-game.input.rmb"><code>game.input.rmb</code></dt>
 		<dd><span class="alert-added">Added in 0.9.4 (8273165).</span></dd>
-		<dt><code>game.input.scroll_down</code></dt>
+		<dt id="nodes-game.input.scroll_down"><code>game.input.scroll_down</code></dt>
 		<dd><span class="alert-added">Added in 0.9.4 (8273165).</span></dd>
-		<dt><code>game.input.scroll_up</code></dt>
+		<dt id="nodes-game.input.scroll_up"><code>game.input.scroll_up</code></dt>
 		<dd><span class="alert-added">Added in 0.9.4 (8273165).</span></dd>
-		<dt><code>game.input.up</code></dt>
+		<dt id="nodes-game.input.up"><code>game.input.up</code></dt>
 		<dd><span class="alert-added">Added in 0.4.6 (5777578).</span></dd>
-		<dt><code>game.input.usetool</code></dt>
+		<dt id="nodes-game.input.usetool"><code>game.input.usetool</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>game.input.vehicle_action</code></dt>
+		<dt id="nodes-game.input.vehicle_action"><code>game.input.vehicle_action</code></dt>
 		<dd><span class="alert-added">Added in 0.9.4 (8273165).</span></dd>
-		<dt><code>game.input.vehicle_lower</code></dt>
+		<dt id="nodes-game.input.vehicle_lower"><code>game.input.vehicle_lower</code></dt>
 		<dd><span class="alert-added">Added in 0.9.4 (8273165).</span></dd>
-		<dt><code>game.input.vehicle_raise</code></dt>
+		<dt id="nodes-game.input.vehicle_raise"><code>game.input.vehicle_raise</code></dt>
 		<dd><span class="alert-added">Added in 0.9.4 (8273165).</span></dd>
-		<dt><code>game.largeui</code></dt>
+		<dt id="nodes-game.largeui"><code>game.largeui</code></dt>
 		<dd><span class="alert-added">Added in 1.1.0 (8942147).</span></dd>
-		<dt><code>game.levelid</code></dt>
-		<dt><code>game.levelpath</code></dt>
-		<dt><code>game.loading.alpha</code></dt>
-		<dt><code>game.loading.text</code></dt>
-		<dt><code>game.map.enabled</code></dt>
-		<dt><code>game.map.fade</code></dt>
-		<dt><code>game.map.focus</code></dt>
-		<dt><code>game.mod</code></dt>
+		<dt id="nodes-game.levelid"><code>game.levelid</code></dt>
+		<dt id="nodes-game.levelpath"><code>game.levelpath</code></dt>
+		<dt id="nodes-game.loading.alpha"><code>game.loading.alpha</code></dt>
+		<dt id="nodes-game.loading.text"><code>game.loading.text</code></dt>
+		<dt id="nodes-game.map.enabled"><code>game.map.enabled</code></dt>
+		<dt id="nodes-game.map.fade"><code>game.map.fade</code></dt>
+		<dt id="nodes-game.map.focus"><code>game.map.focus</code></dt>
+		<dt id="nodes-game.mod"><code>game.mod</code></dt>
 		<dd><span class="alert-added">Added in 0.5.0 (5943727).</span></dd>
-		<dt><code>game.mod.description</code></dt>
+		<dt id="nodes-game.mod.description"><code>game.mod.description</code></dt>
 		<dd><span class="alert-added">Added in 0.5.0 (5943727).</span></dd>
-		<dt><code>game.mod.title</code></dt>
+		<dt id="nodes-game.mod.title"><code>game.mod.title</code></dt>
 		<dd><span class="alert-added">Added in 0.5.0 (5943727).</span></dd>
-		<dt><code>game.music.volume</code></dt>
+		<dt id="nodes-game.music.volume"><code>game.music.volume</code></dt>
 		<dd><span class="alert-added">Added in 0.9.0 (7801522).</span></dd>
-		<dt><code>game.path</code></dt>
-		<dt><code>game.path.alpha</code></dt>
-		<dt><code>game.path.current.x</code></dt>
-		<dt><code>game.path.current.y</code></dt>
-		<dt><code>game.path.current.z</code></dt>
-		<dt><code>game.path.length</code></dt>
-		<dt><code>game.path.loaded</code></dt>
-		<dt><code>game.path.pos</code></dt>
-		<dt><code>game.path.recording</code></dt>
-		<dt><code>game.paused</code></dt>
-		<dt><code>game.player.cangrab</code></dt>
-		<dt><code>game.player.caninteract</code></dt>
-		<dt><code>game.player.caninteract.x</code></dt>
+		<dt id="nodes-game.path"><code>game.path</code></dt>
+		<dt id="nodes-game.path.alpha"><code>game.path.alpha</code></dt>
+		<dt id="nodes-game.path.current.x"><code>game.path.current.x</code></dt>
+		<dt id="nodes-game.path.current.y"><code>game.path.current.y</code></dt>
+		<dt id="nodes-game.path.current.z"><code>game.path.current.z</code></dt>
+		<dt id="nodes-game.path.length"><code>game.path.length</code></dt>
+		<dt id="nodes-game.path.loaded"><code>game.path.loaded</code></dt>
+		<dt id="nodes-game.path.pos"><code>game.path.pos</code></dt>
+		<dt id="nodes-game.path.recording"><code>game.path.recording</code></dt>
+		<dt id="nodes-game.paused"><code>game.paused</code></dt>
+		<dt id="nodes-game.player.cangrab"><code>game.player.cangrab</code></dt>
+		<dt id="nodes-game.player.caninteract"><code>game.player.caninteract</code></dt>
+		<dt id="nodes-game.player.caninteract.x"><code>game.player.caninteract.x</code></dt>
 		<dd><span class="alert-removed">Removed in 0.5.0 (5943727).</span></dd>
-		<dt><code>game.player.caninteract.y</code></dt>
+		<dt id="nodes-game.player.caninteract.y"><code>game.player.caninteract.y</code></dt>
 		<dd><span class="alert-removed">Removed in 0.5.0 (5943727).</span></dd>
-		<dt><code>game.player.caninteract.z</code></dt>
+		<dt id="nodes-game.player.caninteract.z"><code>game.player.caninteract.z</code></dt>
 		<dd><span class="alert-removed">Removed in 0.5.0 (5943727).</span></dd>
-		<dt><code>game.player.caninteractvehicle</code></dt>
+		<dt id="nodes-game.player.caninteractvehicle"><code>game.player.caninteractvehicle</code></dt>
 		<dd><span class="alert-removed">Removed in 0.5.0 (5943727).</span></dd>
-		<dt><code>game.player.canusetool</code></dt>
-		<dt><code>game.player.disableinput</code></dt>
+		<dt id="nodes-game.player.canusetool"><code>game.player.canusetool</code></dt>
+		<dt id="nodes-game.player.disableinput"><code>game.player.disableinput</code></dt>
 		<dd><span class="alert-added">Added in 0.9.0 (7801522).</span></dd>
-		<dt><code>game.player.grabbing</code></dt>
-		<dt><code>game.player.health</code></dt>
-		<dt><code>game.player.hit</code></dt>
+		<dt id="nodes-game.player.grabbing"><code>game.player.grabbing</code></dt>
+		<dt id="nodes-game.player.health"><code>game.player.health</code></dt>
+		<dt id="nodes-game.player.hit"><code>game.player.hit</code></dt>
 		<dd><span class="alert-added">Added in 1.1.0 (8942147).</span></dd>
-		<dt><code>game.player.idling</code></dt>
-		<dt><code>game.player.interactive</code></dt>
+		<dt id="nodes-game.player.idling"><code>game.player.idling</code></dt>
+		<dt id="nodes-game.player.interactive"><code>game.player.interactive</code></dt>
 		<dd><span class="alert-added">Added in 0.5.0 (5943727).</span></dd>
-		<dt><code>game.player.pickdesc</code></dt>
+		<dt id="nodes-game.player.pickdesc"><code>game.player.pickdesc</code></dt>
 		<dd><span class="alert-removed">Removed in 0.5.0 (5943727).</span></dd>
-		<dt><code>game.player.picking</code></dt>
-		<dt><code>game.player.picktarget</code></dt>
+		<dt id="nodes-game.player.picking"><code>game.player.picking</code></dt>
+		<dt id="nodes-game.player.picktarget"><code>game.player.picktarget</code></dt>
 		<dd><span class="alert-removed">Removed in 0.5.0 (5943727).</span></dd>
-		<dt><code>game.player.pickvehicle</code></dt>
+		<dt id="nodes-game.player.pickvehicle"><code>game.player.pickvehicle</code></dt>
 		<dd><span class="alert-removed">Removed in 0.5.0 (5943727).</span></dd>
-		<dt><code>game.player.steroid</code></dt>
+		<dt id="nodes-game.player.steroid"><code>game.player.steroid</code></dt>
 		<dd><span class="alert-added">Added in 0.9.0 (7801522).</span></dd>
-		<dt><code>game.player.throwing</code></dt>
-		<dt><code>game.player.tool</code></dt>
-		<dt><code>game.player.tool.scope</code></dt>
+		<dt id="nodes-game.player.throwing"><code>game.player.throwing</code></dt>
+		<dt id="nodes-game.player.tool"><code>game.player.tool</code></dt>
+		<dt id="nodes-game.player.tool.scope"><code>game.player.tool.scope</code></dt>
 		<dd><span class="alert-added">Added in 0.9.0 (7801522).</span></dd>
-		<dt><code>game.player.toolselect</code></dt>
+		<dt id="nodes-game.player.toolselect"><code>game.player.toolselect</code></dt>
 		<dd><span class="alert-added">Added in 0.8.0 (7458793).</span></dd>
-		<dt><code>game.player.usescreen</code></dt>
-		<dt><code>game.player.usevehicle</code></dt>
-		<dt><code>game.restarted</code></dt>
+		<dt id="nodes-game.player.usescreen"><code>game.player.usescreen</code></dt>
+		<dt id="nodes-game.player.usevehicle"><code>game.player.usevehicle</code></dt>
+		<dt id="nodes-game.restarted"><code>game.restarted</code></dt>
 		<dd><span class="alert-removed">Added in 0.4.5 (5748542), removed in 0.5.0 (5943727).</span></dd>
-		<dt><code>game.saveerror</code></dt>
+		<dt id="nodes-game.saveerror"><code>game.saveerror</code></dt>
 		<dd><span class="alert-added">Added in 0.4.6 (5777578).</span></dd>
-		<dt><code>game.savegamepath</code></dt>
+		<dt id="nodes-game.savegamepath"><code>game.savegamepath</code></dt>
 		<dd><span class="alert-added">Added in 0.7.3 (6911672).</span></dd>
-		<dt><code>game.screenshot</code></dt>
+		<dt id="nodes-game.screenshot"><code>game.screenshot</code></dt>
 		<dd><span class="alert-added">Added in 0.7.0 (6551167).</span></dd>
-		<dt><code>game.screenshot.bloom</code></dt>
+		<dt id="nodes-game.screenshot.bloom"><code>game.screenshot.bloom</code></dt>
 		<dd><span class="alert-added">Added in 0.7.0 (6551167).</span></dd>
-		<dt><code>game.screenshot.dof.max</code></dt>
+		<dt id="nodes-game.screenshot.dof.max"><code>game.screenshot.dof.max</code></dt>
 		<dd><span class="alert-added">Added in 0.7.0 (6551167).</span></dd>
-		<dt><code>game.screenshot.dof.min</code></dt>
+		<dt id="nodes-game.screenshot.dof.min"><code>game.screenshot.dof.min</code></dt>
 		<dd><span class="alert-added">Added in 0.7.0 (6551167).</span></dd>
-		<dt><code>game.screenshot.dof.scale</code></dt>
+		<dt id="nodes-game.screenshot.dof.scale"><code>game.screenshot.dof.scale</code></dt>
 		<dd><span class="alert-added">Added in 0.7.0 (6551167).</span></dd>
-		<dt><code>game.screenshot.exposure</code></dt>
+		<dt id="nodes-game.screenshot.exposure"><code>game.screenshot.exposure</code></dt>
 		<dd><span class="alert-added">Added in 0.7.0 (6551167).</span></dd>
-		<dt><code>game.screenshot.tool</code></dt>
+		<dt id="nodes-game.screenshot.tool"><code>game.screenshot.tool</code></dt>
 		<dd><span class="alert-added">Added in 0.7.0 (6551167).</span></dd>
-		<dt><code>game.simtime</code></dt>
+		<dt id="nodes-game.simtime"><code>game.simtime</code></dt>
 		<dd><span class="alert-removed">Removed in 0.4.5 (5748542).</span></dd>
-		<dt><code>game.steam.active</code></dt>
+		<dt id="nodes-game.steam.active"><code>game.steam.active</code></dt>
 		<dd><span class="alert-added">Added in 1.2.0 (9734688).</span></dd>
-		<dt><code>game.steam.hascontroller</code></dt>
+		<dt id="nodes-game.steam.hascontroller"><code>game.steam.hascontroller</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>game.steamdeck</code></dt>
+		<dt id="nodes-game.steamdeck"><code>game.steamdeck</code></dt>
 		<dd><span class="alert-added">Added in 0.9.4 (8273165).</span></dd>
-		<dt><code>game.tool</code></dt>
-		<dt><code>game.tool.count</code></dt>
+		<dt id="nodes-game.tool"><code>game.tool</code></dt>
+		<dt id="nodes-game.tool.count"><code>game.tool.count</code></dt>
 		<dd><span class="alert-removed">Removed in 0.6.1 (6279809).</span></dd>
-		<dt><code>game.vehicle.health</code></dt>
-		<dt><code>game.vehicle.interactive</code></dt>
+		<dt id="nodes-game.vehicle.health"><code>game.vehicle.health</code></dt>
+		<dt id="nodes-game.vehicle.interactive"><code>game.vehicle.interactive</code></dt>
 		<dd><span class="alert-added">Added in 0.5.0 (5943727).</span></dd>
-		<dt><code>game.version</code></dt>
-		<dt><code>game.version.patch</code></dt>
+		<dt id="nodes-game.version"><code>game.version</code></dt>
+		<dt id="nodes-game.version.patch"><code>game.version.patch</code></dt>
 		<dd><span class="alert-added">Added in 0.5.5 (6205729).</span></dd>
-		<dt><code>game.workshop</code></dt>
+		<dt id="nodes-game.workshop"><code>game.workshop</code></dt>
 		<dd><span class="alert-added">Added in 0.6.1 (6279809).</span></dd>
-		<dt><code>game.workshop.publish</code></dt>
+		<dt id="nodes-game.workshop.publish"><code>game.workshop.publish</code></dt>
 		<dd><span class="alert-added">Added in 0.7.0 (6551167).</span></dd>
-		<dt><code>hud.aimdot</code></dt>
+		<dt id="nodes-hud.aimdot"><code>hud.aimdot</code></dt>
 		<dd>
 			Whether to display the crosshair. Boolean. Non-engine.
 			<span class="alert-added">Added in 0.7.0 (6551167).</span>
 		</dd>
-		<dt><code>hud.disable</code></dt>
+		<dt id="nodes-hud.disable"><code>hud.disable</code></dt>
 		<dd><span class="alert-added">Added in 0.6.1 (6279809).</span></dd>
-		<dt><code>hud.hasnotification</code></dt>
+		<dt id="nodes-hud.hasnotification"><code>hud.hasnotification</code></dt>
 		<dd><span class="alert-added">Added in 0.4.5 (5748542). Non-engine.</span></dd>
-		<dt><code>hud.notification</code></dt>
+		<dt id="nodes-hud.notification"><code>hud.notification</code></dt>
 		<dd><span class="alert-added">Added in 0.4.5 (5748542). Non-engine until 0.7.0 (6551167).</span></dd>
-		<dt><code>level.campaign</code></dt>
+		<dt id="nodes-level.campaign"><code>level.campaign</code></dt>
 		<dd><span class="alert-added">Added in 0.7.3 (6911672).</span></dd>
-		<dt><code>level.interactinfo</code></dt>
+		<dt id="nodes-level.interactinfo"><code>level.interactinfo</code></dt>
 		<dd><span class="alert-removed">Removed in 0.5.0 (5943727).</span></dd>
-		<dt><code>level.sandbox</code></dt>
+		<dt id="nodes-level.sandbox"><code>level.sandbox</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985). Non-engine.</span></dd>
-		<dt><code>level.spawn</code></dt>
+		<dt id="nodes-level.spawn"><code>level.spawn</code></dt>
 		<dd><span class="alert-added">Added in 0.9.3 (8199301). Non-engine.</span></dd>
-		<dt><code>level.unlimitedammo</code></dt>
+		<dt id="nodes-level.unlimitedammo"><code>level.unlimitedammo</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985). Non-engine.</span></dd>
-		<dt><code>options.audio.ambiencevolume</code></dt>
+		<dt id="nodes-options.audio.ambiencevolume"><code>options.audio.ambiencevolume</code></dt>
 		<dd>Integer. Defaults to 100. Intended range is 0 to 100. Only appears in options menu if <code>game.deploy</code> is falsy. (since 0.4.5 (5748542)).</dd>
-		<dt><code>options.audio.menumusic</code></dt>
+		<dt id="nodes-options.audio.menumusic"><code>options.audio.menumusic</code></dt>
 		<dd>
 			Whether to play music on the main menu. Integer. 1 is enabled, 0 is disabled.
 			<br/>
 			<span class="alert-added">Added in 0.9.0 (7801522).</span>
 		</dd>
-		<dt><code>options.audio.musicvolume</code></dt>
+		<dt id="nodes-options.audio.musicvolume"><code>options.audio.musicvolume</code></dt>
 		<dd>Volume of music as percentage. Integer. Defaults to 100. Intended range is 0 to 100.</dd>
-		<dt><code>options.audio.soundvolume</code></dt>
+		<dt id="nodes-options.audio.soundvolume"><code>options.audio.soundvolume</code></dt>
 		<dd>Volume of audio (excluding music) as percentage. Integer. Defaults to 100. Intended range is 0 to 100.</dd>
-		<dt><code>options.display.mode</code></dt>
+		<dt id="nodes-options.display.mode"><code>options.display.mode</code></dt>
 		<dd>Whether to be in windowed mode or fullscreen. Integer. 0 is exclusive fullscreen, 1 is windowed, 2 is borderless windowed.</dd>
-		<dt><code>options.display.resolution</code></dt>
+		<dt id="nodes-options.display.resolution"><code>options.display.resolution</code></dt>
 		<dd>Which resolution preset to use. Integer. Varies depending on screen resolution and display mode. Must be 0 in borderless windowed. Will never be negative. Use <code>GetDisplayResolution</code> to get resolution for given display mode and preset index. Use <code>GetDisplayResolutionCount</code> to get number of presets for given display mode (including 0).</dd>
-		<dt><code>options.game.campaign.ammo</code></dt>
+		<dt id="nodes-options.game.campaign.ammo"><code>options.game.campaign.ammo</code></dt>
 		<dd>
 			Amount of ammo to add to all tools as a percentage multiplier. Integer. Non-engine. Intended values are 50, 100, -1 (special value that means tool will have no ammo at all), or 0.
 			<br/>
 			<span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span>
 		</dd>
-		<dt><code>options.game.campaign.health</code></dt>
+		<dt id="nodes-options.game.campaign.health"><code>options.game.campaign.health</code></dt>
 		<dd>
 			Amount of health to add to max health as a percentage. Integer. Non-engine. Intended values are 50, 100, -50, or 0.
 			<br/>
 			<span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span>
 		</dd>
-		<dt><code>options.game.campaign.time</code></dt>
+		<dt id="nodes-options.game.campaign.time"><code>options.game.campaign.time</code></dt>
 		<dd>
 			Amount of time in seconds to add to timer after alarm goes off in missions. Integer. Non-engine. Intended values are 15, 30, 60, -10, -20, or 0.
 			<br/>
 			<span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span>
 		</dd>
-		<dt><code>options.game.missionskipping</code></dt>
+		<dt id="nodes-options.game.missionskipping"><code>options.game.missionskipping</code></dt>
 		<dd>
 			Whether the option to skip missions on the terminal and mission fail screens should appear. Integer. 1 is enabled, 0 is disabled.
 			<br/>
 			<span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span>
 		</dd>
-		<dt><code>options.game.sandbox.unlocklevels</code></dt>
+		<dt id="nodes-options.game.sandbox.unlocklevels"><code>options.game.sandbox.unlocklevels</code></dt>
 		<dd>
 			Whether all sandbox levels should be available, or only unlocked sandbox levels should be available. Integer. 1 is enabled, 0 is disabled.
 			<br/>
 			<span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span>
 		</dd>
-		<dt><code>options.game.sandbox.unlocktools</code></dt>
+		<dt id="nodes-options.game.sandbox.unlocktools"><code>options.game.sandbox.unlocktools</code></dt>
 		<dd>
 			Whether all tools should always be available in sandbox, or whether only unlocked tools should be available. Integer. 1 is enabled, 0 is disabled.
 			<br/>
 			<span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span>
 		</dd>
-		<dt><code>options.game.spawn</code></dt>
+		<dt id="nodes-options.game.spawn"><code>options.game.spawn</code></dt>
 		<dd>
 			Whether the spawn menu should always be accessible, or only be accessible in sandbox mode. Integer. 1 is enabled, 0 is disabled.
 			<br/>
 			<span class="alert-added">Added in 0.7.3 (6911672). Non-engine.</span>
 		</dd>
-		<dt><code>options.gfx.barrel</code></dt>
+		<dt id="nodes-options.gfx.barrel"><code>options.gfx.barrel</code></dt>
 		<dd>Whether barrel distortion should be used. Integer. 1 is enabled, 0 is disabled.</dd>
-		<dt><code>options.gfx.dof</code></dt>
+		<dt id="nodes-options.gfx.dof"><code>options.gfx.dof</code></dt>
 		<dd>Whether depth of field should be used. Integer. 1 is enabled, 0 is disabled.</dd>
-		<dt><code>options.gfx.fov</code></dt>
+		<dt id="nodes-options.gfx.fov"><code>options.gfx.fov</code></dt>
 		<dd>Field of view in degrees. Integer. Defaults to 90. Intended range is 60 to 120.</dd>
-		<dt><code>options.gfx.gamma</code></dt>
+		<dt id="nodes-options.gfx.gamma"><code>options.gfx.gamma</code></dt>
 		<dd>Gamma correction. Integer. Lower makes the scene darker, higher makes the scene brighter. Defaults to 100. Intended range is 50 to 150.</dd>
-		<dt><code>options.gfx.motionblur</code></dt>
+		<dt id="nodes-options.gfx.motionblur"><code>options.gfx.motionblur</code></dt>
 		<dd>Whether motion blur should be used. Integer. 1 is enabled, 0 is disabled.</dd>
-		<dt><code>options.gfx.quality</code></dt>
+		<dt id="nodes-options.gfx.quality"><code>options.gfx.quality</code></dt>
 		<dd>Render quality. Integer. High is 1, low is 2, medium is 3.</dd>
-		<dt><code>options.gfx.renderscale</code></dt>
+		<dt id="nodes-options.gfx.renderscale"><code>options.gfx.renderscale</code></dt>
 		<dd>Render scale as a percentage. Integer. Intended values are 100, 75, or 50, but higher values work. Lower values not tested.</dd>
-		<dt><code>options.gfx.vsync</code></dt>
+		<dt id="nodes-options.gfx.vsync"><code>options.gfx.vsync</code></dt>
 		<dd>Whether vertical synchronization should be used. Integer. 0 is disabled, 1 is "every frame", 2 is "every other frame". -1 is adaptive <span class="alert-added">(since 0.7.1 (6627985))</span>.</dd>
-		<dt><code>options.input.headbob</code></dt>
+		<dt id="nodes-options.input.headbob"><code>options.input.headbob</code></dt>
 		<dd>Percentage for how much the camera should tilt in response to player movement, and screen shaking on swing/gunshot. Does not affect shake on explosion. Integer. Defaults to 0. Intended range is 0 to 100.</dd>
-		<dt><code>options.input.invert</code></dt>
+		<dt id="nodes-options.input.invert"><code>options.input.invert</code></dt>
 		<dd>Whether to invert vertical look movement. Integer. 1 is enabled, 0 is disabled.</dd>
-		<dt><code>options.input.keymap.backward</code></dt>
+		<dt id="nodes-options.input.keymap.backward"><code>options.input.keymap.backward</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>options.input.keymap.crouch</code></dt>
+		<dt id="nodes-options.input.keymap.crouch"><code>options.input.keymap.crouch</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>options.input.keymap.flashlight</code></dt>
+		<dt id="nodes-options.input.keymap.flashlight"><code>options.input.keymap.flashlight</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>options.input.keymap.forward</code></dt>
+		<dt id="nodes-options.input.keymap.forward"><code>options.input.keymap.forward</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>options.input.keymap.interact</code></dt>
+		<dt id="nodes-options.input.keymap.interact"><code>options.input.keymap.interact</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>options.input.keymap.jump</code></dt>
+		<dt id="nodes-options.input.keymap.jump"><code>options.input.keymap.jump</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>options.input.keymap.left</code></dt>
+		<dt id="nodes-options.input.keymap.left"><code>options.input.keymap.left</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>options.input.keymap.right</code></dt>
+		<dt id="nodes-options.input.keymap.right"><code>options.input.keymap.right</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>options.input.sensitivity</code></dt>
+		<dt id="nodes-options.input.sensitivity"><code>options.input.sensitivity</code></dt>
 		<dd>Mouse sensitivity percentage multiplier. Integer. Defaults to 100. Intended range is 25 (50 before 0.5.4 (6109598)) to 200.</dd>
-		<dt><code>options.input.smoothing</code></dt>
+		<dt id="nodes-options.input.smoothing"><code>options.input.smoothing</code></dt>
 		<dd>Mouse smoothing percentage. Integer. Defaults to 0. Intended range is 0 to 100.</dd>
-		<dt><code>options.input.toolsway</code></dt>
+		<dt id="nodes-options.input.toolsway"><code>options.input.toolsway</code></dt>
 		<dd>
 			Whether tool models should sway and move in response to player movement. Integer. 1 is enabled, 0 is disabled.
 			<br/>
 			<span class="alert-added">Added in 0.9.3 (8199301).</span>
 		</dd>
-		<dt><code>promo.available</code></dt>
+		<dt id="nodes-promo.available"><code>promo.available</code></dt>
 		<dd><span class="alert-added">Added in 1.1.0 (8942147).</span></dd>
-		<dt><code>promo.groups</code></dt>
+		<dt id="nodes-promo.groups"><code>promo.groups</code></dt>
 		<dd><span class="alert-added">Added in 1.1.0 (8942147).</span></dd>
-		<dt><code>savegame.cash</code></dt>
+		<dt id="nodes-savegame.cash"><code>savegame.cash</code></dt>
 		<dd><span class="alert-added">Added in 0.4.5 (5748542). Non-engine.</span></dd>
-		<dt><code>savegame.challenge</code></dt>
+		<dt id="nodes-savegame.challenge"><code>savegame.challenge</code></dt>
 		<dd><span class="alert-added">Added in 0.4.5 (5748542). Non-engine.</span></dd>
-		<dt><code>savegame.hint.targetlocation</code></dt>
+		<dt id="nodes-savegame.hint.targetlocation"><code>savegame.hint.targetlocation</code></dt>
 		<dd><span class="alert-added">Added in 0.5.2 (6001321). Non-engine.</span></dd>
-		<dt><code>savegame.hub</code></dt>
+		<dt id="nodes-savegame.hub"><code>savegame.hub</code></dt>
 		<dd><span class="alert-added">Added in 0.5.2 (6001321). Non-engine.</span></dd>
-		<dt><code>savegame.lastcompleted</code></dt>
+		<dt id="nodes-savegame.lastcompleted"><code>savegame.lastcompleted</code></dt>
 		<dd><span class="alert-added">Added in 0.5.2 (6001321). Non-engine.</span></dd>
-		<dt><code>savegame.legalnoticeshown</code></dt>
+		<dt id="nodes-savegame.legalnoticeshown"><code>savegame.legalnoticeshown</code></dt>
 		<dd><span class="alert-added">Added in 1.2.0 (9734688). Non-engine.</span></dd>
-		<dt><code>savegame.message</code></dt>
+		<dt id="nodes-savegame.message"><code>savegame.message</code></dt>
 		<dd><span class="alert-added">Added in 0.5.2 (6001321). Non-engine.</span></dd>
-		<dt><code>savegame.mission</code></dt>
+		<dt id="nodes-savegame.mission"><code>savegame.mission</code></dt>
 		<dd><span class="alert-added">Added in 0.5.2 (6001321). Non-engine.</span></dd>
-		<dt><code>savegame.promoclosed</code></dt>
+		<dt id="nodes-savegame.promoclosed"><code>savegame.promoclosed</code></dt>
 		<dd><span class="alert-added">Added in 1.2.0 (9734688). Non-engine.</span></dd>
-		<dt><code>savegame.promoupdated</code></dt>
+		<dt id="nodes-savegame.promoupdated"><code>savegame.promoupdated</code></dt>
 		<dd><span class="alert-added">Added in 1.2.0 (9734688).</span></dd>
-		<dt><code>savegame.reward</code></dt>
+		<dt id="nodes-savegame.reward"><code>savegame.reward</code></dt>
 		<dd><span class="alert-added">Added in 0.5.2 (6001321). Non-engine.</span></dd>
-		<dt><code>savegame.spawn.shortcut</code></dt>
+		<dt id="nodes-savegame.spawn.shortcut"><code>savegame.spawn.shortcut</code></dt>
 		<dd><span class="alert-added">Added in 0.9.3 (8199301). Non-engine.</span></dd>
-		<dt><code>savegame.startcount</code></dt>
+		<dt id="nodes-savegame.startcount"><code>savegame.startcount</code></dt>
 		<dd><span class="alert-added">Added in 1.2.0 (9734688). Non-engine.</span></dd>
-		<dt><code>savegame.stats.brokentreadmills</code></dt>
+		<dt id="nodes-savegame.stats.brokentreadmills"><code>savegame.stats.brokentreadmills</code></dt>
 		<dd><span class="alert-added">Added in 1.1.0 (8942378). Non-engine.</span></dd>
-		<dt><code>savegame.stats.brokenvoxels</code></dt>
+		<dt id="nodes-savegame.stats.brokenvoxels"><code>savegame.stats.brokenvoxels</code></dt>
 		<dd><span class="alert-added">Added in 1.1.0 (8942378). Non-engine.</span></dd>
-		<dt><code>savegame.stats.skeetfullscore</code></dt>
+		<dt id="nodes-savegame.stats.skeetfullscore"><code>savegame.stats.skeetfullscore</code></dt>
 		<dd><span class="alert-added">Added in 1.1.0 (8942378). Non-engine.</span></dd>
-		<dt><code>savegame.tool</code></dt>
+		<dt id="nodes-savegame.tool"><code>savegame.tool</code></dt>
 		<dd><span class="alert-added">Added in 0.4.5 (5748542). Non-engine.</span></dd>
-		<dt><code>savegame.valuable</code></dt>
+		<dt id="nodes-savegame.valuable"><code>savegame.valuable</code></dt>
 		<dd><span class="alert-added">Added in 0.4.5 (5748542). Non-engine.</span></dd>
-		<dt><code>mods.available</code></dt>
+		<dt id="nodes-mods.available"><code>mods.available</code></dt>
 		<dd><span class="alert-added">Added in 0.5.0 (5943727).</span></dd>
-		<dt><code>mods.pending</code></dt>
+		<dt id="nodes-mods.pending"><code>mods.pending</code></dt>
 		<dd><span class="alert-added">Added in 1.2.0 (9734688).</span></dd>
-		<dt><code>mods.publish.id</code></dt>
+		<dt id="nodes-mods.publish.id"><code>mods.publish.id</code></dt>
 		<dd><span class="alert-added">Added in 0.6.1 (6279809).</span></dd>
-		<dt><code>mods.publish.message</code></dt>
+		<dt id="nodes-mods.publish.message"><code>mods.publish.message</code></dt>
 		<dd>
 			Error message if publishing failed. String.
 			<br/>
 			<span class="alert-added">Added in 0.6.1 (6279809).</span>
 		</dd>
-		<dt><code>mods.publish.progress</code></dt>
+		<dt id="nodes-mods.publish.progress"><code>mods.publish.progress</code></dt>
 		<dd>
 			Number.
 			<br/>
 			<span class="alert-added">Added in 0.6.1 (6279809).</span>
 		</dd>
-		<dt><code>mods.publish.state</code></dt>
+		<dt id="nodes-mods.publish.state"><code>mods.publish.state</code></dt>
 		<dd>
 			String. Valid values are <code>uploading</code>, <code>ready</code>, <code>failed</code>, and <code>done</code>.
 			<br/>
 			<span class="alert-added">Added in 0.6.1 (6279809).</span>
 		</dd>
-		<dt><code>mods.publish.visibility</code></dt>
+		<dt id="nodes-mods.publish.visibility"><code>mods.publish.visibility</code></dt>
 		<dd>
 			Integer. 0 is public, 1 is friends only, 2 is private, and 3 is unlisted. A -1 value is referenced in the code but its purpose is unclear.
 			<br/>
 			<span class="alert-added">Added in 0.6.1 (6279809).</span>
 		</dd>
-		<dt><code>mods.subscribestate</code></dt>
+		<dt id="nodes-mods.subscribestate"><code>mods.subscribestate</code></dt>
 		<dd>Has never existed. Obsoleted by <code>mods.pending</code>.</dd>
 	</dl>
 </main>

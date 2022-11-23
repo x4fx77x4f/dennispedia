@@ -17,26 +17,26 @@
 	<h1><code>Command</code></h1>
 	<p>Runs an engine command. There's no equivalent to a developer console as far as I can tell, so I have no idea why this was done this way instead of defining a function for each one of these commands.</p>
 	<p class="alert alert-undocumented">This function is not officially documented.</p>
-	<h2>Arguments</h2>
+	<h2 id="arguments">Arguments</h2>
 	<ol>
 		<li>string: Command to execute</li>
 		<li>vararg: Parameters (depends on command)</li>
 	</ol>
-	<h2>Return values</h2>
+	<h2 id="returns">Return values</h2>
 	<p>None.</p>
 	<h2>Commands</h2>
 	<p>Many of these commands will not work if run from an unprivileged script.</p>
 	<dl>
-		<dt><code>game.about</code></dt>
+		<dt id="commands-game.about"><code>game.about</code></dt>
 		<dd>
 			Enter about state, which runs <code>data/ui/about.lua</code>. Only used in perftest.
 			<br/>
 			<span class="alert-removed">Removed in 0.5.0 (5943727).</span>
 		</dd>
-		<dt><code>game.applydisplay</code></dt>
+		<dt id="commands-game.applydisplay"><code>game.applydisplay</code></dt>
 		<dd>Reads updated graphics settings from registry and applies them.</dd>
-		<dt><code>game.applygraphics</code></dt>
-		<dt><code>game.bakemission</code></dt>
+		<dt id="commands-game.applygraphics"><code>game.applygraphics</code></dt>
+		<dt id="commands-game.bakemission"><code>game.bakemission</code></dt>
 		<dd>
 			Presumably bakes an XML level into a binary level (i.e. a TDBIN file). I have been unable to get this to do anything but crash the game.
 			<br/>
@@ -47,49 +47,49 @@
 				<li>string: Layers, separated by spaces</li>
 			</ol>
 		</dd>
-		<dt><code>game.clearbaked</code></dt>
+		<dt id="commands-game.clearbaked"><code>game.clearbaked</code></dt>
 		<dd>
 			Delete all binary levels, i.e. all files in <code>data/bin/</code>.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
-		<dt><code>game.exitlevel</code></dt>
+		<dt id="commands-game.exitlevel"><code>game.exitlevel</code></dt>
 		<dd>
 			Enter main menu. Obsoleted by <code>Menu</code> function.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
-		<dt><code>game.menu</code></dt>
+		<dt id="commands-game.menu"><code>game.menu</code></dt>
 		<dd>
 			Enter main menu. Obsoleted by <code>Menu</code> function.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
-		<dt><code>game.openfolder</code></dt>
+		<dt id="commands-game.openfolder"><code>game.openfolder</code></dt>
 		<dd><span class="alert-added">Added in 0.5.0 (5943727).</span></dd>
-		<dt><code>game.openurl</code></dt>
+		<dt id="commands-game.openurl"><code>game.openurl</code></dt>
 		<dd>
 			Open URL. Unused by but present in perftest.
 			<ol start="2">
 				<li>string: URL</li>
 			</ol>
 		</dd>
-		<dt><code>game.path.has</code></dt>
-		<dt><code>game.path.load</code></dt>
+		<dt id="commands-game.path.has"><code>game.path.has</code></dt>
+		<dt id="commands-game.path.load"><code>game.path.load</code></dt>
 		<dd>
 			<ol start="2">
 				<li>string: Path ID. Will be loaded from <code>%LOCALAPPDATA%/Teardown/path-${path_id}.pth</code> where <code>${path_id}</code> is this parameter</code></li>
 			</ol>
 		</dd>
-		<dt><code>game.path.record</code></dt>
-		<dt><code>game.path.save</code></dt>
+		<dt id="commands-game.path.record"><code>game.path.record</code></dt>
+		<dt id="commands-game.path.save"><code>game.path.save</code></dt>
 		<dd>
 			<ol start="2">
 				<li>string: Path ID. Will be saved to <code>%LOCALAPPDATA%/Teardown/path-${path_id}.pth</code> where <code>${path_id}</code> is this parameter. May not contain slashes, backslashes, or colons</code></li>
 			</ol>
 		</dd>
-		<dt><code>game.path.stop</code></dt>
-		<dt><code>game.pausemenu</code></dt>
+		<dt id="commands-game.path.stop"><code>game.path.stop</code></dt>
+		<dt id="commands-game.pausemenu"><code>game.pausemenu</code></dt>
 		<dd>
 			Indicates to engine that specified pause menu button was pressed.
 			<br/>
@@ -98,51 +98,51 @@
 				<li>string: Pause menu button ID</li>
 			</ol>
 		</dd>
-		<dt><code>game.pause</code></dt>
+		<dt id="commands-game.pause"><code>game.pause</code></dt>
 		<dd>
 			Open pause menu. Obsoleted by <code>SetPaused</code> function.
 			<br/>
 			<span class="alert-removed"><em>Probably</em> removed in 0.4.5 (5748542).</span>
 		</dd>
-		<dt><code>game.quickload</code></dt>
+		<dt id="commands-game.quickload"><code>game.quickload</code></dt>
 		<dd>Load quicksave.</dd>
-		<dt><code>game.quicksave</code></dt>
+		<dt id="commands-game.quicksave"><code>game.quicksave</code></dt>
 		<dd>Save quicksave.</dd>
-		<dt><code>game.quit</code></dt>
+		<dt id="commands-game.quit"><code>game.quit</code></dt>
 		<dd>Fade to black and close game.</dd>
-		<dt><code>game.respawn</code></dt>
+		<dt id="commands-game.respawn"><code>game.respawn</code></dt>
 		<dd>
 			Respawn player. Obsoleted by <code>RespawnPlayer</code> function.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
-		<dt><code>game.restart</code></dt>
+		<dt id="commands-game.restart"><code>game.restart</code></dt>
 		<dd>
 			Reload level. Obsoleted by <code>Restart</code> function.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
-		<dt><code>game.screenrecord</code></dt>
+		<dt id="commands-game.screenrecord"><code>game.screenrecord</code></dt>
 		<dd>
 			<span class="alert-added">Added in 0.9.3 (8199301).</span>
 			<ol start="2">
 				<li>boolean: Whether to hide HUD</li>
 			</ol>
 		</dd>
-		<dt><code>game.screenshot</code></dt>
+		<dt id="commands-game.screenshot"><code>game.screenshot</code></dt>
 		<dd>
 			Saves a screenshot.
 			<br/>
 			<span class="alert-added">Added in 0.7.0 (6551167).</span>
 		</dd>
-		<dt><code>game.selectmod</code></dt>
+		<dt id="commands-game.selectmod"><code>game.selectmod</code></dt>
 		<dd>
 			Has never existed, but nonetheless is run every time you select a mod in the mod manager in every version since 0.5.0 (5943727).
 			<ol start="2">
 				<li>string: Mod ID</li>
 			</ol>
 		</dd>
-		<dt><code>game.startlevel</code></dt>
+		<dt id="commands-game.startlevel"><code>game.startlevel</code></dt>
 		<dd>
 			Enters level. Obsoleted by <code>StartLevel</code> function.
 			<br/>
@@ -151,7 +151,7 @@
 				<li>string: Path to level XML</li>
 			</ol>
 		</dd>
-		<dt><code>game.startmission</code></dt>
+		<dt id="commands-game.startmission"><code>game.startmission</code></dt>
 		<dd>
 			Enters level. Obsoleted by <code>StartLevel</code> function.
 			<br/>
@@ -162,96 +162,96 @@
 				<li>string or no value: Layers, separated by spaces</li>
 			</ol>
 		</dd>
-		<dt><code>game.startui</code></dt>
-		<dt><code>game.steam.showbindingpanel</code></dt>
+		<dt id="commands-game.startui"><code>game.startui</code></dt>
+		<dt id="commands-game.steam.showbindingpanel"><code>game.steam.showbindingpanel</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985).</span></dd>
-		<dt><code>game.unpause</code></dt>
+		<dt id="commands-game.unpause"><code>game.unpause</code></dt>
 		<dd>
 			Close pause menu. Obsoleted by <code>SetPaused</code> function.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
-		<dt><code>mods.activate</code></dt>
+		<dt id="commands-mods.activate"><code>mods.activate</code></dt>
 		<dd>
 			<span class="alert-added">Added in 0.5.0 (5943727).</span>
 			<ol start="2">
 				<li>string: Mod ID
 			</ol>
 		</dd>
-		<dt><code>mods.browsesubscribed</code></dt>
+		<dt id="commands-mods.browsesubscribed"><code>mods.browsesubscribed</code></dt>
 		<dd>
 			<span class="alert-added">Added in 0.7.0 (6551167).</span>
 			<ol start="2">
 				<li>string: Mod ID
 			</ol>
 		</dd>
-		<dt><code>mods.browse</code></dt>
+		<dt id="commands-mods.browse"><code>mods.browse</code></dt>
 		<dd><span class="alert-added">Added in 0.6.1 (6279809).</span></dd>
-		<dt><code>mods.deactivate</code></dt>
+		<dt id="commands-mods.deactivate"><code>mods.deactivate</code></dt>
 		<dd>
 			<span class="alert-added">Added in 0.5.0 (5943727).</span>
 			<ol start="2">
 				<li>string: Mod ID
 			</ol>
 		</dd>
-		<dt><code>mods.delete</code></dt>
+		<dt id="commands-mods.delete"><code>mods.delete</code></dt>
 		<dd>
 			<span class="alert-added">Added in 0.6.1 (6279809).</span>
 			<ol start="2">
 				<li>string: Mod ID
 			</ol>
 		</dd>
-		<dt><code>mods.edit</code></dt>
+		<dt id="commands-mods.edit"><code>mods.edit</code></dt>
 		<dd>
 			<span class="alert-added">Added in 0.5.3 (6002263).</span>
 			<ol start="2">
 				<li>string: Mod ID
 			</ol>
 		</dd>
-		<dt><code>mods.makelocalcopy</code></dt>
+		<dt id="commands-mods.makelocalcopy"><code>mods.makelocalcopy</code></dt>
 		<dd>
 			<span class="alert-added">Added in 0.5.0 (5943727).</span>
 			<ol start="2">
 				<li>string: Mod ID
 			</ol>
 		</dd>
-		<dt><code>mods.new</code></dt>
+		<dt id="commands-mods.new"><code>mods.new</code></dt>
 		<dd>
 			<span class="alert-added">Added in 0.6.1 (6279809).</span>
 			<ol start="2">
 				<li>string: Mod type, either <code>global</code> or <code>content</code>
 			</ol>
 		</dd>
-		<dt><code>mods.options</code></dt>
+		<dt id="commands-mods.options"><code>mods.options</code></dt>
 		<dd>
 			<span class="alert-added">Added in 0.5.0 (5943727).</span>
 			<ol start="2">
 				<li>string: Mod ID
 			</ol>
 		</dd>
-		<dt><code>mods.play</code></dt>
+		<dt id="commands-mods.play"><code>mods.play</code></dt>
 		<dd>
 			<span class="alert-added">Added in 0.5.0 (5943727).</span>
 			<ol start="2">
 				<li>string: Mod ID
 			</ol>
 		</dd>
-		<dt><code>mods.publishbegin</code></dt>
+		<dt id="commands-mods.publishbegin"><code>mods.publishbegin</code></dt>
 		<dd>
 			<span class="alert-added">Added in 0.6.1 (6279809).</span>
 			<ol start="2">
 				<li>string: Mod ID
 			</ol>
 		</dd>
-		<dt><code>mods.publishcancel</code></dt>
+		<dt id="commands-mods.publishcancel"><code>mods.publishcancel</code></dt>
 		<dd><span class="alert-added">Added in 0.6.1 (6279809).</span></dd>
-		<dt><code>mods.publishend</code></dt>
+		<dt id="commands-mods.publishend"><code>mods.publishend</code></dt>
 		<dd><span class="alert-added">Added in 0.6.1 (6279809).</span></dd>
-		<dt><code>mods.publishupload</code></dt>
+		<dt id="commands-mods.publishupload"><code>mods.publishupload</code></dt>
 		<dd><span class="alert-added">Added in 0.6.1 (6279809).</span></dd>
-		<dt><code>mods.refresh</code></dt>
+		<dt id="commands-mods.refresh"><code>mods.refresh</code></dt>
 		<dd><span class="alert-added">Added in 0.5.0 (5943727).</span></dd>
-		<dt><code>mods.subscribe</code></dt>
+		<dt id="commands-mods.subscribe"><code>mods.subscribe</code></dt>
 		<dd>
 			Subscribe to specified Workshop mod.
 			<br/>
@@ -260,7 +260,7 @@
 				<li>string: Mod ID, i.e. Workshop mod ID with <code>steam-</code> prepended</li>
 			</ol>
 		</dd>
-		<dt><code>mods.unsubscribe</code></dt>
+		<dt id="commands-mods.unsubscribe"><code>mods.unsubscribe</code></dt>
 		<dd>
 			Unsubscribe from specified Workshop mod.
 			<br/>
@@ -269,14 +269,14 @@
 				<li>string: Mod ID, i.e. Workshop mod ID with <code>steam-</code> prepended</li>
 			</ol>
 		</dd>
-		<dt><code>mods.updateselecttime</code></dt>
+		<dt id="commands-mods.updateselecttime"><code>mods.updateselecttime</code></dt>
 		<dd>
 			<span class="alert-added">Added in 0.8.0 (7458793).</span>
 			<ol start="2">
 				<li>string: Mod ID
 			</ol>
 		</dd>
-		<dt><code>options.input.keymap.resettodefault</code></dt>
+		<dt id="commands-options.input.keymap.resettodefault"><code>options.input.keymap.resettodefault</code></dt>
 		<dd>
 			Overwrites keyboard controls in registry with default values.
 			<br/>
