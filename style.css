@@ -9,6 +9,11 @@ tt, code, kbd, samp {
 	font-family: monospace, monospace;
 	font-stretch: condensed;
 }
+table, thead, tbody, tfoot, th, td {
+	border: 1px solid currentcolor;
+	border-collapse: collapse;
+	padding: 2px 4px;
+}
 dd ol, dd dl, dd ul, dd menu {
 	margin: 0;
 }
@@ -17,6 +22,9 @@ dt {
 }
 :target:not([id^="docs-"]) {
 	background: #ff07;
+}
+summary h1, summary h2, summary h3, summary h4, summary h5, summary h6 {
+	display: inline;
 }
 @media screen and (prefers-color-scheme: dark) {
 	:root {
@@ -35,12 +43,6 @@ dt {
 	:target:not([id^="docs-"]) {
 		background: #ff03;
 	}
-}
-
-table, thead, tbody, tfoot, th, td {
-	border: 1px solid currentcolor;
-	border-collapse: collapse;
-	padding: 2px 4px;
 }
 
 .breadcrumbs {
