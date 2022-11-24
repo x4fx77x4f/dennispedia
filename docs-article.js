@@ -1,3 +1,4 @@
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt MIT License
 'use strict';
 const dst_href_article = location.href;
 const dst_pathname_article = location.pathname;
@@ -52,3 +53,4 @@ fetch('.')
 		console.error(error);
 	})
 ;
+// @license-end

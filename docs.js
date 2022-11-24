@@ -1,3 +1,4 @@
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt MIT License
 'use strict';
 
 if (!document.currentScript.dataset.noStyle) {
@@ -178,3 +179,4 @@ search.addEventListener('input', event => {
 Array.prototype.forEach.call(document.getElementsByClassName('docs-remove'), el => el.remove());
 
 console.log("Hello, world!");
+// @license-end
