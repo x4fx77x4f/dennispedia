@@ -3,6 +3,7 @@
 :root {
 	font-family: sans-serif;
 	color-scheme: light dark;
+	tab-size: 4;
 }
 tt, code, kbd, samp {
 	font-family: monospace, monospace;
