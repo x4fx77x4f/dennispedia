@@ -153,12 +153,13 @@ if (history.state && !document.currentScript.dataset.noPopstate) {
 	}, document.title, location.href);
 }
 
+const search_landmark = document.getElementById('docs-search');
 const search = document.createElement('input');
 search.type = 'search';
 const label = document.createElement('label');
 label.append(document.createTextNode("Search: "));
 label.append(search);
-nav.insertBefore(label, nav.firstChild);
+search_landmark.replaceWith(label);
 search.addEventListener('input', event => {
 	const value = search.value.normalize().toLowerCase();
 	if (!value) {
@@ -176,7 +177,7 @@ search.addEventListener('input', event => {
 	});
 });
 
-Array.prototype.forEach.call(document.getElementsByClassName('docs-remove'), el => el.remove());
+[...document.getElementsByClassName('docs-remove')].forEach(el => el.remove());
 
 console.log("Hello, world!");
 // @license-end

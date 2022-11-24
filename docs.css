@@ -20,10 +20,39 @@
 	}
 	nav {
 		width: 20em;
-		background: #ccc;
+		background: #eee;
+		border-right: 2px solid #999;
+	}
+	nav h3, nav details {
+		margin: 8px 0;
+	}
+	nav details {
+		background: #ddd;
+		border: 2px solid #999;
+		border-radius: 3px;
+	}
+	nav summary {
+		padding: 4px;
+	}
+	nav summary h4 {
+		display: inline;
+		margin: 0;
 	}
 	nav ul {
-		padding-left: 1em;
+		padding: 0;
+		margin: 0;
+	}
+	nav li {
+		list-style: none;
+		padding: 1px 4px;
+	}
+	nav li:nth-child(odd) {
+		background: #ccc;
+	}
+	nav li a {
+		text-decoration: none;
+		width: 100%;
+		display: inline-block;
 	}
 	nav code {
 		font-size: 90%;
@@ -36,7 +65,15 @@
 	}
 	@media (prefers-color-scheme: dark) {
 		nav {
+			background: #111;
+			border-color: #444;
+		}
+		nav details {
 			background: #222;
+			border-color: #444;
+		}
+		nav li:nth-child(odd) {
+			background: #171717;
 		}
 	}
 }

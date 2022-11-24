@@ -22,73 +22,59 @@
 </main>
 <nav id="docs-nav">
 	<h2 class="docs-remove">Articles</h2>
-	<noscript class="docs-remove"><p class="docs-remove">If you enable JavaScript, these articles will appear in a sidebar (desktop) or above the page (mobile) and you'll be able to switch between them without reloading the page. You'll also have a search box.</p></noscript>
-	<ul>
-		<li><a href=".">Dennispedia</a></li>
-		<li><details open="">
-			<summary><i>Mediocre</i></summary>
-			<ul>
-				<li>
-					<a href="sprinkle/"><i>Sprinkle</i></a>
-					<ul>
-						<li><a href="sprinkle/free/"><i>Sprinkle Free</i></a></li>
-						<li><a href="sprinkle/junior/"><i>Sprinkle Junior</i></a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="grannysmith/"><i>Granny Smith</i></a>
-					<ul>
-						<li><a href="grannysmith/free/"><i>Granny Smith Free</i></a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="sprinkle2/"><i>Sprinkle Islands</i></a>
-					<ul>
-						<li><a href="sprinkle2/free/"><i>Sprinkle Islands Free</i></a></li>
-					</ul>
-				</li>
-				<li><a href="smashhit/"><i>Smash Hit</i></a></li>
-				<li><a href="commute/"><i>Does not Commute</i></a></li>
-				<li><a href="beyondium/"><i>Beyondium</i></a></li>
-				<li><a href="pinout/"><i>PinOut</i></a></li>
-			</ul>
-		</details></li>
-		<li><details open="">
-			<summary><i>Tuxedo Labs</i></summary>
-			<ul>
-				<li><details open="">
-					<summary><a href="teardown/"><i>Teardown</i></a></summary>
-					<ul>
-						<li><a href="teardown/registry.html">Registry</a></li>
-						<li><details open="">
-							<summary><a href="teardown/scripting.html">Scripting</a></summary>
-							<ul>
-								<li><a href="teardown/g/AddSnow.html"><code>AddSnow</code></a></li>
-								<li><a href="teardown/g/Command.html"><code>Command</code></a></li>
-								<li><a href="teardown/g/CompleteAchievement.html"><code>CompleteAchievement</code></a></li>
-								<li><a href="teardown/g/DisableAllLights.html"><code>DisableAllLights</code></a></li>
-								<li><a href="teardown/g/GetDisplayResolution.html"><code>GetDisplayResolution</code></a></li>
-								<li><a href="teardown/g/GetDisplayResolutionCount.html"><code>GetDisplayResolutionCount</code></a></li>
-								<li><a href="teardown/g/GetIntParam.html"><code>GetIntParam</code></a></li>
-								<li><a href="teardown/g/GetFloatParam.html"><code>GetFloatParam</code></a></li>
-								<li><a href="teardown/g/GetBoolParam.html"><code>GetBoolParam</code></a></li>
-								<li><a href="teardown/g/GetStringParam.html"><code>GetStringParam</code></a></li>
-								<li><a href="teardown/g/HasFile.html"><code>HasFile</code></a></li>
-								<li><a href="teardown/g/IndicateAchievementProgress.html"><code>IndicateAchievementProgress</code></a></li>
-								<li><a href="teardown/g/IsAchievementCompleted.html"><code>IsAchievementCompleted</code></a></li>
-								<!--<li><a href="teardown/g/IsShapeDisconnected.html"><code>IsShapeDisconnected</code></a></li>-->
-								<li><a href="teardown/g/ParticleOrientation.html"><code>ParticleOrientation</code></a></li>
-								<li><a href="teardown/g/QuatStr.html"><code>QuatStr</code></a></li>
-								<li><a href="teardown/g/ShakeCamera.html"><code>ShakeCamera</code></a></li>
-								<li><a href="teardown/g/TransformStr.html"><code>TransformStr</code></a></li>
-								<li><a href="teardown/g/UiGetRelativePos.html"><code>UiGetRelativePos</code></a></li>
-								<li><a href="teardown/g/VecStr.html"><code>VecStr</code></a></li>
-							</ul>
-						</details></li>
-					</ul>
-				</details></li>
-			</ul>
-		</details></li>
-	</ul>
+	<p class="docs-remove">If you enable JavaScript, these articles will appear in a sidebar (desktop) or above the page (mobile) and you'll be able to switch between them without reloading the page. You'll also have a search box.</p>
+	<div><a href=".">Dennispedia</a></div>
+	<div id="docs-search"></div>
+	<h3>Mediocre</h3>
+	<details>
+		<summary><h4>Games</h4></summary>
+		<ul>
+			<li><a href="beyondium/">Beyondium</a></li>
+			<li><a href="commute/">Does not Commute</a></li>
+			<li><a href="grannysmith/">Granny Smith</a></li>
+			<li><a href="grannysmith/free/">Granny Smith Free</a></li>
+			<li><a href="pinout/">PinOut</a></li>
+			<li><a href="smashhit/">Smash Hit</a></li>
+			<li><a href="sprinkle/">Sprinkle</a></li>
+			<li><a href="sprinkle/free/">Sprinkle Free</a></li>
+			<li><a href="sprinkle/junior/">Sprinkle Junior</a></li>
+			<li><a href="sprinkle2/">Sprinkle Islands</a></li>
+			<li><a href="sprinkle2/free/">Sprinkle Islands Free</a></li>
+		</ul>
+	</details>
+	<h3>Teardown</h3>
+	<details>
+		<summary><h4>Documentation</h4></summary>
+		<ul>
+			<li><a href="teardown/">Game</a></li>
+			<li><a href="teardown/prerelease/">Prerelease</a></li>
+			<li><a href="teardown/registry.html">Registry</a></li>
+			<li><a href="teardown/scripting.html">Scripting</a></li>
+		</ul>
+	</details>
+	<details>
+		<summary><h4>Globals</h4></summary>
+		<ul>
+			<li><a href="teardown/g/AddSnow.html"><code>AddSnow</code> <small class="alert-undocumented">(undocumented)</small></a></li>
+			<li><a href="teardown/g/Command.html"><code>Command</code> <small class="alert-undocumented">(undocumented)</small></a></li>
+			<li><a href="teardown/g/CompleteAchievement.html"><code>CompleteAchievement</code> <small class="alert-undocumented">(undocumented)</small></a></li>
+			<li><a href="teardown/g/DisableAllLights.html"><code>DisableAllLights</code> <small class="alert-undocumented">(undocumented)</small></a></li>
+			<li><a href="teardown/g/GetBoolParam.html"><code>GetBoolParam</code></a></li>
+			<li><a href="teardown/g/GetDisplayResolutionCount.html"><code>GetDisplayResolutionCount</code> <small class="alert-undocumented">(undocumented)</small></a></li>
+			<li><a href="teardown/g/GetDisplayResolution.html"><code>GetDisplayResolution</code> <small class="alert-undocumented">(undocumented)</small></a></li>
+			<li><a href="teardown/g/GetFloatParam.html"><code>GetFloatParam</code></a></li>
+			<li><a href="teardown/g/GetIntParam.html"><code>GetIntParam</code></a></li>
+			<li><a href="teardown/g/GetStringParam.html"><code>GetStringParam</code></a></li>
+			<li><a href="teardown/g/HasFile.html"><code>HasFile</code> <small class="alert-undocumented">(undocumented)</small></a></li>
+			<li><a href="teardown/g/IndicateAchievementProgress.html"><code>IndicateAchievementProgress</code> <small class="alert-undocumented">(undocumented)</small></a></li>
+			<li><a href="teardown/g/IsAchievementCompleted.html"><code>IsAchievementCompleted</code> <small class="alert-undocumented">(undocumented)</small></a></li>
+			<li><a href="teardown/g/ParticleOrientation.html"><code>ParticleOrientation</code> <small class="alert-undocumented">(undocumented)</small></a></li>
+			<li><a href="teardown/g/QuatStr.html"><code>QuatStr</code> <small class="alert-undocumented">(undocumented)</small></a></li>
+			<li><a href="teardown/g/ShakeCamera.html"><code>ShakeCamera</code> <small class="alert-undocumented">(undocumented)</small></a></li>
+			<li><a href="teardown/g/TransformStr.html"><code>TransformStr</code> <small class="alert-undocumented">(undocumented)</small></a></li>
+			<li><a href="teardown/g/UiGetRelativePos.html"><code>UiGetRelativePos</code> <small class="alert-undocumented">(undocumented)</small></a></li>
+			<li><a href="teardown/g/VecStr.html"><code>VecStr</code> <small class="alert-undocumented">(undocumented)</small></a></li>
+		</ul>
+	</details>
 </nav>
 </html>
