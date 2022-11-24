@@ -44,6 +44,12 @@ summary h1, summary h2, summary h3, summary h4, summary h5, summary h6 {
 		background: #ff03;
 	}
 }
+@media (forced-colors: active) {
+	:target:not([id^="docs-"]) {
+		background: Highlight;
+		color: HighlightText;
+	}
+}
 
 .breadcrumbs {
 	list-style: none;
