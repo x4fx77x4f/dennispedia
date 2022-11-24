@@ -56,14 +56,15 @@ summary h1, summary h2, summary h3, summary h4, summary h5, summary h6 {
 	content: " → ";
 }
 
-.alert {
-	border: 2px solid currentcolor;
-	border-radius: 3px;
-	padding: 8px;
+.alert-warning, .alert-undocumented, .alert-removed, .alert-added, .alert-note {
+	border: 0 solid currentcolor;
+	outline: 1px none currentcolor;
 }
 .alert-warning {
 	background: #fed;
 	color: #520;
+	border-style: dashed;
+	outline-style: dashed;
 }
 .alert-undocumented {
 	background: #eee;
@@ -72,10 +73,16 @@ summary h1, summary h2, summary h3, summary h4, summary h5, summary h6 {
 .alert-removed {
 	background: #fdd;
 	color: #500;
+	border-style: dashed;
+	outline-style: dashed;
 }
 .alert-added {
 	background: #dfd;
 	color: #040;
+}
+.alert-note {
+	background: #def;
+	color: #025;
 }
 @media screen and (prefers-color-scheme: dark) {
 	.alert-warning {
@@ -94,6 +101,16 @@ summary h1, summary h2, summary h3, summary h4, summary h5, summary h6 {
 		background: #040;
 		color: #ded;
 	}
+	.alert-note {
+		background: #025;
+		color: #cde;
+	}
+}
+.alert {
+	border-width: 2px;
+	outline: none;
+	border-radius: 3px;
+	padding: 8px;
 }
 
 .bad {
