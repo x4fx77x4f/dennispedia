@@ -3,11 +3,13 @@ Dennispedia is an **unofficial** resource for all things ~~in the Dennis Gustafs
 
 ## Contributing
 - No personal information.
-- No warez. No redistribution of protected content. No decryption keys.
-	- Describing how anti-tamper or premium works is okay.
-	- Step-by-step guides for enabling premium are not okay.
-	- Step-by-step guides for defeating anti-tamper (e.g. SafetyNet, Steam DRM) are potentially okay.
+- No warez. No supporting piracy. No redistribution of game content.
+	- No step-by-step guides for enabling premium without paying. Describing how premium checks work is okay.
+	- Documenting anti-tamper is okay. Step-by-step guides for defeating official anti-tamper are okay, but external protections such as Steam DRM are out of scope.
+	- Distributing decryption keys is okay, **except for Teardown.**
+	- Of all of the rules, this one is the most negotiable.
 - No frameworks or libraries. No Bootstrap. No jQuery.
 - No mandatory JavaScript. Non-essential JavaScript is okay.
 - No external resources. No embeds. Links are okay.
 - Follow the same "code" style as the existing content.
+	- Ensure content is accessible to users who are colorblind, use a screen reader, or otherwise have unconventional needs.
