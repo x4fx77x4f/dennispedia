@@ -61,11 +61,11 @@
 	<dd>The value of the <code>game.version</code> registry node (game registry, not Windows registry).</dd>
 	<dt>Patch</dt>
 	<dd>The value of the <code>game.version.patch</code> registry node. 0.5.5 (6205729) was the earliest build to have support for this, and 0.6.2 (patch 1) (6324468) was the first build to make use of it.</dd>
-	<dt><code aria-label="time updated">timeupdated</code></dt>
-	<dd>Timestamp in UTC of earliest changelist referencing the build.</dd>
-	<dt><code aria-label="build ID">buildid</code></dt>
+	<dt>Timestamp</dt>
+	<dd>Timestamp in UTC of <code>timeupdated</code> field in earliest changelist referencing the build.</dd>
+	<dt>Build ID</dt>
 	<dd>Rows without this value are non-Steam builds.</dd>
-	<dt><code>manifests</code></dt>
+	<dt>Manifest ID</dt>
 	<dd>Manifest ID for <a href="https://steamdb.info/depot/1167634/">the sole public Teardown depot (1167634)</a>. <a href="https://steamdb.info/depot/1167631/">Another depot (1167631)</a> is known to exist, but it has no known builds.</dd>
 	<dt>Branches</dt>
 	<dd>The branches the build was pushed to, separated by commas, in order of first to last.</dd>
@@ -81,9 +81,9 @@
 		<tr>
 			<th>Ver.</th>
 			<th>Patch</th>
-			<th><code aria-label="time updated">timeupdated</code></th>
-			<th><code aria-label="build ID">buildid</code></th>
-			<th><code>manifests</code></th>
+			<th>Timestamp</th>
+			<th>Build ID</th>
+			<th>Manifest ID</th>
 			<th>Branches</th>
 			<th>CRC-32</th>
 			<th style="width: 15em;">Announcement</th>
