@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"/>
+<base href="../../"/>
+<script src="docs-article.js"></script>
+<link rel="stylesheet" href="style.css"/>
+<nav>
+	<ol class="breadcrumbs">
+		<li><a href=".">Dennispedia</a></li>
+		<li><a href="teardown/">Teardown</a></li>
+		<li><a href="teardown/g/handleCommand.html" aria-current="page"><code>handleCommand</code></a></li>
+	</ol>
+	<hr/>
+</nav>
+<title>handleCommand — Dennispedia</title>
+<main id="docs-main">
+	<h1><code>handleCommand</code></h1>
+	<p>Called by the engine when certain events occur.</p>
+	<p class="alert alert-note">This is a callback function, meaning it does not exist and you should not try to call it. Instead, <em>you define it and the engine will call it.</em> Not to be confused with <a href="teardown/g/Command.html"><code>Command</code></a>.</p>
+	<p class="alert alert-undocumented">This function is not officially documented.</p>
+	<h2 id="arguments">Arguments</h2>
+	<ol>
+		<li>string: Command</li>
+	</ol>
+	<h2 id="returns">Return values</h2>
+	<p>None.</p>
+	<h2>Commands</h2>
+	<p>Some of these are only called for certain scripts. (TODO: Which?)</p>
+	<p><u>Underlined text</u> indicates that the text is not literal but is a placeholder for varying text.</p>
+	<dl>
+		<dt id="commands-activate"><code>activate</code></dt>
+		<dd><span class="alert-added">Added in 0.4.5 (5748542).</span></dd>
+		<dt id="commands-exit"><code>exit</code></dt>
+		<dd>
+			Unused.
+			<br/>
+			<span class="alert-added">Added sometime between 0.4.6 (5788537) and 1.0.0 (8558212).</span>
+		</dd>
+		<dt id="commands-explosion"><code>explosion <u>strength</u> <u>x</u> <u>y</u> <u>z</u></code></dt>
+		<dd>
+			Called when an explosion happens. (TODO: All explosions, or only some?)
+			<br/>
+			<span class="alert-added">Added in 0.9.0 (7801522).</span>
+		</dd>
+		<dt id="commands-quickload"><code>quickload</code></dt>
+		<dd>Called instead of <code>init</code> after a quicksave is loaded.</dd>
+		<dt id="commands-quicksave"><code>quicksave</code></dt>
+		<dd>Called after the <a href="teardown/g/Command.html#commands-game.quicksave"><code>game.quicksave</code> command</a> is run.</dd>
+		<dt id="commands-resolutionchanged"><code>resolutionchanged</code></dt>
+		<dd>Called after the <a href="teardown/g/Command.html#commands-game.applydisplay"><code>game.applydisplay</code> command</a> is run.</dd>
+		<dt id="commands-shot"><code>shot <u>strength</u> <u>x</u> <u>y</u> <u>z</u> <u>dx</u> <u>dy</u> <u>dz</u></code></dt>
+		<dd>
+			Called when a gunshot hits a surface. (TODO: All gunshots?)
+			<br/>
+			<span class="alert-added">Added in 0.9.0 (7801522).</span>
+		</dd>
+		<dt id="commands-updatemods"><code>updatemods</code></dt>
+		<dd><span class="alert-added">Added in 0.6.1 (6279809).</span></dd>
+	</dl>
+</main>
+</html>
