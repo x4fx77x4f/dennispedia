@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"/>
+<base href="../../"/>
+<script src="docs-article.js"></script>
+<link rel="stylesheet" href="style.css"/>
+<nav>
+	<ol class="breadcrumbs">
+		<li><a href=".">Dennispedia</a></li>
+		<li><a href="teardown/">Teardown</a></li>
+		<li><a href="teardown/g/UiUnloadImage.html" aria-current="page"><code>UiUnloadImage</code></a></li>
+	</ol>
+	<hr/>
+</nav>
+<title>UiUnloadImage — Dennispedia</title>
+<main id="docs-main">
+	<h1><code>UiUnloadImage</code></h1>
+	<p>Unloads an image previously loaded with <code>UiImage</code>.</p>
+	<p class="alert alert-note">Like all UI functions, this function will only exist if <code>draw</code> is defined before <code>init</code> is called.</p>
+	<p class="alert alert-undocumented">This function is not officially documented.</p>
+	<h2 id="arguments">Arguments</h2>
+	<ol>
+		<li>string: Path to image file</li>
+	</ol>
+	<h2 id="returns">Return values</h2>
+	<p>None.</p>
+	<h2>Example usage</h2>
+<pre>
+function init()
+	visible = false
+end
+function draw()
+	UiFont("regular.ttf", 32)
+	UiTranslate(0, UiFontHeight())
+	if UiTextButton("Toggle visibility") then
+		visible = not visible
+		if not visible then
+			UiUnloadImage("MOD/example.png")
+		end
+	end
+	if visible then
+		UiImage("MOD/example.png")
+	end
+end
+</pre>
+</main>
+</html>
