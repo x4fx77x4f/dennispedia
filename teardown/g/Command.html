@@ -171,6 +171,33 @@
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
+		<dt id="commands-hydra.eventToolUpgrade"><code>hydra.eventToolUpgrade</code></dt>
+		<dd>
+			Send the parameters and your score, amount of money, number of total destroyed voxels, and some other information to a telemetry server.
+			<br/>
+			<span class="alert-added">Added in 1.3.0 (10148769).</span>
+			<ol start="2">
+				<li>string: Tool ID</li>
+				<li>string: Upgrade ID</li>
+				<li>integer (number): Upgrade level</li>
+				<li>integer (number): Upgrade price</li>
+			</ol>
+		</dd>
+		<dt id="commands-hydra.eventSettings"><code>hydra.eventSettings</code></dt>
+		<dd>
+			Send your display mode (fullscreen, windowed, etc), game resolution, key bindings, graphics settings, audio settings, accessibility settings, and control preferences to a telemetry server.
+			<br/>
+			<span class="alert-added">Added in 1.3.0 (10148769).</span>
+		</dd>
+		<dt id="commands-hydra.eventTutorial"><code>hydra.eventTutorial</code></dt>
+		<dd>
+			Send the parameter to a telemetry server.
+			<br/>
+			<span class="alert-added">Added in 1.3.0 (10148769).</span>
+			<ol start="2">
+				<li>integer (number): Stage of progress of beginning of the game tutorial. Intended range 1 to 6.</li>
+			</ol>
+		</dd>
 		<dt id="commands-mods.activate"><code>mods.activate</code></dt>
 		<dd>
 			<span class="alert-added">Added in 0.5.0 (5943727).</span>
