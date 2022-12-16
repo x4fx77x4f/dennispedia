@@ -25,19 +25,19 @@ check_dir() {
 	then
 		for file in "$dir/data/bin/"*".bin"
 		do
-			check "$file" $@
+			check "$file" "$1"
 		done
 	else
 		if [ -f "$dir/data/bin/test.bin" ]
 		then
-			check "$dir/data/bin/test.bin" $@
+			check "$dir/data/bin/test.bin" "$1"
 		else
-			check "$dir/data/bin/lee_sandbox.bin" $@
+			check "$dir/data/bin/lee_sandbox.bin" "$1"
 		fi
 	fi
 }
-check_dir "$collection/teardown-perftest/" $@
+check_dir "$collection/teardown-perftest/" "$1"
 for file in "$collection/depots/1167634/"*"/"
 do
-	check_dir "$file" $@
+	check_dir "$file" "$1"
 done

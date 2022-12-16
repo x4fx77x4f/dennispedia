@@ -17,8 +17,8 @@ check() {
 		strings -- "$1" | grep -F -- "$2"
 	fi
 }
-check "$collection/teardown-perftest/teardown-perftest.exe" $@
+check "$collection/teardown-perftest/teardown-perftest.exe" "$1"
 for file in "$collection/depots/1167634/"*"/teardown.exe"
 do
-	check "$file" $@
+	check "$file" "$1"
 done

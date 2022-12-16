@@ -11,8 +11,8 @@ fi
 check() {
 	grep --color=auto --include \*.lua -RF -- "$2" "$1"
 }
-check "$collection/teardown-perftest/" $@
+check "$collection/teardown-perftest/" "$1"
 for file in "$collection/depots/1167634/"*"/"
 do
-	check "$file" $@
+	check "$file" "$1"
 done

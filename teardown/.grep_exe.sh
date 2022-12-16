@@ -11,8 +11,8 @@ fi
 check() {
 	grep -F -- "$2" "$1"
 }
-check "$collection/teardown-perftest/teardown-perftest.exe" $@
+check "$collection/teardown-perftest/teardown-perftest.exe" "$1"
 for file in "$collection/depots/1167634/"*"/teardown.exe"
 do
-	check "$file" $@
+	check "$file" "$1"
 done
