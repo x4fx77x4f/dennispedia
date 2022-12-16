@@ -9,6 +9,14 @@ tt, code, kbd, samp {
 	font-family: monospace, monospace;
 	font-stretch: condensed;
 }
+tt, code, kbd, samp, pre {
+	background: #eee;
+	border-radius: 3px;
+}
+pre {
+	white-space: pre-wrap;
+	border: 1px solid #999;
+}
 table, thead, tbody, tfoot, th, td {
 	border: 1px solid currentcolor;
 	border-collapse: collapse;
@@ -39,6 +47,11 @@ summary h1, summary h2, summary h3, summary h4, summary h5, summary h6 {
 	}
 	:visited {
 		color: #cd99ff;
+	}
+	tt, code, kbd, samp, pre {
+		background: #111;
+		border-color: #444;
+		outline-color: #444;
 	}
 	:target:not([id^="docs-"]) {
 		background: #ff03;
