@@ -17,8 +17,8 @@ table, thead, tbody, tfoot, th, td {
 dd ol, dd dl, dd ul, dd menu {
 	margin: 0;
 }
-dt {
-	margin-top: 8px;
+dd {
+	margin-bottom: 8px;
 }
 :target:not([id^="docs-"]) {
 	background: #ff07;
