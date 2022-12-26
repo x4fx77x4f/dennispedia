@@ -21,18 +21,21 @@
 	nav {
 		width: 20em;
 		background: #eee;
-		border-right: 2px solid #999;
+		border-right: 1px solid #999;
 	}
 	nav h3, nav details {
 		margin: 8px 0;
 	}
 	nav details {
 		background: #ddd;
-		border: 2px solid #999;
+		border: 1px solid #999;
 		border-radius: 3px;
 	}
 	nav summary {
 		padding: 4px;
+	}
+	nav details[open] > summary {
+		border-bottom: 1px solid #999;
 	}
 	nav summary h4 {
 		margin: 0;
@@ -69,6 +72,8 @@
 		}
 		nav details {
 			background: #222;
+		}
+		nav details, nav details[open] > summary {
 			border-color: #444;
 		}
 		nav li:nth-child(odd) {
