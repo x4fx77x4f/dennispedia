@@ -26,205 +26,154 @@
 			<br/>
 			<span class="alert-added">Added in 0.9.6 (8498817).</span>
 		</dd>
-
 		<dt id="tags-fxsmoke"><code>fxsmoke=p[size, 1-9][color]</code></dt>
 		<dd>
 			Location tag. When positioned near a shape, makes it spawn in smoke particles. Valid colors are brown and subtle. This is handled in fx.lua. Non-engine.
 			<br/>
 			<span class="alert-added">Added in 0.9.6 (8498817).</span>
 		</dd>
-
 		<dt id="tags-fxflicker"><code>fxflicker=[time, 1-9]</code></dt>
 		<dd>
 			Light tag. Make light flicker. This is handled in fx.lua. Non-engine.
 			<br/>
 			<span class="alert-added">Added in 0.9.6 (8498817).</span>
 		</dd>
-
 		<dt id="tags-explosive"><code>explosive=[size, 0.5-4.0]</code></dt>
 		<dd>
 			Body/Shape tag. Entity explodes when broken. If applied to an already broken shape, it instantly blows up. This is handled by the engine.
-			<br/>
 		</dd>
-
 		<dt id="tags-unbreakable"><code>unbreakable</code></dt>
 		<dd>
 			Body/Shape tag. Entity unbreakable, but still markable by spray paint or burn marks.
-			<br/>
 		</dd>
-
 		<dt id="tags-nocull"><code>nocull</code></dt>
 		<dd>
 			Shape tag. Shape is never culled.
-			<br/>
 		</dd>
-
 		<dt id="tags-interact"><code>interact=(interact text)</code></dt>
 		<dd>
 			Body/Shape tag. Makes it so when the player is close to the tagged entity, a prompt shows up to interact with it. GetPlayerInteractShape/Body only works on entities with this tag.
-			<br/>
 		</dd>
-
 		<dt id="tags-autobreak"><code>autobreak</code></dt>
 		<dd>
 			Body tag. Makes body require a smaller inertia to trigger a break event. This is used/set/handled by the engine for vehicle body(ies?).
 			<br/>
 			<span class="alert-added">Added in 0.9.0 (7801522).</span>
 		</dd>
-
 		<dt id="tags-breakall"><code>breakall</code></dt>
 		<dd>
 			Shape tag. Automaticly break the other shape that touches the this tagged shape. This is used/set in robot.lua and used/set by the engine if a explosive entity is thrown? handled by the engine?
 			<br/>
 			<span class="alert-added">Added in 0.9.0 (7801522).</span>
 		</dd>
-
 		<dt id="tags-inherittags"><code>inherittags</code></dt>
 		<dd>
 			Body/Shape tag? takes all the tags from tagged entity and set them on its debris. It will recursively do this.
-			<br/>
 		</dd>
-
 		<dt id="tags-awake"><code>awake</code></dt>
 		<dd>
 			Body/Shape tag. When the level loads, the tagged body/shape body will not be asleep. Non-engine.
 			<br/>
 			<span class="alert-added">Added in 0.7.0 (6551167).</span>
 		</dd>
-
 		<dt id="tags-map"><code>map</code></dt>
 		<dd>
 			Body tag. Marks body on map. Defaults to a blue color. Non-engine.
 			<br/>
 			<span class="alert-added">Added in 0.4.5 (5748542).</span>
 		</dd>
-
 		<dt id="tags-invisible"><code>invisible</code></dt>
 		<dd>
 			Shape tag. Make tagged shape invisible, however still impacts the shadow volume.
 			<br/>
 			<span class="alert-added">Added in 1.3.0 (10148769).</span>
 		</dd>
-
 		<dt id="tags-nonav"><code>nonav</code></dt>
 		<dd>
 			Shape tag. Shape is entirely disreguarded by pathfinding.
 			<br/>
 			<span class="alert-added">Added in 0.9.0 (7801522).</span>
 		</dd>
-
 		<dt id="tags-night"><code>night</code></dt>
 		<dd>
 			Light tag. Light will be turned off if the nightlight environment property is currently false.
-			<br/>
 		</dd>
-
 		<dt id="tags-nosnow"><code>nosnow</code></dt>
 		<dd>
 			Shape tag. Shape does not have any snow on it when the level loads.
 			<br/>
 			<span class="alert-added">Added in 0.7.1 (6627985).</span>
 		</dd>
-
 		<dt id="tags-nodrive"><code>nodrive</code></dt>
 		<dd>
 			Vehicle tag. Vehicle is not drivable to the player
-			<br/>
 		</dd>
-
 		<dt id="tags-reversebeep"><code>reversebeep</code></dt>
 		<dd>
 			Vehicle tag. Vehicle makes beep sound when reversing
 			<br/>
 			<span class="alert-added">Added in 0.4.5 (5748542).</span>
 		</dd>
-
 		<dt id="tags-boat"><code>boat</code></dt>
 		<dd>
-			Vehicle tag. Makes vehicle a boat 🚢, with additional boat physics applied ane able to use propeller locations, but lose ability to use wheel?
+			Vehicle tag. Makes vehicle a boat, with additional boat physics applied ane able to use propeller locations, but lose ability to use wheel?
 			<br/>
 			<span class="alert-added">Added in 0.5.1 (5987914).</span>
 		</dd>
-
 		<dt id="tags-dumptruck"><code>dumptruck</code></dt>
 		<dd>
 			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display bed controls
-			<br/>
 		</dd>
-
 		<dt id="tags-frontloader"><code>frontloader</code></dt>
 		<dd>
 			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display arm controls
-			<br/>
 		</dd>
-
 		<dt id="tags-skylift"><code>skylift</code></dt>
 		<dd>
 			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display lift controls
-			<br/>
 		</dd>
-
 		<dt id="tags-crane"><code>skylift</code></dt>
 		<dd>
 			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display crane controls. Hook is also controllable.
-			<br/>
 		</dd>
-
 		<dt id="tags-forklift"><code>forklift</code></dt>
 		<dd>
 			Vehicle tag. All prismatic joints on vehicle are controllable with vehicle_raise/vehicle_lower, display forklift controls.
-			<br/>
 		</dd>
-
 		<dt id="tags-tank"><code>forklift</code></dt>
 		<dd>
 			Vehicle tag. Display tank controls. Non-engine.
 			<br/>
 			<span class="alert-added">Added in 0.9.0 (7801522).</span>
 		</dd>
-
 		<dt id="tags-hook"><code>hook</code></dt>
 		<dd>
 			Body?/Shape tag. Shape body acts as vehicle hook which can be controlled by vehicle_action.
-			<br/>
 		</dd>
-
 		<dt id="tags-player"><code>player</code></dt>
 		<dd>
 			Location tag. Defines where the entry point and first person camera are for a vehicle.
-			<br/>
 		</dd>
-
 		<dt id="tags-camera"><code>camera</code></dt>
 		<dd>
 			Location tag. Defines where the 3rd person camera is. Defaults to player location. This tag have had its behaviour changed after Version? and was not usable during Version?
-			<br/>
 		</dd>
-
 		<dt id="tags-exit"><code>exit</code></dt>
 		<dd>
 			Location tag. Defines where the player will exit vehicle to. Defaults to left of player location.
-			<br/>
 		</dd>
-
 		<dt id="tags-exhaust"><code>exhaust=(amount)</code></dt>
 		<dd>
 			Location tag. Defines where/what direction exhaust is emitted from the vehicle.
-			<br/>
 		</dd>
-
 		<dt id="tags-vital"><code>vital</code></dt>
 		<dd>
 			Location tag. When voxels at this position are broken, the vehicle is instantly broken(?). Defines where engine smoke comes from.
-			<br/>
 		</dd>
-
 		<dt id="tags-propeller"><code>propeller</code></dt>
 		<dd>
 			Location tag. Defines where the propeller is in a boat.
-			<br/>
 		</dd>
-
 	</dl>
 </main>
 </html>
