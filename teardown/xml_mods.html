@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"/>
+<base href="../"/>
+<script src="docs-article.js"></script>
+<link rel="stylesheet" href="style.css"/>
+<nav>
+	<ol class="breadcrumbs">
+		<li><a href=".">Dennispedia</a></li>
+		<li><a href="teardown/">Teardown</a></li>
+		<li><a href="teardown/xml_registry.html" aria-current="page">&lt;mods&gt; element</a></li>
+	</ol>
+	<hr/>
+</nav>
+<title>&lt;mods&gt; element — Dennispedia</title>
+<main id="docs-main">
+<h1>&lt;mods&gt; element</h1>
+<p>The <code>&lt;mods&gt;</code> XML element is used for <code>%LOCALAPPDATA%/Teardown/mods.xml</code>. It has one attribute, <code>version</code>, which is the value of registry node <code>game.version</code>. It has one child for each mod you have, represented as a <code>&lt;mod&gt;</code> element. The order of the mods is seemingly completely random. The attributes of the <code>mod</code> element are listed here:</p>
+<dl>
+	<dt><code>id</code></dt>
+	<dd>The ID of the mod.</dd>
+	<dt><code>active</code></dt>
+	<dd><code>true</code> if the mod is enabled, otherwise <code>false</code>.</dd>
+	<dt><code>seltime</code></dt>
+	<dd>The last time you clicked on (selected) the mod in Unix time. Only defined for Steam Workshop mods.</dd>
+	<dt><code>subtime</code></dt>
+	<dd>The time you subscribed to the mod in Unix time. Only defined for Steam Workshop mods. (TODO: The time Steam thinks you subscribed to the mod, or the time the game first realized you were subscribed to the mod?)</dd>
+</dl>
+</main>
+</html>
