@@ -17,12 +17,10 @@
 	<h1><code>DisableAllLights</code></h1>
 	<p>Disables all lights in the scene. They can still be reenabled and are not otherwise affected. Used by <code>data/script/disablelights.lua</code> in the mission "Flooding" for the flooded variant of Lee Chemicals.</p>
 	<p>Equivalent to:
-<pre>
-local lights = FindLights("", true)
+<pre><code>local lights = FindLights("", true)
 for i=1, #lights do
 	SetLightEnabled(lights[i], false)
-end
-</pre>
+end</code></pre>
 	</q>
 	<p class="alert alert-added">This function was added in 0.4.5 (5748542).</p>
 	<p class="alert alert-undocumented">This function is not officially documented.</p>

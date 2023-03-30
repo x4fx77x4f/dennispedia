@@ -17,20 +17,16 @@
 <h1>&lt;registry&gt; element</h1>
 <p>The <code>&lt;registry&gt;</code> XML element is used for <code>savegame.xml</code> and <code>options.xml</code> in <code>%LOCALAPPDATA%/Teardown/</code>. It has one attribute, <code>version</code>, which is the value of registry node <code>game.version</code>.</p>
 <p>The following registry layout:
-<pre>
-SetString("foo", "1")
+<pre><code>SetString("foo", "1")
 SetString("foo.bar", "2")
-SetString("foo.baz", "")
-</pre>
+SetString("foo.baz", "")</code></pre>
 would be saved like this:
-<pre>
-&lt;registry version="1.3.0"&gt;
+<pre><code>&lt;registry version="1.3.0"&gt;
 	&lt;foo value="1"&gt;
 		&lt;bar value="2"/&gt;
 		&lt;baz/&gt;
 	&lt;/foo&gt;
-&lt;/registry&gt;
-</pre></p>
+&lt;/registry&gt;</code></pre></p>
 <p>Nodes with keys containing anything other than a letter or digit will be ignored. Keys will be forced lowercase. Keys starting with digits are okay, despite this not being legal XML (but the game is still able to parse the file fine).</p>
 <p>There are no restrictions on values. Absolutely any byte will be put as-is into the XML (except for <code>&amp;</code>, <code>&lt;</code>, and <code>&gt;</code>, which will be escaped, obviously). (Null bytes cannot appear in registry values; the engine truncates strings with null bytes.) Values that are empty strings will not have a <code>value</code> attribute.</p>
 <p>There is no particular order to registry nodes. They seem to be saved in the same order they were read, or the order in which they were first set if they are new.</p>

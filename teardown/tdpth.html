@@ -17,8 +17,7 @@
 <h1>TDPTH format</h1>
 <p>In Teardown, your route through a mission is saved and able to drawn in-game as a red line. These paths are saved to files in the format <code>%LOCALAPPDATA%/Teardown/path-<u>path_id</u>.pth</code>, where <code>path_id</code> is the mission ID followed by either <code>-best</code> or <code>-last</code>.</p>
 <p>These files are in a custom proprietary binary format identified with the magic bytes "TDPTH". Here is the format in C-like pseudocode:
-<pre>
-struct tdpth_t {
+<pre><code>struct tdpth_t {
     char magic[5]; // "TDPTH"
     char version[3]; // major, minor, and patch
     float time; // length of path in seconds
@@ -29,7 +28,6 @@ struct node_t {
     float time; // timestamp in seconds
     uint32_t flags; // unknown; either "0" or "1"
     float pos[3];
-};
-</pre></p>
+};</code></pre></p>
 </main>
 </html>

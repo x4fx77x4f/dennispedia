@@ -17,6 +17,10 @@ pre {
 	white-space: pre-wrap;
 	border: 1px solid #999;
 }
+pre > tt, pre > code, pre > kbd, pre > samp {
+	background: unset;
+	border: unset;
+}
 table, thead, tbody, tfoot, th, td {
 	border: 1px solid currentcolor;
 	border-collapse: collapse;
