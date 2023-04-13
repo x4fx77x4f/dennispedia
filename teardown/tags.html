@@ -18,17 +18,79 @@
 	<p>All entities can have any number of tags. Tags are loosely similar to XML attributes. A tag with an equal sign in it will be treated as a key and value pair.</p>
 	<p>"Non-engine" means it is only ever handled by Lua scripts, and never by the engine.</p>
 	<dl>
-		<dt id="tags-fxbreak"><code>fxbreak=<u>s</u><u>#</u><u>color</u></code></dt>
+		<dt id="tags-autobreak"><code>autobreak</code></dt>
 		<dd>
-			Shape tag. Generate particle effects when shape is broken. "s" is either "l" for liquid or "g" for gas. "#" is a number in range 1 to 9 representing time in seconds until effects end. Valid colors for liquids are yellow, black, blue, green, and brown. Valid colors for gasses are yellow, blue, and green. Default color is white. This is handled by <code>data/script/fx.lua</code>. Non-engine.
+			Body tag. Makes body require a smaller inertia to trigger a break event. This is used/set/handled by the engine for the vehicle body.
 			<br/>
-			<span class="alert-added">Added in 0.9.6 (8498817).</span>
+			<span class="alert-added">Added in 0.9.0 (7801522).</span>
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
-		<dt id="tags-fxsmoke"><code>fxsmoke=<u>t</u><u>#</u><u>color</u></code></dt>
+		<dt id="tags-awake"><code>awake</code></dt>
 		<dd>
-			Location tag. When positioned near a shape, makes it spawn in smoke particles. "t" is the type; "p" to make the particles change size, anything else to not. "#" is a number in range 1 to 9 representing time in seconds until effects end. Valid colors are brown and "subtle" (grey). This is handled by <code>data/script/fx.lua</code>. Non-engine.
+			Body and shape tag. When the level loads, the tagged body will not be asleep. Handled by <code>data/script/awake.lua</code>. Non-engine.
+			<br/>
+			<span class="alert-added">Added in 0.7.0 (6551167).</span>
+		</dd>
+		<dt id="tags-boat"><code>boat</code></dt>
+		<dd>
+			Vehicle tag. Makes vehicle a boat, with additional boat physics applied ane able to use propeller locations, but lose ability to use wheel.
+			<br/>
+			<span class="alert-added">Added in 0.5.1 (5987914).</span>
+		</dd>
+		<dt id="tags-breakall"><code>breakall</code></dt>
+		<dd>
+			Shape tag. Automaticlly break the other shape that touches the this tagged shape. This is used/set by <code>data/script/robot.lua</code> and used/set by the engine if a explosive entity is thrown (TODO: verify).
+			<br/>
+			<span class="alert-added">Added in 0.9.0 (7801522).</span>
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
+		<dt id="tags-camera"><code>camera</code></dt>
+		<dd>
+			Location tag. Defines where the 3rd person camera is. Defaults to player location.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
+		<dt id="tags-crane"><code>crane</code></dt>
+		<dd>
+			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display crane controls. Hook is also controllable.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
+		<dt id="tags-dumptruck"><code>dumptruck</code></dt>
+		<dd>
+			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display bed controls.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
+		<dt id="tags-exhaust"><code>exhaust=<u>amount</u></code></dt>
+		<dd>
+			Location tag. Defines where/what direction exhaust is emitted from the vehicle. "amount" is a number (TODO: what is its range?).
+		</dd>
+		<dt id="tags-exit"><code>exit</code></dt>
+		<dd>
+			Location tag. Defines where the player will exit vehicle to. Defaults to left of player location.
+		</dd>
+		<dt id="tags-explosive"><code>explosive=<u>size</u></code></dt>
+		<dd>
+			Body and shape tag. Entity explodes when broken. "size" is number in range 0.5 to 4 (TODO: verify). If applied to an already broken shape, it instantly blows up.
+		</dd>
+		<dt id="tags-forklift"><code>forklift</code></dt>
+		<dd>
+			Vehicle tag. All prismatic joints on vehicle are controllable with vehicle_raise/vehicle_lower, display forklift controls.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
+		<dt id="tags-frontloader"><code>frontloader</code></dt>
+		<dd>
+			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display arm controls.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
+		<dt id="tags-fxbreak"><code>fxbreak=<u>s</u><u>#</u><u>color</u></code></dt>
+		<dd>
+			Shape tag. Generate particle effects when shape is broken. "s" is either "l" for liquid or "g" for gas. "#" is a number in range 1 to 9 representing time in seconds until effects end. Valid colors for liquids are yellow, black, blue, green, and brown. Valid colors for gasses are yellow, blue, and green. Default color is white. This is handled by <code>data/script/fx.lua</code>. Non-engine.
 			<br/>
 			<span class="alert-added">Added in 0.9.6 (8498817).</span>
 			<br/>
@@ -42,35 +104,17 @@
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
-		<dt id="tags-explosive"><code>explosive=<u>size</u></code></dt>
+		<dt id="tags-fxsmoke"><code>fxsmoke=<u>t</u><u>#</u><u>color</u></code></dt>
 		<dd>
-			Body and shape tag. Entity explodes when broken. "size" is number in range 0.5 to 4 (TODO: verify). If applied to an already broken shape, it instantly blows up.
-		</dd>
-		<dt id="tags-unbreakable"><code>unbreakable</code></dt>
-		<dd>
-			Body and shape tag. Entity unbreakable, but still markable by spray paint or burn marks.
-		</dd>
-		<dt id="tags-nocull"><code>nocull</code></dt>
-		<dd>
-			Shape tag. Shape will continue to be rendered no matter how far away it is.
-		</dd>
-		<dt id="tags-interact"><code>interact=<u>text</u></code></dt>
-		<dd>
-			Body and shape tag. Makes it so when the player is close to the tagged entity, a prompt shows up to interact with it. <code>GetPlayerInteractShape</code>/<code>GetPlayerInteractBody</code> only works on entities with this tag.
-		</dd>
-		<dt id="tags-autobreak"><code>autobreak</code></dt>
-		<dd>
-			Body tag. Makes body require a smaller inertia to trigger a break event. This is used/set/handled by the engine for the vehicle body.
+			Location tag. When positioned near a shape, makes it spawn in smoke particles. "t" is the type; "p" to make the particles change size, anything else to not. "#" is a number in range 1 to 9 representing time in seconds until effects end. Valid colors are brown and "subtle" (grey). This is handled by <code>data/script/fx.lua</code>. Non-engine.
 			<br/>
-			<span class="alert-added">Added in 0.9.0 (7801522).</span>
+			<span class="alert-added">Added in 0.9.6 (8498817).</span>
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
-		<dt id="tags-breakall"><code>breakall</code></dt>
+		<dt id="tags-hook"><code>hook</code></dt>
 		<dd>
-			Shape tag. Automaticlly break the other shape that touches the this tagged shape. This is used/set by <code>data/script/robot.lua</code> and used/set by the engine if a explosive entity is thrown (TODO: verify).
-			<br/>
-			<span class="alert-added">Added in 0.9.0 (7801522).</span>
+			Body and shape tag (TODO: verify). Shape body acts as vehicle hook which can be controlled by vehicle_action.
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
@@ -80,11 +124,15 @@
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
-		<dt id="tags-awake"><code>awake</code></dt>
+		<dt id="tags-interact"><code>interact=<u>text</u></code></dt>
 		<dd>
-			Body and shape tag. When the level loads, the tagged body will not be asleep. Handled by <code>data/script/awake.lua</code>. Non-engine.
+			Body and shape tag. Makes it so when the player is close to the tagged entity, a prompt shows up to interact with it. <code>GetPlayerInteractShape</code>/<code>GetPlayerInteractBody</code> only works on entities with this tag.
+		</dd>
+		<dt id="tags-invisible"><code>invisible</code></dt>
+		<dd>
+			Shape tag. Make tagged shape invisible, however still impacts the shadow volume.
 			<br/>
-			<span class="alert-added">Added in 0.7.0 (6551167).</span>
+			<span class="alert-added">Added in 1.3.0 (10148769).</span>
 		</dd>
 		<dt id="tags-map"><code>map</code></dt>
 		<dd>
@@ -94,11 +142,17 @@
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
-		<dt id="tags-invisible"><code>invisible</code></dt>
+		<dt id="tags-night"><code>night</code></dt>
 		<dd>
-			Shape tag. Make tagged shape invisible, however still impacts the shadow volume.
-			<br/>
-			<span class="alert-added">Added in 1.3.0 (10148769).</span>
+			Light tag. Light will be turned off if the nightlight environment property is currently false.
+		</dd>
+		<dt id="tags-nocull"><code>nocull</code></dt>
+		<dd>
+			Shape tag. Shape will continue to be rendered no matter how far away it is.
+		</dd>
+		<dt id="tags-nodrive"><code>nodrive</code></dt>
+		<dd>
+			Vehicle tag. Vehicle is not drivable to the player
 		</dd>
 		<dt id="tags-nonav"><code>nonav</code></dt>
 		<dd>
@@ -108,10 +162,6 @@
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
-		<dt id="tags-night"><code>night</code></dt>
-		<dd>
-			Light tag. Light will be turned off if the nightlight environment property is currently false.
-		</dd>
 		<dt id="tags-nosnow"><code>nosnow</code></dt>
 		<dd>
 			Shape tag. Shape does not have any snow on it when the level loads.
@@ -120,9 +170,13 @@
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
-		<dt id="tags-nodrive"><code>nodrive</code></dt>
+		<dt id="tags-player"><code>player</code></dt>
 		<dd>
-			Vehicle tag. Vehicle is not drivable to the player
+			Location tag. Defines where the entry point and first person camera are for a vehicle.
+		</dd>
+		<dt id="tags-propeller"><code>propeller</code></dt>
+		<dd>
+			Location tag. Defines where the propeller is in a boat.
 		</dd>
 		<dt id="tags-reversebeep"><code>reversebeep</code></dt>
 		<dd>
@@ -130,39 +184,9 @@
 			<br/>
 			<span class="alert-added">Added in 0.4.5 (5748542).</span>
 		</dd>
-		<dt id="tags-boat"><code>boat</code></dt>
-		<dd>
-			Vehicle tag. Makes vehicle a boat, with additional boat physics applied ane able to use propeller locations, but lose ability to use wheel.
-			<br/>
-			<span class="alert-added">Added in 0.5.1 (5987914).</span>
-		</dd>
-		<dt id="tags-dumptruck"><code>dumptruck</code></dt>
-		<dd>
-			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display bed controls.
-			<br/>
-			<span class="alert-undocumented">This tag is not officially documented.</span>
-		</dd>
-		<dt id="tags-frontloader"><code>frontloader</code></dt>
-		<dd>
-			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display arm controls.
-			<br/>
-			<span class="alert-undocumented">This tag is not officially documented.</span>
-		</dd>
 		<dt id="tags-skylift"><code>skylift</code></dt>
 		<dd>
 			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display lift controls.
-			<br/>
-			<span class="alert-undocumented">This tag is not officially documented.</span>
-		</dd>
-		<dt id="tags-crane"><code>crane</code></dt>
-		<dd>
-			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display crane controls. Hook is also controllable.
-			<br/>
-			<span class="alert-undocumented">This tag is not officially documented.</span>
-		</dd>
-		<dt id="tags-forklift"><code>forklift</code></dt>
-		<dd>
-			Vehicle tag. All prismatic joints on vehicle are controllable with vehicle_raise/vehicle_lower, display forklift controls.
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
@@ -174,39 +198,15 @@
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
-		<dt id="tags-hook"><code>hook</code></dt>
+		<dt id="tags-unbreakable"><code>unbreakable</code></dt>
 		<dd>
-			Body and shape tag (TODO: verify). Shape body acts as vehicle hook which can be controlled by vehicle_action.
-			<br/>
-			<span class="alert-undocumented">This tag is not officially documented.</span>
-		</dd>
-		<dt id="tags-player"><code>player</code></dt>
-		<dd>
-			Location tag. Defines where the entry point and first person camera are for a vehicle.
-		</dd>
-		<dt id="tags-camera"><code>camera</code></dt>
-		<dd>
-			Location tag. Defines where the 3rd person camera is. Defaults to player location.
-			<br/>
-			<span class="alert-undocumented">This tag is not officially documented.</span>
-		</dd>
-		<dt id="tags-exit"><code>exit</code></dt>
-		<dd>
-			Location tag. Defines where the player will exit vehicle to. Defaults to left of player location.
-		</dd>
-		<dt id="tags-exhaust"><code>exhaust=<u>amount</u></code></dt>
-		<dd>
-			Location tag. Defines where/what direction exhaust is emitted from the vehicle. "amount" is a number (TODO: what is its range?).
+			Body and shape tag. Entity unbreakable, but still markable by spray paint or burn marks.
 		</dd>
 		<dt id="tags-vital"><code>vital</code></dt>
 		<dd>
 			Location tag. When voxels at this position are broken, the vehicle is instantly broken (TODO: verify). Defines where engine smoke comes from.
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
-		</dd>
-		<dt id="tags-propeller"><code>propeller</code></dt>
-		<dd>
-			Location tag. Defines where the propeller is in a boat.
 		</dd>
 	</dl>
 </main>
