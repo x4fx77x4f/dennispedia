@@ -44,7 +44,7 @@
 		</dd>
 		<dt id="tags-explosive"><code>explosive=<u>size</u></code></dt>
 		<dd>
-			Body and shape tag. Entity explodes when broken. "size" is number in range 0.5 to 4 (TODO: verify). If applied to an already broken shape, it instantly blows up. This is handled by the engine.
+			Body and shape tag. Entity explodes when broken. "size" is number in range 0.5 to 4 (TODO: verify). If applied to an already broken shape, it instantly blows up.
 		</dd>
 		<dt id="tags-unbreakable"><code>unbreakable</code></dt>
 		<dd>
@@ -82,13 +82,13 @@
 		</dd>
 		<dt id="tags-awake"><code>awake</code></dt>
 		<dd>
-			Body and shape tag. When the level loads, the tagged body will not be asleep. Non-engine.
+			Body and shape tag. When the level loads, the tagged body will not be asleep. Handled by <code>data/script/awake.lua</code>. Non-engine.
 			<br/>
 			<span class="alert-added">Added in 0.7.0 (6551167).</span>
 		</dd>
 		<dt id="tags-map"><code>map</code></dt>
 		<dd>
-			Body tag. Marks body on map. Defaults to a blue color. Non-engine.
+			Body tag. Marks body on map. Defaults to a blue color. Handled by <code>data/ui/map.lua</code>. Non-engine.
 			<br/>
 			<span class="alert-added">Added in 0.4.5 (5748542).</span>
 			<br/>
@@ -168,7 +168,7 @@
 		</dd>
 		<dt id="tags-tank"><code>tank</code></dt>
 		<dd>
-			Vehicle tag. Display tank controls. Non-engine.
+			Vehicle tag. Display tank controls. Handled by <code>data/script/tank.lua</code> and <code>data/ui/hud.lua</code>. Non-engine.
 			<br/>
 			<span class="alert-added">Added in 0.9.0 (7801522).</span>
 			<br/>
