@@ -23,18 +23,24 @@
 			Shape tag. Generate particle effects when shape is broken. "s" is either "l" for liquid or "g" for gas. "#" is a number in range 1 to 9 representing time in seconds until effects end. Valid colors for liquids are yellow, black, blue, green, and brown. Valid colors for gasses are yellow, blue, and green. Default color is white. This is handled by <code>data/script/fx.lua</code>. Non-engine.
 			<br/>
 			<span class="alert-added">Added in 0.9.6 (8498817).</span>
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-fxsmoke"><code>fxsmoke=<u>t</u><u>#</u><u>color</u></code></dt>
 		<dd>
 			Location tag. When positioned near a shape, makes it spawn in smoke particles. "t" is the type; "p" to make the particles change size, anything else to not. "#" is a number in range 1 to 9 representing time in seconds until effects end. Valid colors are brown and "subtle" (grey). This is handled by <code>data/script/fx.lua</code>. Non-engine.
 			<br/>
 			<span class="alert-added">Added in 0.9.6 (8498817).</span>
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-fxflicker"><code>fxflicker=<u>#</u></code></dt>
 		<dd>
 			Light tag. Makes the light flicker. "#" is a number in range 1 to 9 (or 1 if not a number). This is handled by <code>data/script/fx.lua</code>. Non-engine.
 			<br/>
 			<span class="alert-added">Added in 0.9.6 (8498817).</span>
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-explosive"><code>explosive=<u>size</u></code></dt>
 		<dd>
@@ -57,16 +63,22 @@
 			Body tag. Makes body require a smaller inertia to trigger a break event. This is used/set/handled by the engine for the vehicle body.
 			<br/>
 			<span class="alert-added">Added in 0.9.0 (7801522).</span>
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-breakall"><code>breakall</code></dt>
 		<dd>
 			Shape tag. Automaticlly break the other shape that touches the this tagged shape. This is used/set by <code>data/script/robot.lua</code> and used/set by the engine if a explosive entity is thrown (TODO: verify).
 			<br/>
 			<span class="alert-added">Added in 0.9.0 (7801522).</span>
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-inherittags"><code>inherittags</code></dt>
 		<dd>
 			Body and shape tag (TODO: verify). Takes all the tags from tagged entity and set them on its debris. It will recursively do this.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-awake"><code>awake</code></dt>
 		<dd>
@@ -79,6 +91,8 @@
 			Body tag. Marks body on map. Defaults to a blue color. Non-engine.
 			<br/>
 			<span class="alert-added">Added in 0.4.5 (5748542).</span>
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-invisible"><code>invisible</code></dt>
 		<dd>
@@ -91,6 +105,8 @@
 			Shape tag. Shape is entirely disreguarded by pathfinding.
 			<br/>
 			<span class="alert-added">Added in 0.9.0 (7801522).</span>
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-night"><code>night</code></dt>
 		<dd>
@@ -101,6 +117,8 @@
 			Shape tag. Shape does not have any snow on it when the level loads.
 			<br/>
 			<span class="alert-added">Added in 0.7.1 (6627985).</span>
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-nodrive"><code>nodrive</code></dt>
 		<dd>
@@ -121,32 +139,46 @@
 		<dt id="tags-dumptruck"><code>dumptruck</code></dt>
 		<dd>
 			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display bed controls.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-frontloader"><code>frontloader</code></dt>
 		<dd>
 			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display arm controls.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-skylift"><code>skylift</code></dt>
 		<dd>
 			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display lift controls.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
-		<dt id="tags-crane"><code>skylift</code></dt>
+		<dt id="tags-crane"><code>crane</code></dt>
 		<dd>
 			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display crane controls. Hook is also controllable.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-forklift"><code>forklift</code></dt>
 		<dd>
 			Vehicle tag. All prismatic joints on vehicle are controllable with vehicle_raise/vehicle_lower, display forklift controls.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
-		<dt id="tags-tank"><code>forklift</code></dt>
+		<dt id="tags-tank"><code>tank</code></dt>
 		<dd>
 			Vehicle tag. Display tank controls. Non-engine.
 			<br/>
 			<span class="alert-added">Added in 0.9.0 (7801522).</span>
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-hook"><code>hook</code></dt>
 		<dd>
 			Body and shape tag (TODO: verify). Shape body acts as vehicle hook which can be controlled by vehicle_action.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-player"><code>player</code></dt>
 		<dd>
@@ -154,7 +186,9 @@
 		</dd>
 		<dt id="tags-camera"><code>camera</code></dt>
 		<dd>
-			Location tag. Defines where the 3rd person camera is. Defaults to player location. This tag have had its behaviour changed after Version? and was not usable during Version?
+			Location tag. Defines where the 3rd person camera is. Defaults to player location.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-exit"><code>exit</code></dt>
 		<dd>
@@ -167,6 +201,8 @@
 		<dt id="tags-vital"><code>vital</code></dt>
 		<dd>
 			Location tag. When voxels at this position are broken, the vehicle is instantly broken (TODO: verify). Defines where engine smoke comes from.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-propeller"><code>propeller</code></dt>
 		<dd>
