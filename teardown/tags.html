@@ -34,13 +34,25 @@
 		</dd>
 		<dt id="tags-boat"><code>boat</code></dt>
 		<dd>
-			Vehicle tag. Makes the vehicle act like a boat, including looking for and using a propeller location, and not being able to use wheels.
+			Vehicle tag. Makes the vehicle act like a boat, including looking for and using a <code>propeller</code> location, and not being able to use wheels.
 			<br/>
 			<span class="alert-added">Added in 0.5.1 (5987914).</span>
 		</dd>
+		<dt id="tags-bomb"><code>bomb=<u>time</u></code></dt>
+		<dd>
+			Shape tag. Will countdown the time untill it reaches 0, which then the shape is exploded (TODO: shape pivot? shape center?) and removed (TODO: verify, and which order?), time in seconds (TODO: verify). This is used/set/handled by the engine for bombs and pipebombs.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
+		<dt id="tags-bombstrength"><code>bombstrength=<u>size</u> (TODO: verify)</code></dt>
+		<dd>
+			Shape tag. Used as explosion size by <code>bomb</code> tag, "size" is number in range 0.5 to 4 (TODO: verify). This is used/set/handled by the engine for bombs and pipebombs.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
 		<dt id="tags-breakall"><code>breakall</code></dt>
 		<dd>
-			Shape tag. Automaticlly break the other shape that touches the this tagged shape. This is used/set by <code>data/script/robot.lua</code> and used/set by the engine if a explosive entity is thrown (TODO: verify).
+			Shape tag. Automatically break the other shape that touches the this tagged shape. This is used/set by <code>data/script/robot.lua</code> and used/set by the engine if a explosive entity is thrown (TODO: verify).
 			<br/>
 			<span class="alert-added">Added in 0.9.0 (7801522).</span>
 			<br/>
@@ -55,6 +67,22 @@
 		<dt id="tags-crane"><code>crane</code></dt>
 		<dd>
 			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display crane controls. Hook is also controllable.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
+		<dt id="tags-cranebottom"><code>cranebottom</code></dt>
+		<dd>
+			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower (TODO: verify), display crane base (TODO: better name) controls.
+			<br/>
+			<span class="alert-added">Added in 0.9.0 (7801522).</span>
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
+		<dt id="tags-cranetop"><code>cranetop</code></dt>
+		<dd>
+			Vehicle tag. display crane arm controls. (TODO: any joint magic?)
+			<br/>
+			<span class="alert-added">Added in 0.9.0 (7801522).</span>
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
@@ -75,6 +103,14 @@
 		<dt id="tags-explosive"><code>explosive=<u>size</u></code></dt>
 		<dd>
 			Body and shape tag. Entity explodes when broken. "size" is number in range 0.5 to 4 (TODO: verify). If applied to an already broken shape, it instantly blows up.
+		</dd>
+		<dt id="tags-extend"><code>extend</code></dt>
+		<dd>
+			Joint tag. Joint can be controlled by up/down when player in <code>crane</code> (TODO: verify) vehicle.
+			<br/>
+			<span class="alert-added">Added in 0.9.0 (7801522).</span>
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-forklift"><code>forklift</code></dt>
 		<dd>
@@ -134,6 +170,12 @@
 			<br/>
 			<span class="alert-added">Added in 1.3.0 (10148769).</span>
 		</dd>
+		<dt id="tags-level"><code>level</code></dt>
+		<dd>
+			Joint tag. Force skylift joints to have the same rotation amount. (TODO: skylift only?)
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
 		<dt id="tags-map"><code>map</code></dt>
 		<dd>
 			Body tag. Marks body on map. Defaults to a blue color. Handled by <code>data/ui/map.lua</code>. Non-engine.
@@ -152,7 +194,7 @@
 		</dd>
 		<dt id="tags-nodrive"><code>nodrive</code></dt>
 		<dd>
-			Vehicle tag. Vehicle is not drivable to the player
+			Vehicle tag. Vehicle is not drivable to the player with no "Drive" prompt.
 		</dd>
 		<dt id="tags-nonav"><code>nonav</code></dt>
 		<dd>
@@ -170,9 +212,23 @@
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
+		<dt id="tags-passive"><code>passive</code></dt>
+		<dd>
+			Vehicle tag. Disable inputs to the vehicle so it does not drive, stear or gear change (TODO: verify) and leaves only the engine idle sounds.
+			<br/>
+			<span class="alert-added">Added in 0.9.0 (7801522).</span>
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
 		<dt id="tags-player"><code>player</code></dt>
 		<dd>
 			Location tag. Defines where the entry point and first person camera are for a vehicle.
+		</dd>
+		<dt id="tags-plank"><code>plank</code></dt>
+		<dd>
+			Joint tag. (TODO: what does it do?)
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-propeller"><code>propeller</code></dt>
 		<dd>
@@ -180,13 +236,19 @@
 		</dd>
 		<dt id="tags-reversebeep"><code>reversebeep</code></dt>
 		<dd>
-			Vehicle tag. Vehicle makes beep sound when reversing
+			Vehicle tag. Vehicle makes beeping sound when reversing.
 			<br/>
 			<span class="alert-added">Added in 0.4.5 (5748542).</span>
 		</dd>
 		<dt id="tags-skylift"><code>skylift</code></dt>
 		<dd>
 			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display lift controls.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
+		<dt id="tags-smoke"><code>smoke</code></dt>
+		<dd>
+			Shape tag. Emit smoke from shape, This is used/set/handled by the engine for pipebombs.
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
@@ -198,6 +260,14 @@
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
+		<dt id="tags-turn"><code>turn</code></dt>
+		<dd>
+			Joint tag. Force joint to be controlled by left/right when in a <code>crane</code> (TODO: verify) vehicle.
+			<br/>
+			<span class="alert-added">Added in 0.9.0 (7801522). (TODO: verify)</span>
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
 		<dt id="tags-unbreakable"><code>unbreakable</code></dt>
 		<dd>
 			Body, shape, and rope tag. Entity unbreakable, but still markable by spray paint or burn marks.
@@ -205,6 +275,14 @@
 		<dt id="tags-vital"><code>vital</code></dt>
 		<dd>
 			Location tag. When voxels at this position are broken, the vehicle is instantly broken (TODO: verify). Defines where engine smoke comes from.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
+		<dt id="tags-wire"><code>wire</code></dt>
+		<dd>
+			Joint tag. (TODO: what does it do?)
+			<br/>
+			<span class="alert-added">Added in 0.9.0 (7801522). (TODO: verify)</span>
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
