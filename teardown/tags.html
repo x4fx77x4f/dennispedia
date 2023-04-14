@@ -38,7 +38,7 @@
 			<br/>
 			<span class="alert-added">Added in 0.5.1 (5987914).</span>
 		</dd>
-		<dt id="tags-bomb"><code>bomb=<u>time</u> (TODO: verify)</code></dt>
+		<dt id="tags-bomb"><code>bomb=<u>time</u></code></dt>
 		<dd>
 			Shape tag. Will countdown the time untill it reaches 0, which then the shape is exploded (TODO: shape pivot? shape center?) and removed (TODO: verify, and which order?), time in seconds (TODO: verify). This is used/set/handled by the engine for bombs and pipebombs.
 			<br/>
@@ -52,7 +52,7 @@
 		</dd>
 		<dt id="tags-breakall"><code>breakall</code></dt>
 		<dd>
-			Shape tag. Automaticlly break the other shape that touches the this tagged shape. This is used/set by <code>data/script/robot.lua</code> and used/set by the engine if a explosive entity is thrown (TODO: verify).
+			Shape tag. Automatically break the other shape that touches the this tagged shape. This is used/set by <code>data/script/robot.lua</code> and used/set by the engine if a explosive entity is thrown (TODO: verify).
 			<br/>
 			<span class="alert-added">Added in 0.9.0 (7801522).</span>
 			<br/>
@@ -102,7 +102,7 @@
 		</dd>
 		<dt id="tags-explosive"><code>explosive=<u>size</u></code></dt>
 		<dd>
-			Body and shape tag. Entity explodes when broken. "size" is number in range 0.5 to 4. If applied to an already broken shape, it instantly blows up.
+			Body and shape tag. Entity explodes when broken. "size" is number in range 0.5 to 4 (TODO: verify). If applied to an already broken shape, it instantly blows up.
 		</dd>
 		<dt id="tags-extend"><code>extend</code></dt>
 		<dd>
@@ -172,7 +172,7 @@
 		</dd>
 		<dt id="tags-level"><code>level</code></dt>
 		<dd>
-			Joint tag. Force skylift joints to have the same rotation amount.
+			Joint tag. Force skylift joints to have the same rotation amount. (TODO: skylift only?)
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
@@ -194,7 +194,7 @@
 		</dd>
 		<dt id="tags-nodrive"><code>nodrive</code></dt>
 		<dd>
-			Vehicle tag. Vehicle is not drivable to the player with no "Drive" promp.
+			Vehicle tag. Vehicle is not drivable to the player with no "Drive" prompt.
 		</dd>
 		<dt id="tags-nonav"><code>nonav</code></dt>
 		<dd>
@@ -216,7 +216,7 @@
 		<dd>
 			Vehicle tag. Disable inputs to the vehicle so it does not drive, stear or gear change (TODO: verify) and leaves only the engine idle sounds.
 			<br/>
-			<span class="alert-added">Added in 0.9.0 (7801522) (TODO: verify).</span>
+			<span class="alert-added">Added in 0.9.0 (7801522).</span>
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
@@ -226,7 +226,7 @@
 		</dd>
 		<dt id="tags-plank"><code>plank</code></dt>
 		<dd>
-			Joint tag. Don't know what it does engine wise, but this tag means that this joint is supposed to be a plank joint.
+			Joint tag. (TODO: what does it do?)
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
@@ -236,7 +236,7 @@
 		</dd>
 		<dt id="tags-reversebeep"><code>reversebeep</code></dt>
 		<dd>
-			Vehicle tag. Vehicle makes beep sound when reversing
+			Vehicle tag. Vehicle makes beeping sound when reversing.
 			<br/>
 			<span class="alert-added">Added in 0.4.5 (5748542).</span>
 		</dd>
@@ -248,7 +248,7 @@
 		</dd>
 		<dt id="tags-smoke"><code>smoke</code></dt>
 		<dd>
-			Shape tag. emit smoke from shape, This is used/set/handled by the engine for pipebombs.
+			Shape tag. Emit smoke from shape, This is used/set/handled by the engine for pipebombs.
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
@@ -262,15 +262,15 @@
 		</dd>
 		<dt id="tags-turn"><code>turn</code></dt>
 		<dd>
-			Joint tag. Force Joint to be controlled by left/right when player in <code>crane</code> (TODO: verify) vehicle.
+			Joint tag. Force joint to be controlled by left/right when in a <code>crane</code> (TODO: verify) vehicle.
 			<br/>
-			<span class="alert-added">Added in 0.9.0 (7801522).</span>
+			<span class="alert-added">Added in 0.9.0 (7801522). (TODO: verify)</span>
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-unbreakable"><code>unbreakable</code></dt>
 		<dd>
-			Body, shape, and rope type joint tag. Entity unbreakable, but still markable by spray paint or burn marks.
+			Body, shape, and rope tag. Entity unbreakable, but still markable by spray paint or burn marks.
 		</dd>
 		<dt id="tags-vital"><code>vital</code></dt>
 		<dd>
@@ -280,9 +280,9 @@
 		</dd>
 		<dt id="tags-wire"><code>wire</code></dt>
 		<dd>
-			Joint tag. Don't know what it does engine wise, but this tag means that this joint is supposed to be a wire joint.
+			Joint tag. (TODO: what does it do?)
 			<br/>
-			<span class="alert-added">Added in 0.9.0 (7801522).</span>
+			<span class="alert-added">Added in 0.9.0 (7801522). (TODO: verify)</span>
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
