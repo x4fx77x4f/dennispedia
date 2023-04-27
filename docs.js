@@ -64,7 +64,9 @@ const load_text = text => {
 		location.hash = location.hash;
 	}
 	Array.prototype.forEach.call(main.getElementsByTagName('a'), a => {
-		const url = new URL(a.getAttribute('href'), base);
+		const href = a.getAttribute("href");
+		if (href.startsWith("#")) return;
+		const url = new URL(href, base);
 		if (url.host !== location.host) return;
 		a.href = url.href;
 		a.addEventListener('click', event => a_click(event, a));
