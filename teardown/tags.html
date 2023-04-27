@@ -50,6 +50,12 @@
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
+		<dt id="tags-booster"><code>booster=<u>time</u></code></dt>
+		<dd>
+			Shape tag. "time" is a number in range 0 to 10. A time of 10 or greater will cause the tag to be removed. A time of 0 will cause the tag to be ignored. A time less than 0 will be set to 0. A time between 0 and 7 (exclusive) will cause flames and smoke to shoot out from the origin of the shape in the +Z direction. The time will gradually increase at a rate of 1 per second. This is set by the engine for rocket boosters.
+			<br/>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
 		<dt id="tags-breakall"><code>breakall</code></dt>
 		<dd>
 			Shape tag. Automatically break the other shape that touches the this tagged shape. This is used/set by <code>data/script/robot.lua</code> and used/set by the engine if a explosive entity is thrown (TODO: verify).
