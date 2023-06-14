@@ -470,8 +470,53 @@
 		<dt id="nodes-savegame.valuable"><code>savegame.valuable</code></dt>
 		<dd><span class="alert-added">Added in 0.4.5 (5748542). Non-engine.</span></dd>
 		<dt id="nodes-mods.available"><code>mods.available</code></dt>
-		<dd><span class="alert-added">Added in 0.5.0 (5943727).</span></dd>
+		<dd>
+			Empty string value; exists only to be a parent to a node for every mod. The key is the mod ID, and the value is an empty string as they also only exist to be parents to other nodes.
+			A mod ID starting with <code>builtin-</code> is a "built-in" mod in <code>mods/</code> in the game folder.
+			A mod ID starting with <code>local-</code> is a "local" mod in <code>Teardown/mods/</code> in your Documents.
+			A mod ID starting with <code>steam-</code> is a Steam Workshop mod. The numbers after <code>steam-</code> are the ID of the mod; you can append it to the end of <a href="https://steamcommunity.com/workshop/filedetails/?id=">this URL</a> to be brought to its Steam Workshop page.
+			<br/>
+			<span class="alert-added">Added in 0.5.0 (5943727).</span>
+		</dd>
+		<dt id="nodes-mods.available.X.active"><code>mods.available.<u>id</u>.active</code></dt>
+		<dd>Whether or not the mod is active. Boolean. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.author"><code>mods.available.<u>id</u>.author</code></dt>
+		<dd>The author of the mod as specified in <code>info.txt</code>. String. (TODO: What happens if the author isn't specified? When was this added?)</dd>
+		<dt id="nodes-mods.available.X.description"><code>mods.available.<u>id</u>.description</code></dt>
+		<dd>The description of the mod as specified in <code>info.txt</code>. String. (TODO: What happens if the description isn't specified? What if it's too long or malformed? When was this added?)</dd>
+		<dt id="nodes-mods.available.X.listname"><code>mods.available.<u>id</u>.listname</code></dt>
+		<dd>The human readable name of the mod. String. The name of the mod folder if it's a local mod, or the name of the mod specified in <code>info.txt</code> if it's a built-in mod or Workshop mod (or an empty string if none is specified). (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.local"><code>mods.available.<u>id</u>.local</code></dt>
+		<dd>Whether or not the mod is a local mod. Boolean. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.name"><code>mods.available.<u>id</u>.name</code></dt>
+		<dd>The name of the mod as specified in <code>info.txt</code>. String. (TODO: What happens if the name isn't specified? When was this added?)</dd>
+		<dt id="nodes-mods.available.X.options"><code>mods.available.<u>id</u>.options</code></dt>
+		<dd>Whether or not the mod has options or not, i.e. whether it has an <code>options.lua</code> file. Boolean. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.override"><code>mods.available.<u>id</u>.override</code></dt>
+		<dd>Whether or not the mod is a global mod and will have an enable/disable button in the mod manager. Boolean. Should be truthy if the mod has a <code>main.lua</code> file and is not playable. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.path"><code>mods.available.<u>id</u>.path</code></dt>
+		<dd>The absolute path to the mod folder. String. Only used for local mods. (TODO: What about non-local mods? When was this added?)</dd>
+		<dt id="nodes-mods.available.X.playable"><code>mods.available.<u>id</u>.playable</code></dt>
+		<dd>Whether or not this mod should have a "Play" button. Boolean. Should be truthy if the mod has a <code>main.xml</code> file. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.showbold"><code>mods.available.<u>id</u>.showbold</code></dt>
+		<dd>Whether or not this mod has been interacted with since the last time it was updated. Boolean. Causes the mod name to appear in bold in the mod manager if truthy. Only applicable for Steam Workshop mods. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.steamtime"><code>mods.available.<u>id</u>.steamtime</code></dt>
+		<dd>When the mod was last updated. Integer. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.subscribetime"><code>mods.available.<u>id</u>.subscribetime</code></dt>
+		<dd>When the mod was last subscribed to by the player. Integer. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.tags"><code>mods.available.<u>id</u>.tags</code></dt>
+		<dd>The tags of the mod as specified in <code>info.txt</code> in human readable form. String. Tags are concatenated together with ", " between. (TODO: What about custom tags? When was this added?)</dd>
+		<dt id="nodes-mods.available.X.timestamp"><code>mods.available.<u>id</u>.timestamp</code></dt>
+		<dd>When the mod was last updated as a human readable time. String. Format is "YYYY-MM-DD hh:mm:ss". (TODO: When was this added?)</dd>
 		<dt id="nodes-mods.pending"><code>mods.pending</code></dt>
+		<dd>
+			Like <a href="#nodes-mods.available"><code>mods.available</code></a>, but used by <code>data/ui/promo.lua</code> to keep track of the state of featured mods.
+			<br/>
+			<span class="alert-added">Added in 1.2.0 (9734688).</span>
+		</dd>
+		<dt id="nodes-mods.pending.X.downloading"><code>mods.pending.<u>id</u>.downloading</code></dt>
+		<dd><span class="alert-added">Added in 1.2.0 (9734688).</span></dd>
+		<dt id="nodes-mods.pending.X.installed"><code>mods.pending.<u>id</u>.installed</code></dt>
 		<dd><span class="alert-added">Added in 1.2.0 (9734688).</span></dd>
 		<dt id="nodes-mods.publish.id"><code>mods.publish.id</code></dt>
 		<dd><span class="alert-added">Added in 0.6.1 (6279809).</span></dd>
