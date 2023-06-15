@@ -43,7 +43,7 @@
 		<dd><span class="alert-removed">Removed in 0.5.0 (5943727).</span></dd>
 		<dt id="nodes-game.cpu.threads"><code>game.cpu.threads</code></dt>
 		<dd>
-			Number of CPU threads.
+			Number of CPU threads. Integer.
 			<br/>
 			<span class="alert-removed">Removed in 0.4.5 (5748542).</span>
 		</dd>
@@ -528,7 +528,11 @@
 			<span class="alert-added">Added in 1.2.0 (9734688).</span>
 		</dd>
 		<dt id="nodes-mods.publish.id"><code>mods.publish.id</code></dt>
-		<dd><span class="alert-added">Added in 0.6.1 (6279809).</span></dd>
+		<dd>
+			The Workshop ID of the mod about to be published. String? 0 if the mod has not already been published to the Steam Workshop.
+			<br/>
+			<span class="alert-added">Added in 0.6.1 (6279809).</span>
+		</dd>
 		<dt id="nodes-mods.publish.message"><code>mods.publish.message</code></dt>
 		<dd>
 			Error message if publishing failed. String.
@@ -537,14 +541,23 @@
 		</dd>
 		<dt id="nodes-mods.publish.progress"><code>mods.publish.progress</code></dt>
 		<dd>
-			Number.
+			Progress of publishing mod. Float. From range 0 to 1. Used by <code>data/ui/menu.lua</code> which clamps to range 0.1 to 0.9.
 			<br/>
 			<span class="alert-added">Added in 0.6.1 (6279809).</span>
 		</dd>
 		<dt id="nodes-mods.publish.state"><code>mods.publish.state</code></dt>
 		<dd>
-			String. Valid values are <code>uploading</code>, <code>ready</code>, <code>failed</code>, and <code>done</code>.
-			<br/>
+			String. Valid values are:
+			<dl>
+				<dt id="nodes-mod.publish.state-values-done"><code>done</code></dt>
+				<dd>The mod was successfully published to the Steam Workshop. The <a href="g/Command.html#commands-mods.publishend"><code>mods.publishend</code> command</a> is intended to be run after this. (TODO: What happens if you try to publish another mod without ending the previous one?)</dd>
+				<dt id="nodes-mod.publish.state-values-failed"><code>failed</code></dt>
+				<dd>Similar to <a href="#nodes-mod.publish.state-values-ready"><code>ready</code></a> in that one can try to publish.</dd>
+				<dt id="nodes-mod.publish.state-values-ready"><code>ready</code></dt>
+				<dd>The mod can be published to the Steam Workshop. The <a href="g/Command.html#commands-mods.publishupload"><code>mods.publishupload</code> command</a> can be used to start uploading the mod.</dd>
+				<dt id="nodes-mod.publish.state-values-uploading"><code>uploading</code></dt>
+				<dd>The mod is currently being uploaded to the Steam Workshop by the engine. Can be cancelled with the <a href="g/Command.html#commands-mods.publishcancel"><code>mods.publishcancel</code> command</a>. Progress can be read from <a href="#nodes-mods.publish.progress"><code>mods.publish.progress</code></a>.</dd>
+			</dl>
 			<span class="alert-added">Added in 0.6.1 (6279809).</span>
 		</dd>
 		<dt id="nodes-mods.publish.visibility"><code>mods.publish.visibility</code></dt>
