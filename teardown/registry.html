@@ -17,6 +17,7 @@
 	<h1>Registry</h1>
 	<p>The registry (not to be confused with the Windows registry) consists of what the official modding documentation refers to as "nodes", which are key and value pairs where both are strings.</p>
 	<p>Registry nodes are not to be confused with <a href="teardown/g/Command.html">commands</a>, which follow the same naming conventions but are handled entirely separately.</p>
+	<p>All registry values are strings, but there are helper functions to convert to/from other types. If there is a single intended type for a value, I'll label it as one of the following: string, boolean, integer, float, or empty string value.</p>
 	<h2>Nodes</h2>
 	<p>"Non-engine" means it is only ever get or set by Lua scripts, and never by the engine.</p>
 	<dl>
