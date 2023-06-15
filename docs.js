@@ -156,6 +156,11 @@ if (history.state && !document.currentScript.dataset.noPopstate) {
 }
 
 const search_landmark = document.getElementById('docs-search');
+const homepage = document.createElement("a");
+homepage.href = location.origin;
+homepage.textContent = "Dennispedia";
+search_landmark.parentElement.insertBefore(homepage, search_landmark);
+search_landmark.parentElement.insertBefore(document.createElement("br"), search_landmark);
 const search = document.createElement('input');
 search.type = 'search';
 const label = document.createElement('label');
