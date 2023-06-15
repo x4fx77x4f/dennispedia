@@ -508,16 +508,24 @@
 		<dd>The tags of the mod as specified in <code>info.txt</code> in human readable form. String. Tags are concatenated together with ", " between in the order: "Global" or "Content" (mutually exclusive), "Map", "Gameplay", "Asset", "Vehicle", "Tool". Custom tags are ignored. (TODO: When was this added?)</dd>
 		<dt id="nodes-mods.available.X.timestamp"><code>mods.available.<u>id</u>.timestamp</code></dt>
 		<dd>When the mod was last updated as a human readable time. String. Format is "YYYY-MM-DD hh:mm:ss". Empty string if not a Workshop mod. (TODO: When was this added?)</dd>
-		<dt id="nodes-mods.pending"><code>mods.pending</code></dt>
+		<dt id="nodes-mods.pending.X"><code>mods.pending.<u>id</u></code></dt>
 		<dd>
-			Like <a href="#nodes-mods.available"><code>mods.available</code></a>, but used by <code>data/ui/promo.lua</code> to keep track of the state of featured mods.
+			"id" is <em>not</em> the mod ID like for <a href="#nodes-mods.available.X"><code>mods.available.<u>id</u></code></a>, but rather the Steam Workshop ID. Empty string value; exists only to be a parent to other nodes. Used by <code>data/ui/promo.lua</code> to allow subscribing to
 			<br/>
 			<span class="alert-added">Added in 1.2.0 (9734688).</span>
 		</dd>
 		<dt id="nodes-mods.pending.X.downloading"><code>mods.pending.<u>id</u>.downloading</code></dt>
-		<dd><span class="alert-added">Added in 1.2.0 (9734688).</span></dd>
+		<dd>
+			Whether or not the mod is being downloaded by Steam. Boolean. There is a brief gap between subscribing to a mod and it starting to download, even if subscribing was done in-game.
+			<br/>
+			<span class="alert-added">Added in 1.2.0 (9734688).</span>
+		</dd>
 		<dt id="nodes-mods.pending.X.installed"><code>mods.pending.<u>id</u>.installed</code></dt>
-		<dd><span class="alert-added">Added in 1.2.0 (9734688).</span></dd>
+		<dd>
+			Whether or not the mod has been fully downloaded by Steam. Boolean. There is a brief gap between <a href="#nodes-mods.pending.X.downloading"><code>mods.pending.<u>id</u>.downloading</code></a> becoming falsy and this becoming truthy after the mod is done downloading.
+			<br/>
+			<span class="alert-added">Added in 1.2.0 (9734688).</span>
+		</dd>
 		<dt id="nodes-mods.publish.id"><code>mods.publish.id</code></dt>
 		<dd><span class="alert-added">Added in 0.6.1 (6279809).</span></dd>
 		<dt id="nodes-mods.publish.message"><code>mods.publish.message</code></dt>
@@ -544,8 +552,12 @@
 			<br/>
 			<span class="alert-added">Added in 0.6.1 (6279809).</span>
 		</dd>
-		<dt id="nodes-mods.subscribestate"><code>mods.subscribestate</code></dt>
-		<dd>Has never existed. Obsoleted by <code>mods.pending</code>.</dd>
+		<dt id="nodes-mods.subscribestate.X"><code>mods.subscribestate.<u>id</u></code></dt>
+		<dd>Has never existed. Obsoleted by <a href="#nodes-mods.pending.X"><code>mods.pending.<u>id</u></code></a>. Empty string value. Would have been used by <code>data/ui/promo.lua</code> as evidenced by commented out code.</dd>
+		<dt id="nodes-mods.subscribestate.X.downloading"><code>mods.subscribestate.<u>id</u>.downloading</code></dt>
+		<dd>Has never existed. Obsoleted by <a href="#nodes-mods.pending.X.downloading"><code>mods.pending.<u>id</u>.downloading</code></a>. Boolean. Would have been used by <code>data/ui/promo.lua</code> as evidenced by commented out code.</dd>
+		<dt id="nodes-mods.subscribestate.X.installed"><code>mods.subscribestate.<u>id</u>.installed</code></dt>
+		<dd>Has never existed. Obsoleted by <a href="#nodes-mods.pending.X.installed"><code>mods.pending.<u>id</u>.installed</code></a>. Boolean. Would have been used by <code>data/ui/promo.lua</code> as evidenced by commented out code.</dd>
 	</dl>
 </main>
 </html>
