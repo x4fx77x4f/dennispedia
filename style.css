@@ -5,6 +5,21 @@
 	color-scheme: light dark;
 	tab-size: 4;
 }
+:link {
+	text-decoration-color: #00e7;
+}
+:visited {
+	text-decoration-color: #551a8b77;
+}
+:any-link:focus, :any-link:hover, :any-link:active {
+	text-decoration-color: currentcolor;
+}
+:any-link {
+	text-underline-offset: 3px;
+}
+u {
+	text-underline-offset: 1px;
+}
 tt, code, kbd, samp {
 	font-family: monospace, monospace;
 	font-stretch: condensed;
@@ -48,9 +63,11 @@ summary h1, summary h2, summary h3, summary h4, summary h5, summary h6 {
 	}
 	:link {
 		color: #7ab6ff;
+		text-decoration-color: #7ab6ff77;
 	}
 	:visited {
 		color: #cd99ff;
+		text-decoration-color: #cd99ff77;
 	}
 	tt, code, kbd, samp, pre {
 		background: #fff1;

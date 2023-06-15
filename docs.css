@@ -51,8 +51,8 @@
 	nav li:nth-child(odd) {
 		background: #ccc;
 	}
-	nav li a {
-		text-decoration: none;
+	nav li :any-link {
+		text-decoration-color: #0000;
 		width: 100%;
 		display: inline-block;
 	}
