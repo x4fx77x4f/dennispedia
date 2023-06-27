@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"/>
+<base href="../../"/>
+<script src="docs-article.js"></script>
+<link rel="stylesheet" href="style.css"/>
+<nav>
+	<ol class="breadcrumbs">
+		<li><a href=".">Dennispedia</a></li>
+		<li><a href="teardown/">Teardown</a></li>
+		<li><a href="teardown/g/SaveShape.html" aria-current="page"><code>SaveShape</code></a></li>
+	</ol>
+	<hr/>
+</nav>
+<title>SaveShape — Dennispedia</title>
+<main id="docs-main">
+	<h1><code>SaveShape</code></h1>
+	<p>Saves a shape as .vox and .xml files to <code>Teardown/creativemode/</code> in Documents.</p>
+	<p>(TODO: Exactly how does the <code>creative</code> tag affect this function? Why do names containing <code>.</code> cause a crash? What other names are invalid? Go into more detail about what is saved.)</p>
+	<p class="alert alert-note">This function exists in all environments, but <em>will do nothing if called from a non-privileged script.</em></p>
+	<p class="alert alert-added">This function was added in 1.4.0 (11452023).</p>
+	<p class="alert alert-undocumented">This function is not officially documented.</p>
+	<h2 id="arguments">Arguments</h2>
+	<ol>
+		<li>Shape (number): Index of shape entity to save.</li>
+		<li>string: Name to save to. Must not contain <code>/</code>, <code>\</code>, <code>:</code>, or <code>..</code>.</li>
+	</ol>
+	<h2 id="returns">Return values</h2>
+	<p>None.</p>
+</main>
+</html>
