@@ -73,6 +73,16 @@
 			<br/>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
+		<dt id="tags-cctv"><code>cctv=<u>unused</u></code></dt>
+		<dd>
+			Light tag. Indicates that the light should act as a surveillance camera. When a medium distance away, two lines will be drawn indicating the field of view of the light. When at close range, an animated pattern of rings will be projected by the light. Standing in the light (when not obstructed) will cause <a href="teardown/registry.html#nodes-game.cctv.hits">the <code>game.cctv.hits</code> registry value</a> to change to a value between 1 and 10 based on how visible you are to the camera. When the value reaches 10, <a href="teardown/registry.html#nodes-level.alarm">the alarm will go off by setting <code>level.alarm</code> to true.</a>
+			<br>
+			"unused" is an unused floating point value. Defaults to 0.
+			<br>
+			<span class="alert-removed">Removed in 0.5.0 (5943727).</span>
+			<br>
+			<span class="alert-undocumented">This tag is not officially documented.</span>
+		</dd>
 		<dt id="tags-crane"><code>crane</code></dt>
 		<dd>
 			Vehicle tag. All hinge joints on vehicle are controllable with vehicle_raise/vehicle_lower, display crane controls. Hook is also controllable.
