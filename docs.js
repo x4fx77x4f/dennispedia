@@ -157,7 +157,7 @@ if (history.state && !document.currentScript.dataset.noPopstate) {
 
 const search_landmark = document.getElementById('docs-search');
 const homepage = document.createElement("a");
-homepage.href = location.origin;
+homepage.href = src_pathname;
 homepage.textContent = "Dennispedia";
 search_landmark.parentElement.insertBefore(homepage, search_landmark);
 search_landmark.parentElement.insertBefore(document.createElement("br"), search_landmark);
