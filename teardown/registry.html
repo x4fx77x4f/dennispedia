@@ -339,6 +339,138 @@
 		<dd><span class="alert-added">Added in 0.9.3 (8199301). Non-engine.</span></dd>
 		<dt id="nodes-level.unlimitedammo"><code>level.unlimitedammo</code></dt>
 		<dd><span class="alert-added">Added in 0.7.1 (6627985). Non-engine.</span></dd>
+		<dt id="nodes-map.description2"><code>mods.description</code></dt>
+		<dd>
+			If this exists, it will be used in place of the mission description on the map. String. Non-engine.
+			<br>
+			<span class="alert-added">Added in 1.3.0 (10148769).</span>
+		</dd>
+		<dt id="nodes-map.description2"><code>mods.description2</code></dt>
+		<dd>
+			If this exists, it will be used in place of the mission subdescription on the map. String. Non-engine.
+			<br>
+			<span class="alert-added">Added in 1.3.0 (10148769).</span>
+		</dd>
+		<dt id="nodes-map.security.description"><code>mods.security.description</code></dt>
+		<dd>
+			If this exists, it will be used in place of the security description on the map. String. Non-engine.
+			<br>
+			<span class="alert-added">Added in 1.3.0 (10148769).</span>
+		</dd>
+		<dt id="nodes-map.security.title"><code>mods.security.title</code></dt>
+		<dd>
+			If this exists, it will be used in place of the security name on the map. String. Non-engine.
+			<br>
+			<span class="alert-added">Added in 1.3.0 (10148769).</span>
+		</dd>
+		<dt id="nodes-map.title"><code>mods.title</code></dt>
+		<dd>
+			If this exists, it will be used in place of the mission name on the map. String. Non-engine.
+			<br>
+			<span class="alert-added">Added in 1.3.0 (10148769).</span>
+		</dd>
+		<dt id="nodes-mods.available"><code>mods.available</code></dt>
+		<dd>
+			Empty string value; exists only to be a parent to a node for every mod. The key is the mod ID, and the value is an empty string as they also only exist to be parents to other nodes.
+			A mod ID starting with <code>builtin-</code> is a "built-in" mod in <code>mods/</code> in the game folder.
+			A mod ID starting with <code>local-</code> is a "local" mod in <code>Teardown/mods/</code> in your Documents.
+			A mod ID starting with <code>steam-</code> is a Steam Workshop mod. The numbers after <code>steam-</code> are the ID of the mod; you can append it to the end of <a href="https://steamcommunity.com/workshop/filedetails/?id=">this URL</a> to be brought to its Steam Workshop page.
+			<br/>
+			<span class="alert-added">Added in 0.5.0 (5943727).</span>
+		</dd>
+		<dt id="nodes-mods.available.X.active"><code>mods.available.<u>id</u>.active</code></dt>
+		<dd>Whether or not the mod is enabled. Boolean. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.author"><code>mods.available.<u>id</u>.author</code></dt>
+		<dd>The author of the mod as specified in <code>info.txt</code>. String. Empty string if not specified. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.description"><code>mods.available.<u>id</u>.description</code></dt>
+		<dd>The description of the mod as specified in <code>info.txt</code>. String. Empty string if not specified. (TODO: What if it's too long or malformed? When was this added?)</dd>
+		<dt id="nodes-mods.available.X.listname"><code>mods.available.<u>id</u>.listname</code></dt>
+		<dd>The human readable name of the mod. String. The name of the mod folder if it's a local mod, or the name of the mod specified in <code>info.txt</code> if it's a built-in mod or Workshop mod (or an empty string if none is specified). (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.local"><code>mods.available.<u>id</u>.local</code></dt>
+		<dd>Whether or not the mod is a local mod. Boolean. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.name"><code>mods.available.<u>id</u>.name</code></dt>
+		<dd>The name of the mod as specified in <code>info.txt</code>. String. Empty string if not specified. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.options"><code>mods.available.<u>id</u>.options</code></dt>
+		<dd>Whether or not the mod has options or not, i.e. whether it has an <code>options.lua</code> file. Boolean. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.override"><code>mods.available.<u>id</u>.override</code></dt>
+		<dd>Whether or not the mod is a global mod and will have an enable/disable button in the mod manager. Boolean. Should be truthy if the mod has a <code>main.lua</code> file and is not playable. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.path"><code>mods.available.<u>id</u>.path</code></dt>
+		<dd>The absolute path to the mod folder. String. Only used for local mods. (TODO: What about non-local mods? When was this added?)</dd>
+		<dt id="nodes-mods.available.X.playable"><code>mods.available.<u>id</u>.playable</code></dt>
+		<dd>Whether or not this mod should have a "Play" button. Boolean. Should be truthy if the mod has a <code>main.xml</code> file. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.showbold"><code>mods.available.<u>id</u>.showbold</code></dt>
+		<dd>Whether or not this mod has been interacted with since the last time it was updated. Boolean. Causes the mod name to appear in bold in the mod manager if truthy. Only applicable for Steam Workshop mods. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.steamtime"><code>mods.available.<u>id</u>.steamtime</code></dt>
+		<dd>When the mod was last updated. Integer. 0 if the mod is not a Workshop mod. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.subscribetime"><code>mods.available.<u>id</u>.subscribetime</code></dt>
+		<dd>When the mod was last subscribed to by the player. Integer. Garbage vaguely near the current time if not a Workshop mod. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.tags"><code>mods.available.<u>id</u>.tags</code></dt>
+		<dd>The tags of the mod as specified in <code>info.txt</code> in human readable form. String. Tags are concatenated together with ", " between in the order: "Global" or "Content" (mutually exclusive), "Map", "Gameplay", "Asset", "Vehicle", "Tool". Custom tags are ignored. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.available.X.timestamp"><code>mods.available.<u>id</u>.timestamp</code></dt>
+		<dd>When the mod was last updated as a human readable time. String. Format is "YYYY-MM-DD hh:mm:ss". Empty string if not a Workshop mod. (TODO: When was this added?)</dd>
+		<dt id="nodes-mods.pending.X"><code>mods.pending.<u>id</u></code></dt>
+		<dd>
+			"id" is <em>not</em> the mod ID like for <a href="#nodes-mods.available.X"><code>mods.available.<u>id</u></code></a>, but rather the Steam Workshop ID. Empty string value; exists only to be a parent to other nodes. Used by <code>data/ui/promo.lua</code> to allow subscribing to
+			<br/>
+			<span class="alert-added">Added in 1.2.0 (9734688).</span>
+		</dd>
+		<dt id="nodes-mods.pending.X.downloading"><code>mods.pending.<u>id</u>.downloading</code></dt>
+		<dd>
+			Whether or not the mod is being downloaded by Steam. Boolean. There is a brief gap between subscribing to a mod and it starting to download, even if subscribing was done in-game.
+			<br/>
+			<span class="alert-added">Added in 1.2.0 (9734688).</span>
+		</dd>
+		<dt id="nodes-mods.pending.X.installed"><code>mods.pending.<u>id</u>.installed</code></dt>
+		<dd>
+			Whether or not the mod has been fully downloaded by Steam. Boolean. There is a brief gap between <a href="#nodes-mods.pending.X.downloading"><code>mods.pending.<u>id</u>.downloading</code></a> becoming falsy and this becoming truthy after the mod is done downloading.
+			<br/>
+			<span class="alert-added">Added in 1.2.0 (9734688).</span>
+		</dd>
+		<dt id="nodes-mods.publish.id"><code>mods.publish.id</code></dt>
+		<dd>
+			The Workshop ID of the mod about to be published. String? 0 if the mod has not already been published to the Steam Workshop.
+			<br/>
+			<span class="alert-added">Added in 0.6.1 (6279809).</span>
+		</dd>
+		<dt id="nodes-mods.publish.message"><code>mods.publish.message</code></dt>
+		<dd>
+			Error message if publishing failed. String.
+			<br/>
+			<span class="alert-added">Added in 0.6.1 (6279809).</span>
+		</dd>
+		<dt id="nodes-mods.publish.progress"><code>mods.publish.progress</code></dt>
+		<dd>
+			Progress of publishing mod. Float. From range 0 to 1. Used by <code>data/ui/menu.lua</code> which clamps to range 0.1 to 0.9.
+			<br/>
+			<span class="alert-added">Added in 0.6.1 (6279809).</span>
+		</dd>
+		<dt id="nodes-mods.publish.state"><code>mods.publish.state</code></dt>
+		<dd>
+			String. Valid values are:
+			<dl>
+				<dt id="nodes-mod.publish.state-values-done"><code>done</code></dt>
+				<dd>The mod was successfully published to the Steam Workshop. The <a href="g/Command.html#commands-mods.publishend"><code>mods.publishend</code> command</a> is intended to be run after this. (TODO: What happens if you try to publish another mod without ending the previous one?)</dd>
+				<dt id="nodes-mod.publish.state-values-failed"><code>failed</code></dt>
+				<dd>Similar to <a href="#nodes-mod.publish.state-values-ready"><code>ready</code></a> in that one can try to publish.</dd>
+				<dt id="nodes-mod.publish.state-values-ready"><code>ready</code></dt>
+				<dd>The mod can be published to the Steam Workshop. The <a href="g/Command.html#commands-mods.publishupload"><code>mods.publishupload</code> command</a> can be used to start uploading the mod.</dd>
+				<dt id="nodes-mod.publish.state-values-uploading"><code>uploading</code></dt>
+				<dd>The mod is currently being uploaded to the Steam Workshop by the engine. Can be cancelled with the <a href="g/Command.html#commands-mods.publishcancel"><code>mods.publishcancel</code> command</a>. Progress can be read from <a href="#nodes-mods.publish.progress"><code>mods.publish.progress</code></a>.</dd>
+			</dl>
+			<span class="alert-added">Added in 0.6.1 (6279809).</span>
+		</dd>
+		<dt id="nodes-mods.publish.visibility"><code>mods.publish.visibility</code></dt>
+		<dd>
+			Integer. 0 is public, 1 is friends only, 2 is private, and 3 is unlisted. A -1 value is referenced in the code but its purpose is unclear.
+			<br/>
+			<span class="alert-added">Added in 0.6.1 (6279809).</span>
+		</dd>
+		<dt id="nodes-mods.subscribestate.X"><code>mods.subscribestate.<u>id</u></code></dt>
+		<dd><span class="alert-removed">Has never existed.</span> Obsoleted by <a href="#nodes-mods.pending.X"><code>mods.pending.<u>id</u></code></a>. Empty string value. Would have been used by <code>data/ui/promo.lua</code> as evidenced by commented out code.</dd>
+		<dt id="nodes-mods.subscribestate.X.downloading"><code>mods.subscribestate.<u>id</u>.downloading</code></dt>
+		<dd><span class="alert-removed">Has never existed.</span> Obsoleted by <a href="#nodes-mods.pending.X.downloading"><code>mods.pending.<u>id</u>.downloading</code></a>. Boolean. Would have been used by <code>data/ui/promo.lua</code> as evidenced by commented out code.</dd>
+		<dt id="nodes-mods.subscribestate.X.installed"><code>mods.subscribestate.<u>id</u>.installed</code></dt>
+		<dd><span class="alert-removed">Has never existed.</span> Obsoleted by <a href="#nodes-mods.pending.X.installed"><code>mods.pending.<u>id</u>.installed</code></a>. Boolean. Would have been used by <code>data/ui/promo.lua</code> as evidenced by commented out code.</dd>
 		<dt id="nodes-options.audio.ambiencevolume"><code>options.audio.ambiencevolume</code></dt>
 		<dd>Integer. Defaults to 100. Intended range is 0 to 100. Only appears in options menu if <code>game.deploy</code> is falsy. (since 0.4.5 (5748542)).</dd>
 		<dt id="nodes-options.audio.menumusic"><code>options.audio.menumusic</code></dt>
@@ -483,138 +615,6 @@
 		<dd><span class="alert-added">Added in 0.4.5 (5748542). Non-engine.</span></dd>
 		<dt id="nodes-savegame.valuable"><code>savegame.valuable</code></dt>
 		<dd><span class="alert-added">Added in 0.4.5 (5748542). Non-engine.</span></dd>
-		<dt id="nodes-map.description2"><code>mods.description</code></dt>
-		<dd>
-			If this exists, it will be used in place of the mission description on the map. String. Non-engine.
-			<br>
-			<span class="alert-added">Added in 1.3.0 (10148769).</span>
-		</dd>
-		<dt id="nodes-map.description2"><code>mods.description2</code></dt>
-		<dd>
-			If this exists, it will be used in place of the mission subdescription on the map. String. Non-engine.
-			<br>
-			<span class="alert-added">Added in 1.3.0 (10148769).</span>
-		</dd>
-		<dt id="nodes-map.security.description"><code>mods.security.description</code></dt>
-		<dd>
-			If this exists, it will be used in place of the security description on the map. String. Non-engine.
-			<br>
-			<span class="alert-added">Added in 1.3.0 (10148769).</span>
-		</dd>
-		<dt id="nodes-map.security.title"><code>mods.security.title</code></dt>
-		<dd>
-			If this exists, it will be used in place of the security name on the map. String. Non-engine.
-			<br>
-			<span class="alert-added">Added in 1.3.0 (10148769).</span>
-		</dd>
-		<dt id="nodes-map.title"><code>mods.title</code></dt>
-		<dd>
-			If this exists, it will be used in place of the mission name on the map. String. Non-engine.
-			<br>
-			<span class="alert-added">Added in 1.3.0 (10148769).</span>
-		</dd>
-		<dt id="nodes-mods.available"><code>mods.available</code></dt>
-		<dd>
-			Empty string value; exists only to be a parent to a node for every mod. The key is the mod ID, and the value is an empty string as they also only exist to be parents to other nodes.
-			A mod ID starting with <code>builtin-</code> is a "built-in" mod in <code>mods/</code> in the game folder.
-			A mod ID starting with <code>local-</code> is a "local" mod in <code>Teardown/mods/</code> in your Documents.
-			A mod ID starting with <code>steam-</code> is a Steam Workshop mod. The numbers after <code>steam-</code> are the ID of the mod; you can append it to the end of <a href="https://steamcommunity.com/workshop/filedetails/?id=">this URL</a> to be brought to its Steam Workshop page.
-			<br/>
-			<span class="alert-added">Added in 0.5.0 (5943727).</span>
-		</dd>
-		<dt id="nodes-mods.available.X.active"><code>mods.available.<u>id</u>.active</code></dt>
-		<dd>Whether or not the mod is enabled. Boolean. (TODO: When was this added?)</dd>
-		<dt id="nodes-mods.available.X.author"><code>mods.available.<u>id</u>.author</code></dt>
-		<dd>The author of the mod as specified in <code>info.txt</code>. String. Empty string if not specified. (TODO: When was this added?)</dd>
-		<dt id="nodes-mods.available.X.description"><code>mods.available.<u>id</u>.description</code></dt>
-		<dd>The description of the mod as specified in <code>info.txt</code>. String. Empty string if not specified. (TODO: What if it's too long or malformed? When was this added?)</dd>
-		<dt id="nodes-mods.available.X.listname"><code>mods.available.<u>id</u>.listname</code></dt>
-		<dd>The human readable name of the mod. String. The name of the mod folder if it's a local mod, or the name of the mod specified in <code>info.txt</code> if it's a built-in mod or Workshop mod (or an empty string if none is specified). (TODO: When was this added?)</dd>
-		<dt id="nodes-mods.available.X.local"><code>mods.available.<u>id</u>.local</code></dt>
-		<dd>Whether or not the mod is a local mod. Boolean. (TODO: When was this added?)</dd>
-		<dt id="nodes-mods.available.X.name"><code>mods.available.<u>id</u>.name</code></dt>
-		<dd>The name of the mod as specified in <code>info.txt</code>. String. Empty string if not specified. (TODO: When was this added?)</dd>
-		<dt id="nodes-mods.available.X.options"><code>mods.available.<u>id</u>.options</code></dt>
-		<dd>Whether or not the mod has options or not, i.e. whether it has an <code>options.lua</code> file. Boolean. (TODO: When was this added?)</dd>
-		<dt id="nodes-mods.available.X.override"><code>mods.available.<u>id</u>.override</code></dt>
-		<dd>Whether or not the mod is a global mod and will have an enable/disable button in the mod manager. Boolean. Should be truthy if the mod has a <code>main.lua</code> file and is not playable. (TODO: When was this added?)</dd>
-		<dt id="nodes-mods.available.X.path"><code>mods.available.<u>id</u>.path</code></dt>
-		<dd>The absolute path to the mod folder. String. Only used for local mods. (TODO: What about non-local mods? When was this added?)</dd>
-		<dt id="nodes-mods.available.X.playable"><code>mods.available.<u>id</u>.playable</code></dt>
-		<dd>Whether or not this mod should have a "Play" button. Boolean. Should be truthy if the mod has a <code>main.xml</code> file. (TODO: When was this added?)</dd>
-		<dt id="nodes-mods.available.X.showbold"><code>mods.available.<u>id</u>.showbold</code></dt>
-		<dd>Whether or not this mod has been interacted with since the last time it was updated. Boolean. Causes the mod name to appear in bold in the mod manager if truthy. Only applicable for Steam Workshop mods. (TODO: When was this added?)</dd>
-		<dt id="nodes-mods.available.X.steamtime"><code>mods.available.<u>id</u>.steamtime</code></dt>
-		<dd>When the mod was last updated. Integer. 0 if the mod is not a Workshop mod. (TODO: When was this added?)</dd>
-		<dt id="nodes-mods.available.X.subscribetime"><code>mods.available.<u>id</u>.subscribetime</code></dt>
-		<dd>When the mod was last subscribed to by the player. Integer. Garbage vaguely near the current time if not a Workshop mod. (TODO: When was this added?)</dd>
-		<dt id="nodes-mods.available.X.tags"><code>mods.available.<u>id</u>.tags</code></dt>
-		<dd>The tags of the mod as specified in <code>info.txt</code> in human readable form. String. Tags are concatenated together with ", " between in the order: "Global" or "Content" (mutually exclusive), "Map", "Gameplay", "Asset", "Vehicle", "Tool". Custom tags are ignored. (TODO: When was this added?)</dd>
-		<dt id="nodes-mods.available.X.timestamp"><code>mods.available.<u>id</u>.timestamp</code></dt>
-		<dd>When the mod was last updated as a human readable time. String. Format is "YYYY-MM-DD hh:mm:ss". Empty string if not a Workshop mod. (TODO: When was this added?)</dd>
-		<dt id="nodes-mods.pending.X"><code>mods.pending.<u>id</u></code></dt>
-		<dd>
-			"id" is <em>not</em> the mod ID like for <a href="#nodes-mods.available.X"><code>mods.available.<u>id</u></code></a>, but rather the Steam Workshop ID. Empty string value; exists only to be a parent to other nodes. Used by <code>data/ui/promo.lua</code> to allow subscribing to
-			<br/>
-			<span class="alert-added">Added in 1.2.0 (9734688).</span>
-		</dd>
-		<dt id="nodes-mods.pending.X.downloading"><code>mods.pending.<u>id</u>.downloading</code></dt>
-		<dd>
-			Whether or not the mod is being downloaded by Steam. Boolean. There is a brief gap between subscribing to a mod and it starting to download, even if subscribing was done in-game.
-			<br/>
-			<span class="alert-added">Added in 1.2.0 (9734688).</span>
-		</dd>
-		<dt id="nodes-mods.pending.X.installed"><code>mods.pending.<u>id</u>.installed</code></dt>
-		<dd>
-			Whether or not the mod has been fully downloaded by Steam. Boolean. There is a brief gap between <a href="#nodes-mods.pending.X.downloading"><code>mods.pending.<u>id</u>.downloading</code></a> becoming falsy and this becoming truthy after the mod is done downloading.
-			<br/>
-			<span class="alert-added">Added in 1.2.0 (9734688).</span>
-		</dd>
-		<dt id="nodes-mods.publish.id"><code>mods.publish.id</code></dt>
-		<dd>
-			The Workshop ID of the mod about to be published. String? 0 if the mod has not already been published to the Steam Workshop.
-			<br/>
-			<span class="alert-added">Added in 0.6.1 (6279809).</span>
-		</dd>
-		<dt id="nodes-mods.publish.message"><code>mods.publish.message</code></dt>
-		<dd>
-			Error message if publishing failed. String.
-			<br/>
-			<span class="alert-added">Added in 0.6.1 (6279809).</span>
-		</dd>
-		<dt id="nodes-mods.publish.progress"><code>mods.publish.progress</code></dt>
-		<dd>
-			Progress of publishing mod. Float. From range 0 to 1. Used by <code>data/ui/menu.lua</code> which clamps to range 0.1 to 0.9.
-			<br/>
-			<span class="alert-added">Added in 0.6.1 (6279809).</span>
-		</dd>
-		<dt id="nodes-mods.publish.state"><code>mods.publish.state</code></dt>
-		<dd>
-			String. Valid values are:
-			<dl>
-				<dt id="nodes-mod.publish.state-values-done"><code>done</code></dt>
-				<dd>The mod was successfully published to the Steam Workshop. The <a href="g/Command.html#commands-mods.publishend"><code>mods.publishend</code> command</a> is intended to be run after this. (TODO: What happens if you try to publish another mod without ending the previous one?)</dd>
-				<dt id="nodes-mod.publish.state-values-failed"><code>failed</code></dt>
-				<dd>Similar to <a href="#nodes-mod.publish.state-values-ready"><code>ready</code></a> in that one can try to publish.</dd>
-				<dt id="nodes-mod.publish.state-values-ready"><code>ready</code></dt>
-				<dd>The mod can be published to the Steam Workshop. The <a href="g/Command.html#commands-mods.publishupload"><code>mods.publishupload</code> command</a> can be used to start uploading the mod.</dd>
-				<dt id="nodes-mod.publish.state-values-uploading"><code>uploading</code></dt>
-				<dd>The mod is currently being uploaded to the Steam Workshop by the engine. Can be cancelled with the <a href="g/Command.html#commands-mods.publishcancel"><code>mods.publishcancel</code> command</a>. Progress can be read from <a href="#nodes-mods.publish.progress"><code>mods.publish.progress</code></a>.</dd>
-			</dl>
-			<span class="alert-added">Added in 0.6.1 (6279809).</span>
-		</dd>
-		<dt id="nodes-mods.publish.visibility"><code>mods.publish.visibility</code></dt>
-		<dd>
-			Integer. 0 is public, 1 is friends only, 2 is private, and 3 is unlisted. A -1 value is referenced in the code but its purpose is unclear.
-			<br/>
-			<span class="alert-added">Added in 0.6.1 (6279809).</span>
-		</dd>
-		<dt id="nodes-mods.subscribestate.X"><code>mods.subscribestate.<u>id</u></code></dt>
-		<dd><span class="alert-removed">Has never existed.</span> Obsoleted by <a href="#nodes-mods.pending.X"><code>mods.pending.<u>id</u></code></a>. Empty string value. Would have been used by <code>data/ui/promo.lua</code> as evidenced by commented out code.</dd>
-		<dt id="nodes-mods.subscribestate.X.downloading"><code>mods.subscribestate.<u>id</u>.downloading</code></dt>
-		<dd><span class="alert-removed">Has never existed.</span> Obsoleted by <a href="#nodes-mods.pending.X.downloading"><code>mods.pending.<u>id</u>.downloading</code></a>. Boolean. Would have been used by <code>data/ui/promo.lua</code> as evidenced by commented out code.</dd>
-		<dt id="nodes-mods.subscribestate.X.installed"><code>mods.subscribestate.<u>id</u>.installed</code></dt>
-		<dd><span class="alert-removed">Has never existed.</span> Obsoleted by <a href="#nodes-mods.pending.X.installed"><code>mods.pending.<u>id</u>.installed</code></a>. Boolean. Would have been used by <code>data/ui/promo.lua</code> as evidenced by commented out code.</dd>
 	</dl>
 </main>
 </html>
