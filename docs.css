@@ -82,7 +82,7 @@
 	}
 }
 @media print {
-	nav {
+	nav, nav + hr {
 		display: none;
 	}
 }
