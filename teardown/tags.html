@@ -303,8 +303,12 @@
 		</dd>
 		<dt id="tags-vital"><code>vital</code></dt>
 		<dd>
-			Location tag. When voxels at this position are broken, the vehicle is instantly broken (TODO: verify). Defines where engine smoke comes from.
-			<br/>
+			Location tag. Defines where engine smoke comes from.
+			<br>
+			Commonly believed to cause the vehicle to die if voxels in the area are broken, but this is false at least in 1.4.0 (patch 1) (11527952). (TODO: Was it ever true in the past?)
+			<br>
+			(TODO: Does this tag make any difference when determining which of the two resulting bodies will remain the vehicle body when the vehicle is broken into two parts?)
+			<br>
 			<span class="alert-undocumented">This tag is not officially documented.</span>
 		</dd>
 		<dt id="tags-wire"><code>wire</code></dt>
