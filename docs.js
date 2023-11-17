@@ -185,5 +185,17 @@ for (const el of [...document.getElementsByClassName("docs-remove")]) {
 	el.remove();
 }
 
+const aside = document.createElement("aside");
+aside.classList.add("alert", "alert-removed");
+const strong = document.createElement("strong");
+strong.append(document.createTextNode("This wiki is defunct and will no longer receive updates."));
+aside.append(strong);
+aside.append(document.createTextNode(" "));
+const a = document.createElement("a");
+a.href = `${location.protocol}//${src_host}${src_pathname}`;
+a.append(document.createTextNode("See the front page for details."));
+aside.append(a);
+nav.insertBefore(aside, nav.firstChild);
+
 console.log("Hello, world!");
 // @license-end
