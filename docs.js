@@ -193,6 +193,8 @@ aside.append(strong);
 aside.append(document.createTextNode(" "));
 const a = document.createElement("a");
 a.href = `${location.protocol}//${src_host}${src_pathname}`;
+a.dataset.pathname = src_pathname;
+a.addEventListener("click", event => a_click(event, a));
 a.append(document.createTextNode("See the front page for details."));
 aside.append(a);
 nav.insertBefore(aside, nav.firstChild);
